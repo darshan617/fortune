@@ -1,0 +1,9 @@
+.statBox {
+  color: #9ca3af;
+}
+.statNo {
+  font-size: clamp(1.5rem, calc(1.2rem + 1.5vw), 3rem);
+  color: var(--gold);
+  display: block;
+  font-weight: 600;
+}

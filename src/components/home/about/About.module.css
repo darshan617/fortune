@@ -1,0 +1,29 @@
+.aboutImgWrap {
+  position: relative;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  height: 100%;
+}
+.aboutImgWrap:before {
+  content: "";
+  width: 15%;
+  height: auto;
+  aspect-ratio: 1;
+  display: block;
+  border-left: 3px solid var(--gold);
+  border-top: 3px solid var(--gold);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: inherit;
+}
+.aiwImgBox {
+  border-radius: 1rem;
+  height: 100%;
+}
+.aiwImg {
+  object-position: center;
+}
+.aiwYear {
+  font-size: clamp(1.88rem, calc(1.45rem + 2.125vw), 4rem);
+}
