@@ -1,0 +1,81 @@
+.pageFooter {
+  font-size: 0.875rem;
+  border-bottom: 10px solid var(--gold);
+  position: relative;
+}
+.pageFooter:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.pageFooter a:not(.ctaBtn):hover {
+  color: var(--gold);
+  transition: all 0.3s ease;
+}
+.footLogo {
+  max-width: 200px;
+  width: 100%;
+  aspect-ratio: 2.62;
+  display: block;
+  background: var(--lotusPink) no-repeat center / contain;
+}
+.footHead {
+  text-transform: uppercase;
+  font-size: 1.125rem;
+}
+.footLinks li:before {
+  content: "-";
+  margin-right: 0.5rem;
+  color: var(--gold);
+}
+.footLinks li a {
+  position: relative;
+  left: 0;
+  transition: all 0.5s ease;
+  display: inline-block;
+}
+.footLinks li:hover a {
+  left: 5px;
+}
+.footCopy {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.socialIcons a {
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in;
+  transform-origin: center center;
+}
+.socialIcons a:hover {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #fff !important;
+  transform: scale(1.2);
+}
+.socialIcons a svg {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+@media (min-width: 1200px) {
+  .pageFooter {
+    position: sticky;
+    bottom: 0;
+  }
+}

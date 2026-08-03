@@ -1,10 +1,9 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import styles from '@/components/Layout/navbar/Navbar.module.css'
-import logo from '@/assets/images/fortune_logo.png'
+import styles from "@/components/Layout/navbar/Navbar.module.css";
+import logo from "@/assets/images/fortune_logo.png";
 
 const Navbar = () => {
-
   const [menuShow, setMenuShow] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
@@ -58,13 +57,15 @@ const Navbar = () => {
             </a>
           </div>
           <div className="col-md-4 col-auto text-end">
-            <a href="" className="ctaBtn" style={{ '--btnWidth': '40px' }}>
+            <a href="" className="ctaBtn" style={{ "--btnWidth": "40px" }}>
               <span className="d-none d-md-block">Enquire Now</span>
             </a>
           </div>
         </div>
-        <div className={`collapse ${menuShow ? 'show' : ''}`} id="menu">
-          <ul className={`${styles.naviWrap} d-flex flex-column text-uppercase py-5`}>
+        <div className={`collapse ${menuShow ? "show" : ""}`} id="menu">
+          <ul
+            className={`${styles.naviWrap} d-flex flex-column text-uppercase py-5`}
+          >
             <li>
               <a href="">Home</a>
             </li>
