@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import styles from "@/components/Layout/navbar/Navbar.module.css";
 import logo from "@/assets/images/fortune_logo.png";
+import lineProject from "@/assets/images/line-project.png";
 
 const Navbar = () => {
   const [menuShow, setMenuShow] = useState(false);
@@ -28,64 +29,87 @@ const Navbar = () => {
 
   return (
     <header
-      className={`${styles.pageHeader} sitePadding py-3 ${isSticky ? "stick" : ""} ${menuShow ? "opened" : ""}`}
-    >
-      <div className="pgHeadMain container-fluid rounded">
-        <div className="row align-items-center">
-          <div className="col-md-4 col-auto">
-            <button
-              role="button"
-              className={`${styles.headBtns} titleFont`}
-              onClick={handleMenuShow}
-            >
-              <div className={`${styles.menuBtn}`}>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <span className="d-none d-md-block">MENU</span>
-            </button>
+  className={`${styles.pageHeader} sitePadding py-3 ${isSticky ? "stick" : ""} ${menuShow ? "opened" : ""}`}
+>
+  <div className="pgHeadMain container-fluid rounded">
+    <div className="row align-items-center">
+      <div className="col-md-4 col-auto">
+        <button
+          role="button"
+          className={`${styles.headBtns} titleFont`}
+          onClick={handleMenuShow}
+        >
+          <div className={`${styles.menuBtn}`}>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-          <div className="col d-flex justify-content-center align-items-center text-center">
-            <a href="/" className={`${styles.logoBox}`}>
-              <Image
-                src={logo}
-                alt=""
-                title="Fortune Group"
-                className={`${styles.logoImg}`}
-              />
-            </a>
-          </div>
-          <div className="col-md-4 col-auto text-end">
-            <a href="" className="ctaBtn" style={{ "--btnWidth": "40px" }}>
-              <span className="d-none d-md-block">Enquire Now</span>
-            </a>
-          </div>
+          <span className="d-none d-md-block">MENU</span>
+        </button>
+      </div>
+      <div className="col d-flex justify-content-center align-items-center text-center">
+        <a href="/" className={`${styles.logoBox}`}>
+          <Image
+            src={logo}
+            alt=""
+            title="Fortune Group"
+            className={`${styles.logoImg}`}
+          />
+        </a>
+      </div>
+      <div className="col-md-4 col-auto text-end">
+        
+          <a href="">
+          <span className="ctaBtn headEnquiryBtn" style={{ "--btnWidth": "30px" }}>
+          <span className="d-none d-md-block">Enquire Now</span>
+        </span>
+        </a>
+      </div>
+    </div>
+    <div className={`collapse ${menuShow ? "show" : ""}`} id="menu">
+      <div className={`d-flex ${styles.navigMain}`}>
+        <div className="col-md-5 d-none d-md-block">
+          <Image
+            src={lineProject}
+            alt=""
+            className="w-100 h-100 object-fit-contain"
+          />
         </div>
-        <div className={`collapse ${menuShow ? "show" : ""}`} id="menu">
+        <div className="col-md col-12">
           <ul
-            className={`${styles.naviWrap} d-flex flex-column text-uppercase py-5`}
+            className={`${styles.naviWrap} titleFont d-flex flex-column text-uppercase py-5`}
           >
             <li>
-              <a href="">Home</a>
+              <a href="/">
+                <span>Home</span>
+              </a>
             </li>
             <li>
-              <a href="">About Us</a>
+              <a href="">
+                <span>About Us</span>
+              </a>
             </li>
             <li>
-              <a href="">Projects</a>
+              <a href="">
+                <span>Projects</span>
+              </a>
             </li>
             <li>
-              <a href="">Investors</a>
+              <a href="">
+                <span>Investors</span>
+              </a>
             </li>
             <li>
-              <a href="">Contact Us</a>
+              <a href="">
+                <span>Contact Us</span>
+              </a>
             </li>
           </ul>
         </div>
       </div>
-    </header>
+    </div>
+  </div>
+</header>
   );
 };
-
 export default Navbar;

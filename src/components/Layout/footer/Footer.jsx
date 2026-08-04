@@ -48,9 +48,6 @@ const Footer = () => {
                     <a href="">Investors</a>
                   </li>
                   <li>
-                    <a href="">Careers</a>
-                  </li>
-                  <li>
                     <a href="">Contact Us</a>
                   </li>
                 </ul>
@@ -59,7 +56,7 @@ const Footer = () => {
                 className="col-xl-auto col-lg col-md-4 col-sm-6 col-12 animateThis slideRight"
                 style={{transitionDelay:".4s"}}
               >
-                <h5 className="footHead textPink fw-semibold mb-4">Contact Us</h5>
+                <h5 className={`${styles.footHead} textPink fw-semibold mb-4`}>Contact Us</h5>
                 <div className="d-flex flex-column gap-4">
                   <div className="d-flex gap-3">
                     <div className="textGold">
@@ -136,7 +133,7 @@ const Footer = () => {
                 style={{transitionDelay:".5s"}}
               >
                 <div>
-                  <h5 className="footHead textPink fw-semibold mb-4">
+                  <h5 className={`${styles.footHead} textPink fw-semibold mb-4`}>
                     Social Media
                   </h5>
                   <ul className={`${styles.socialIcons} hstack gap-3`}>

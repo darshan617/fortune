@@ -93,11 +93,11 @@ const FeaturedProject = () => {
                               Borivali East, Mumbai
                             </div>
                           </div>
-                          <div>
+                          {/* <div>
                             <a href="" className="ctaBtn">
                               View More
                             </a>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>
@@ -137,11 +137,11 @@ const FeaturedProject = () => {
                               Andheri West, Mumbai
                             </div>
                           </div>
-                          <div>
+                          {/* <div>
                             <a href="" className="ctaBtn">
                               View More
                             </a>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>
@@ -187,11 +187,11 @@ const FeaturedProject = () => {
                               Borivali East, Mumbai
                             </div>
                           </div>
-                          <div>
+                          {/* <div>
                             <a href="" className="ctaBtn">
                               View More
                             </a>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>
@@ -231,11 +231,11 @@ const FeaturedProject = () => {
                               Andheri West, Mumbai
                             </div>
                           </div>
-                          <div>
+                          {/* <div>
                             <a href="" className="ctaBtn">
                               View More
                             </a>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>
