@@ -59,7 +59,7 @@ const Navbar = () => {
       </div>
       <div className="col-md-4 col-auto text-end">
         
-          <a href="">
+          <a href="/projects">
           <span className="ctaBtn headEnquiryBtn" style={{ "--btnWidth": "30px" }}>
           <span className="d-none d-md-block">Enquire Now</span>
         </span>
@@ -85,12 +85,12 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/about-us">
                 <span>About Us</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/projects">
                 <span>Projects</span>
               </a>
             </li>

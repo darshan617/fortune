@@ -21,7 +21,7 @@ const Banner = () => {
             together. Discover homes designed for generations.
           </p>
           <div className="animateThis fadeIn ">
-            <Link href="" className="ctaBtn">
+            <Link href="/projects" className="ctaBtn">
               Explore Projects{" "}
             </Link>
           </div>

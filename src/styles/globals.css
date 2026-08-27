@@ -3,7 +3,7 @@
 :root {
   --primary: rgba(24, 36, 82, 1);
   --primaryRGB: 24, 36, 82;
-  --gold: rgba(212, 175, 55, 1);
+  --gold: #d4af37;
   --goldRGB: 212, 175, 55;
 }
 
@@ -112,7 +112,7 @@ p {
   color: var(--primary);
 }
 .textGold {
-  color: var(--gold);
+  color: var(--gold) !important;
 }
 
 .pageBody {
@@ -129,6 +129,21 @@ p {
   .sitePadding {
     padding-left: 4vw;
     padding-right: 4vw;
+  }
+  .scrollToTop {
+    width: 45px;
+    height: 45px;
+    margin: 1rem;
+}
+}
+@media (max-width: 575px) {
+  .scrollToTop {
+    width: 45px;
+    height: 45px;
+    margin: 1rem;
+    &:after {
+      padding: 4px;
+    }
   }
 }
 
@@ -192,16 +207,25 @@ p {
 .fadeIn.in-view {
   opacity: 1;
 }
-.curtain {
-  clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-}
 .curtain.in-view {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .curtainLeft {
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition-duration: 2s;
 }
 .curtainLeft.in-view {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.curtain {
+  clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+}
+
+.curtainRight {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  transition-duration: 2s;
+}
+.curtainRight.in-view {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .flipX {
@@ -383,4 +407,55 @@ p {
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+.scrollToTop {
+  background-color: var(--primary);
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  color: var(--gold);
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0.25rem;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.5) translateY(10px);
+  transition: all 0.15s ease;
+  &:after {
+    content: "";
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+  }
+  &.showBtn {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0);
+  }
+  .scroll-progress-bar {
+    --scrollAmount: 0px;
+    & svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      max-height: 100%;
+      transform: rotate(90deg);
+      & path {
+        stroke: var(--gold);
+        stroke-width: 0.2em;
+        stroke-dasharray: 154;
+        stroke-dashoffset: calc(-154px + var(--scrollAmount));
+        animation-fill-mode: forwards;
+      }
+    }
+  }
 }

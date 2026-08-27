@@ -1,0 +1,204 @@
+.stickyFrame {
+  width: 100%;
+  height: 55vh;
+}
+.stfrImg {
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.stickyBlue {
+  width: 40%;
+  aspect-ratio: 1;
+  border: 6px double rgba(var(--goldRGB), 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  filter: drop-shadow(-40px 40px 10px rgba(0, 0, 0, 0.2));
+  background: rgba(var(--primaryRGB), 0);
+}
+
+@keyframes stfrImgShrink {
+  0% {
+    width: 200%;
+    opacity: 0.2;
+    filter: grayscale(100%);
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+}
+@keyframes stickyBlue {
+  0% {
+    background: rgba(var(--primaryRGB), 0);
+  }
+  100% {
+    background: rgba(var(--primaryRGB), 1);
+  }
+}
+
+@keyframes stfrImgMove {
+  0% {
+    opacity: 0.2;
+    filter: grayscale(100%) brightness(130%);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    filter: grayscale(0%) brightness(100%);
+    transform: translateX(-50%);
+  }
+}
+@keyframes stickyBlueMove {
+  0% {
+    background: rgba(var(--primaryRGB), 0);
+  }
+  100% {
+    background: rgba(var(--primaryRGB), 1);
+  }
+}
+
+.motoMain {
+  filter: drop-shadow(20px 30px 5px rgba(0, 0, 0, 0));
+}
+.aboutPgContent p:first-child::first-letter {
+  font-size: 300%;
+  font-family: "Playfair Display", serif;
+  line-height: 0;
+}
+
+.vmvBox {
+  border: 1px solid var(--gold);
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+.vmvBox:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.invItemList {
+  --bs-gutter-x: 1px;
+  --bs-gutter-y: 1px;
+  padding-bottom: 1px;
+  border-radius: 3px;
+}
+.invItem {
+  height: 100%;
+  transition: all 0.5s ease-out;
+  border-radius: 3px;
+  background: linear-gradient(
+      45deg,
+      rgba(24, 36, 82, 1) 0%,
+      rgba(26, 43, 112, 1) 38%,
+      rgba(255, 255, 255, 1) 55%,
+      rgba(255, 255, 255, 1) 100%
+    )
+    right top/ 300% 150%;
+}
+.invItem * {
+  transition: inherit;
+}
+.invIconBox {
+  width: 3rem;
+  aspect-ratio: 1;
+  background: rgba(var(--goldRGB), 0.1);
+  color: var(--gold);
+}
+.invIcon {
+  width: 50%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: all 0.2s linear;
+}
+.invHead {
+  color: var(--primary);
+  font-size: clamp(1.5rem, calc(1.318rem + 0.909vw), 2rem);
+}
+
+.invItem:hover {
+  background-position: left bottom;
+}
+.invItem:hover .invIconBox {
+  background: rgba(var(--goldRGB), 0);
+}
+.invItem:hover .invIcon {
+  width: 100%;
+}
+.invItem:hover .invHead,
+.invItem:hover .invTxt {
+  color: #fff;
+}
+
+.textGold {
+  color: #d4af37 !important;
+}
+
+@media (min-width: 768px) {
+  .readyTxt {
+    transform: scale(0.7);
+    transform-origin: 0 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .stickyFrame {
+    overflow: hidden;
+    position: relative;
+  }
+  .stfrImg {
+    animation: stfrImgMove 20s forwards;
+  }
+  .stickyBlue {
+    animation: stickyBlueMove 3s 2s forwards;
+  }
+}
+
+@media (min-width: 768px) {
+  .stickyFrame {
+    height: 100vh;
+    position: sticky;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+  .stfrImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation-timeline: view(block);
+    animation-name: stfrImgShrink;
+    animation-fill-mode: forwards;
+    animation-range: entry 100% exit -50%;
+  }
+  .stickyBlue {
+    width: 30%;
+    border: 10px double rgba(var(--goldRGB), 1);
+    animation-timeline: view();
+    animation-name: stickyBlue;
+    animation-fill-mode: forwards;
+    animation-range: entry 200% exit -50%;
+  }
+  .aboutPgContent {
+    padding: 30vh 0;
+  }
+  .motoMain {
+    height: 100vh;
+  }
+}

@@ -158,7 +158,7 @@ const WhyChoose = () => {
                   Experience a lifestyle where quality, convenience, and
                   timeless design come together.
                 </p>
-                <a href="" className="ctaBtn">
+                <a href="/fortune_florence" className="ctaBtn">
                   View Project
                 </a>
               </div>

@@ -51,7 +51,7 @@ const About = () => {
                   lifestyle for generations to come.
                 </p>
                 <div className="animateThis fadeIn ">
-                  <a href="" className="ctaBtn ghost">
+                  <a href="/about-us" className="ctaBtn ghost">
                     Know More
                   </a>
                 </div>
