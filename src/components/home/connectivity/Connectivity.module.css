@@ -1,0 +1,44 @@
+.projStatusBar {
+  --greenColor: 22, 163, 74;
+  background: rgba(var(--greenColor), 0.1);
+  border: 1px solid rgba(var(--greenColor), 0.2);
+  color: rgba(var(--greenColor), 1);
+}
+.arialViewWrap {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid var(--primary);
+}
+.avwImg {
+  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+}
+.avwImg:global(.in-view) {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition-delay: 1s;
+  transition-duration: 2s;
+}
+
+.avwProject {
+  background: rgba(var(--primaryRGB), 0.8);
+  border: 1px solid rgba(var(--goldRGB), 0.4);
+}
+
+.marqueStrip :global(.swiper-wrapper) {
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+.marqueStrip :global(.swiper-slide) {
+  max-width: 200px;
+  aspect-ratio: 2/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #faf8f3;
+}
+.marqueStrip :global(img) {
+  width: 100%;
+  aspect-ratio: 2/1;
+  object-fit: contain;
+  object-position: center;
+  mix-blend-mode: multiply;
+}

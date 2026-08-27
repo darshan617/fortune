@@ -1,0 +1,104 @@
+.projectSlider {
+  border-radius: 1rem;
+  overflow: visible;
+}
+.projectSlider .swiperBtn {
+  visibility: hidden;
+}
+.projectItem {
+  aspect-ratio: 5/3;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 1.3rem;
+  background: var(--primary);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: all 1s ease;
+}
+
+:global(.in-view) .projectItem {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.projectItem * {
+  transition: all 0.5s ease-in-out;
+}
+.projectItem:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(102, 102, 102, 0) 57%,
+    rgba(6, 8, 34, 0.8) 80%,
+    rgba(0, 1, 29, 0.86) 100%
+  );
+  z-index: 1;
+}
+
+.projImgBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+  filter: brightness(200%); /*clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);*/
+}
+:global(.in-view) .projImgBox {
+  opacity: 1;
+  filter: brightness(
+    100%
+  ); /*clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);*/
+  transition-delay: 0.9s;
+}
+.pibImg {
+  object-fit: cover;
+}
+.pibHoverImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 1s ease;
+}
+.projectItem:hover .pibHoverImg {
+  opacity: 1;
+}
+
+.projLogo {
+  max-width: 40%;
+}
+.projLogoImg {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
+}
+
+.projName {
+  font-size: clamp(1.5rem, calc(1.2rem + 1.5vw), 3rem);
+}
+.projLocation:before {
+  content: "";
+  width: 1.1rem;
+  aspect-ratio: 1;
+  display: inline-block;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%23d4af37' viewBox='0 0 16 16'><path d='M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10'/><path d='M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6'/></svg>")
+    no-repeat center/ contain;
+}
+
+@media (min-width: 992px) {
+  .projectSlider {
+    overflow: hidden;
+  }
+  .projectSlider .swiperBtn {
+    visibility: visible;
+  }
+}

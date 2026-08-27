@@ -92,10 +92,13 @@ function setTestimonialAvatars() {
     const nameElement = card.querySelector(".ti_userName");
     const imgElement = card.querySelector(".ti_userImg");
     if (!nameElement || !imgElement) return;
+    if (imgElement.dataset.avatarReady === "true") return;
+
     imgElement.textContent = nameElement.textContent
       .trim()
       .charAt(0)
       .toUpperCase();
+    imgElement.dataset.avatarReady = "true";
   });
 }
 
