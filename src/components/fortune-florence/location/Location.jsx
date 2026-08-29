@@ -25,7 +25,7 @@ const Location = () => {
         <div className="row justify-content-lg-end justify-content-center">
           <div className="col-xl-7 col-lg-8 col-md-9 col-12">
             <h3 className="mb-5 titleFont sectBigTitle textPrimary revealText">
-              Prime Location. <br /> Seamless Connectivity.
+              Prime Location. <br /> Seamless Connectivity
             </h3>
 
             <div className="row row-cols-xl-3 row-cols-sm-2 row-cols-1 g-sm-4 g-2">

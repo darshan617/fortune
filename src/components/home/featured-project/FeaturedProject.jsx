@@ -42,9 +42,9 @@ const FeaturedProject = ({
     <section className="sitePadding py-5 overflow-hidden">
       <div className="container-fluid py-5">
         <div className="row justify-content-between align-items-end g-4 mb-4">
-          <div className="col-xxl-4 col-lg-6 col-md order-md-1">
+          <div className="col-xxl-6 col-lg-6 col-md order-md-1">
             <h2 className="sectTitle textGold mb-3 revealText">{title}</h2>
-            <h3 className="sectBigTitle titleFont textPrimary mb-0 revealText">
+            <h3 className="sectBigTitle titleFont textPrimary mb-0 revealText mb-3">
               {description}
             </h3>
           </div>

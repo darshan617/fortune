@@ -1,9 +1,60 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "@/components/home/about/About.module.css";
 import aboutHero from "@/assets/images/aboutHero.jpg";
 
 const About = () => {
+  useEffect(() => {
+    const counters = document.querySelectorAll(".counter");
+    const animationDuration = 1500;
+
+    const startCounterAnimation = (element) => {
+      const target = +element.getAttribute("data-target");
+      const start = 0;
+      let startTime = null;
+
+      const animate = (timestamp) => {
+        if (element.dataset.animating === "false") return;
+
+        if (!startTime) startTime = timestamp;
+        const progress = timestamp - startTime;
+
+        const progressRatio = Math.min(progress / animationDuration, 1);
+        const currentValue = Math.floor(
+          progressRatio * (target - start) + start,
+        );
+
+        element.textContent = currentValue;
+
+        if (progress < animationDuration) {
+          requestAnimationFrame(animate);
+        } else {
+          element.textContent = target;
+        }
+      };
+
+      element.dataset.animating = "true";
+      requestAnimationFrame(animate);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startCounterAnimation(entry.target);
+          } else {
+            entry.target.dataset.animating = "false";
+            entry.target.textContent = "0";
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      },
+    );
+
+    counters.forEach((counter) => observer.observe(counter));
+  }, []);
   return (
     <>
       <section className="sitePadding py-5">
@@ -23,7 +74,7 @@ const About = () => {
                 <div
                   className={`${styles.aiwYear} textGold lh-1 fw-semibold mb-2`}
                 >
-                  <span className="counter" data-target="25"></span>+
+                  <span className="counter" data-target="2016"></span>
                 </div>
                 <div className="aiwLabel text-white text-opacity-75">
                   Years of Building
@@ -51,7 +102,7 @@ const About = () => {
                   lifestyle for generations to come.
                 </p>
                 <div className="animateThis fadeIn ">
-                  <a href="/about-us" className="ctaBtn ghost">
+                  <a href="/about-us" className="ctaBtn ghost" style={{ fontFamily: "var(--font-jakarta)" }}>
                     Know More
                   </a>
                 </div>
@@ -72,7 +123,7 @@ const About = () => {
                   "We don't just build structures — we create sanctuaries where
                   generations begin their finest chapters. Every detail, every
                   material, every space is a{" "}
-                  <i className="textGold">promise kept</i>."
+                  <span className="textGold"> promise kept</span>."
                 </blockquote>
                 <figcaption className="fs-20 d-flex align-items-center gap-4 animateThis slideRight">
                   <span
@@ -81,7 +132,7 @@ const About = () => {
                   ></span>
                   <span className="text-white-50">
                     {" "}
-                    Faizan Malik Rozani - Founder & Chairman, Fortune Group{" "}
+                    Akbar Momin - Founder & Chairman, Fortune Group{" "}
                   </span>
                 </figcaption>
               </figure>

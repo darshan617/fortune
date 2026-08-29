@@ -1,4 +1,5 @@
 import AboutBanner from "@/components/about-us/banner/Banner";
+import OurTeam from "@/components/home/our-team/OurTeam";
 import Layout from "@/components/Layout/Layout";
 import Head from "next/head";
 import React from "react";
@@ -12,6 +13,7 @@ const AboutUs = () => {
       </Head>
       <Layout>
         <AboutBanner />
+        <OurTeam />
       </Layout>
     </>
   );

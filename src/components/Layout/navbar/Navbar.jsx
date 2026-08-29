@@ -59,9 +59,9 @@ const Navbar = () => {
       </div>
       <div className="col-md-4 col-auto text-end">
         
-          <a href="/projects">
+          <a href="/contact-us">
           <span className="ctaBtn headEnquiryBtn" style={{ "--btnWidth": "30px" }}>
-          <span className="d-none d-md-block">Enquire Now</span>
+          <span className="d-none d-md-block" style={{ fontFamily: "var(--font-jakarta)" }}>Enquire Now</span>
         </span>
         </a>
       </div>
@@ -100,7 +100,7 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/contact-us">
                 <span>Contact Us</span>
               </a>
             </li>

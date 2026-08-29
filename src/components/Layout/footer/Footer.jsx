@@ -16,12 +16,12 @@ const Footer = () => {
               <div className={`${styles.footLogo}`}>
                 <Image src={fortuneLogo} alt="fortuneLogo" className="w-100 h-100 " />
               </div>
-              <p className="lh-lg mb-0">
+              <p className="lh-lg mb-0" style={{ fontFamily: "var(--font-jakarta)" }}>
                 Where Visionary Designs and Uncompromising Quality Merge to
                 Shape Extraordinary Real Estate Experiences!
               </p>
               <div>
-                <a href="" className="ctaBtn">
+                <a href="" className="ctaBtn" style={{ fontFamily: "var(--font-jakarta)" }}>
                   Download Brochure
                 </a>
               </div>
@@ -76,7 +76,7 @@ const Footer = () => {
                         <circle cx="12" cy="10" r="3" />
                       </svg>
                     </div>
-                    <address className="mb-0" style={{maxWidth:"300px"}}>
+                    <address className="mb-0" style={{maxWidth:"300px", fontFamily: "var(--font-jakarta)"}}>
                       Plot C, Near St. Johns High School, Siddharth Nagar,
                       Borivali East, Mumbai - 400066. Maharashtra
                     </address>
@@ -98,7 +98,7 @@ const Footer = () => {
                         <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
                       </svg>
                     </div>
-                    <div>
+                    <div style={{ fontFamily: "var(--font-jakarta)" }}>
                       <a href="tel:+919960560199">+91 99605 60199</a>
                     </div>
                   </div>
@@ -120,7 +120,7 @@ const Footer = () => {
                         <rect x="2" y="4" width="20" height="16" rx="2" />
                       </svg>
                     </div>
-                    <div>
+                    <div style={{ fontFamily: "var(--font-jakarta)" }}>
                       <a href="mailto:info@fortunegroup.in">
                         info@fortunegroup.in
                       </a>
@@ -193,16 +193,17 @@ const Footer = () => {
         </div>
 
         <div className={`${styles.footCopy} text-center py-4 d-flex flex-wrap justify-content-between`}>
-          <div className="d-flex flex-nowrap gap-2 order-last">
+          <div className="d-flex flex-nowrap gap-2 order-last" style={{ fontFamily: "var(--font-jakarta)" }}>
             <a href="">Term of Use</a>|<a href="">Privacy Policy</a>|
             <a href="">Compliance</a>
           </div>
-          <div className="order-first">
+          <div className="order-first" style={{ fontFamily: "var(--font-jakarta)" }}>
             © 2026 Fortune Group. All rights reserved. Designed by{" "}
             <a
               href="https://www.goyalinfotech.com"
               target="_blank"
               className="d-inline-block"
+              style={{ fontFamily: "var(--font-jakarta)" }}
             >
               Goyal Infotech
             </a>

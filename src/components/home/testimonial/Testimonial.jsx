@@ -71,7 +71,7 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <section className={`${styles.testimonialSection}"py-5 overflow-hidden`}>
+    <section className={`${styles.testimonialSection}"py-5 overflow-hidden bg-white`}>
       <div className="w-100 py-5">
         <div className="text-center mb-5">
           <h2 className="sectTitle textGold mb-3 revealText">TESTIMONIALS</h2>

@@ -49,7 +49,6 @@ const Lifestyle = ({
     let fancyboxRef;
     let cancelled = false;
 
-    // Load the CSS and JS only in the browser, after mount.
     import("@fancyapps/ui/dist/fancybox/fancybox.css");
 
     import("@fancyapps/ui").then(({ Fancybox }) => {

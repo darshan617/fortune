@@ -5,8 +5,8 @@ import Link from "next/link";
 const Banner = () => {
   return (
     <section className={`${styles.heroSection} sitePadding`}>
-      <video autoPlay muted loop playsInline className={`${styles.heroBanVid}`} poster="/video/hero.jpg">
-        <source src="/video/hero.mp4" type="video/mp4" />
+      <video autoPlay muted loop playsInline className={`${styles.heroBanVid}`} poster="/video/mumbai.jpg">
+        <source src="/video/mumbai.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -20,7 +20,7 @@ const Banner = () => {
             architecture, exceptional craftsmanship, and premium living come
             together. Discover homes designed for generations.
           </p>
-          <div className="animateThis fadeIn ">
+          <div className="animateThis fadeIn" style={{ fontFamily: "var(--font-jakarta)" }}>
             <Link href="/projects" className="ctaBtn">
               Explore Projects{" "}
             </Link>

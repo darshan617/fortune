@@ -36,7 +36,7 @@ const AboutBanner = () => {
                   Relentless Dedication to{" "}
                 </h1>{" "}
                 <div className="d-flex gap-3">
-                <h1 className="textGold sectBigTitle titleFont textPrimary revealText">
+                <h1 className="textGold sectBigTitle titleFont textPrimary revealText" style={{ fontStyle: "italic" }}>
                   Your
                 </h1>{" "}
                 <h1 className="sectBigTitle titleFont textPrimary revealText">
@@ -81,7 +81,7 @@ const AboutBanner = () => {
           <h2 className="sectBigTitle titleFont revealText fw-normal mb-0">
             A Legacy of delivering
           </h2>
-          <span className="textGold sectBigTitle titleFont revealText fw-normal">
+          <span className="textGold sectBigTitle titleFont revealText fw-normal" style={{ fontStyle: "italic" }}>
             promises
           </span>
         </div>
@@ -92,7 +92,7 @@ const AboutBanner = () => {
           <div
             className={`${styles.invItemList} row row-cols-lg-3 row-cols-1 bgGold `}
           >
-            <div className="col animateThis curtainLeft fadeGrow">
+            <div className="col animateThis curtainLeft fadeGrow p-0">
               <div
                 className={`${styles.invItem} d-flex flex-column gap-3 p-xl-5 px-4 py-5`}
               >
@@ -197,14 +197,14 @@ const AboutBanner = () => {
             </div>
           </div>
 
-          <div className="clearfix">
+          {/* <div className="clearfix">
             <Image
               src={skyline}
               alt=""
               className="float-end"
               style={{ width: "80%", maxWidth: "900px" }}
             />
-          </div>
+          </div> */}
         </div>
       </section>
     </>

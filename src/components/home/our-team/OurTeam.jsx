@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import Team1 from "@/assets/images/team_1.jpg";
-import Team2 from "@/assets/images/team_2.jpg";
-import Team3 from "@/assets/images/team_3.jpg";
+import Team1 from "@/assets/images/Akbar_Momin.jpg";
+import Team2 from "@/assets/images/Malik_Rozani.jpg";
+import Team3 from "@/assets/images/Faizan_Rozani.jpg";
 import Team4 from "@/assets/images/team_4.jpg";
-import Skyline from "@/assets/images/skyline.svg";
+// import Skyline from "@/assets/images/skyline.svg";
 import styles from "@/components/home/our-team/OurTeam.module.css";
 
 const OurTeam = () => {
@@ -35,11 +35,9 @@ const OurTeam = () => {
                   <Image
                     src={Team1}
                     alt=""
-                    className="teamImg object-fit-cover w-100"
+                    className="teamImg object-fit-cover w-100 h-100"
                   />
-                  <div
-                    className={`${styles.teamText} text-white d-none d-lg-flex align-items-end`}
-                  >
+                  <div className={`${styles.teamText} text-white d-none d-lg-flex align-items-end`}>
                     <p>
                       Visionary behind Fortune Group's 25-year legacy of
                       landmark residential development across Mumbai.
@@ -47,12 +45,10 @@ const OurTeam = () => {
                   </div>
                 </div>
                 <div className={`${styles.teamInfo} pe-5 position-relative`}>
-                  <div
-                    className={`${styles.teamName} titleFont textPrimary fw-medium`}
-                  >
-                    Rajan Mehta
+                  <div className={`${styles.teamName} titleFont textPrimary fw-medium`}>
+                    Akbar Momin
                   </div>
-                  <div className="teamDesig">CHAIRMAN & FOUNDER</div>
+                  <div className={`${styles.teamDesig} text-uppercase`}>Founder & Chairman</div>
                 </div>
               </div>
             </div>
@@ -65,11 +61,9 @@ const OurTeam = () => {
                   <Image
                     src={Team2}
                     alt=""
-                    className="teamImg object-fit-cover w-100"
+                    className="teamImg object-fit-cover w-100 h-100"
                   />
-                  <div
-                    className={`${styles.teamText} text-white d-none d-lg-flex align-items-end`}
-                  >
+                  <div className={`${styles.teamText} text-white d-none d-lg-flex align-items-end`}>
                     <p>
                       Visionary behind Fortune Group's 25-year legacy of
                       landmark residential development across Mumbai.
@@ -77,12 +71,10 @@ const OurTeam = () => {
                   </div>
                 </div>
                 <div className={`${styles.teamInfo} pe-5 position-relative`}>
-                  <div
-                    className={`${styles.teamName} titleFont textPrimary fw-medium`}
-                  >
-                    Ananya Mehta
+                  <div className={`${styles.teamName} titleFont textPrimary fw-medium`}>
+                    Malik Rozani
                   </div>
-                  <div className={`${styles.teamDesig}`}>MANAGING DIRECTOR</div>
+                  <div className={`${styles.teamDesig} text-uppercase`}>Managing Director</div>
                 </div>
               </div>
             </div>
@@ -95,11 +87,9 @@ const OurTeam = () => {
                   <Image
                     src={Team3}
                     alt=""
-                    className="teamImg object-fit-cover w-100"
+                    className="teamImg object-fit-cover w-100 h-100"
                   />
-                  <div
-                    className={`${styles.teamText} text-white d-none d-lg-flex align-items-end`}
-                  >
+                  <div className={`${styles.teamText} text-white d-none d-lg-flex align-items-end`}>
                     <p>
                       Visionary behind Fortune Group's 25-year legacy of
                       landmark residential development across Mumbai.
@@ -107,12 +97,10 @@ const OurTeam = () => {
                   </div>
                 </div>
                 <div className={`${styles.teamInfo} pe-5 position-relative`}>
-                  <div
-                    className={`${styles.teamName} titleFont textPrimary fw-medium`}
-                  >
-                    Wilson Thomas
+                  <div className={`${styles.teamName} titleFont textPrimary fw-medium`}>
+                    Faizan Rozani
                   </div>
-                  <div className="teamDesig">CHIEF DESIGN OFFICER</div>
+                  <div className={`${styles.teamDesig} text-uppercase`}>Director</div>
                 </div>
               </div>
             </div>
@@ -125,11 +113,9 @@ const OurTeam = () => {
                   <Image
                     src={Team4}
                     alt=""
-                    className="teamImg object-fit-cover w-100"
+                    className="teamImg object-fit-cover w-100 h-100"
                   />
-                  <div
-                    className={`${styles.teamText} text-white d-none d-lg-flex align-items-end`}
-                  >
+                  <div className={`${styles.teamText} text-white d-none d-lg-flex align-items-end`}>
                     <p>
                       Visionary behind Fortune Group's 25-year legacy of
                       landmark residential development across Mumbai.
@@ -137,19 +123,19 @@ const OurTeam = () => {
                   </div>
                 </div>
                 <div className={`${styles.teamInfo} pe-5 position-relative`}>
-                  <div
-                    className={`${styles.teamName} titleFont textPrimary fw-medium`}
-                  >
+                  <div className={`${styles.teamName} titleFont textPrimary fw-medium`}>
                     Priya Iyer
                   </div>
-                  <div className="teamDesig">HEAD OF INVESTOR RELATIONS</div>
+                  <div className={`${styles.teamDesig} text-uppercase`}>
+                    HEAD OF INVESTOR RELATIONS
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="sitePadding py-5 position-relative overflow-hidden">
+      {/* <section className="sitePadding py-5 position-relative overflow-hidden">
          <Image src={Skyline} alt="" className={`${styles.skyline}`}/>
          <div className="container-fluid position-relative">
 
@@ -290,7 +276,7 @@ const OurTeam = () => {
                </div>
             </div>
          </div>
-      </section>
+      </section> */}
     </>
   );
 };

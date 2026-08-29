@@ -54,12 +54,7 @@ const fortuneVenetianPage = () => {
         Location="Azad Nagar, Veera Desai Road, Andheri West."
         Configuration= "Premium 1,2,3 BHK and Duplexes (4/6 BHK)"
         />
-        {/*
-          No *Extra props are passed here, so each floorPlan_N fancybox group
-          contains only this project's single image. Next/Prev will simply
-          have nothing to cycle to unless you add Venetian-specific extra
-          images via flatImageNExtra={[...]} the same way Florence does below.
-        */}
+        
         <Lifestyle 
         flatImage={flatImage1}
         flatImageName="Ground Floor Plan"

@@ -133,7 +133,7 @@ const WhyChoose = () => {
         </div>
       </section>
 
-      <section className="sitePadding pt-5">
+      {/* <section className="sitePadding pt-5">
         <div className="container-fluid pt-5">
           <div className={`${styles.videoWrap} position-relative rounded-4 bgPrimary`}>
             <video
@@ -165,7 +165,7 @@ const WhyChoose = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

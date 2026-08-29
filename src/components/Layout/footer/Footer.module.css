@@ -27,6 +27,7 @@
 .footHead {
   text-transform: uppercase;
   font-size: 1.125rem;
+  font-family: var(--font-jakarta);
 }
 .footLinks li:before {
   content: "-";
@@ -38,6 +39,7 @@
   left: 0;
   transition: all 0.5s ease;
   display: inline-block;
+  font-family: var(--font-jakarta);
 }
 .footLinks li:hover a {
   left: 5px;

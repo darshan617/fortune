@@ -19,7 +19,7 @@ const HomeComponents = () => {
   return (
     <Layout>
       <Banner />
-      <Counter />
+      {/* <Counter /> */}
       <About />
       <FeaturedProject 
        title="Featured Projects"
@@ -35,7 +35,7 @@ const HomeComponents = () => {
 
        />
       <WhyChoose />
-      <OurTeam />   
+      {/* <OurTeam />    */}
       <Connectivity />  
       <Testimonial />
     </Layout>

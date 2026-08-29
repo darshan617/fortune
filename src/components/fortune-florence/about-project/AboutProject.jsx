@@ -57,11 +57,8 @@ const AboutProject = ( {heading, title, paragraph1, paragraph2, paragraph3, para
 
             <div className="animateThis slideTop">
               <p className="lh-lg opacity-75">{paragraph1}</p>
-
               <p className="lh-lg opacity-75">{paragraph2}</p>
-
               <p className="lh-lg opacity-75">{paragraph3}</p>
-
               <p className="lh-lg opacity-75">{paragraph4}</p>
             </div>
           </div>
