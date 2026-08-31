@@ -57,6 +57,9 @@
   justify-content: center;
   gap: 10px;
 }
+.headBtns > span{
+  text-shadow: 0 0 1px #000;
+}
 
 .menuBtn {
   width: 1.5rem;

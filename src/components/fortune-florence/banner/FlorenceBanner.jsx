@@ -56,7 +56,7 @@ const FlorenceBanner = ({
       <div className="container-fluid text-center text-white position-relative z-3 mb-sm-5 mb-4 animateThis fadeIn">
         <Image src={logo} alt="" className={`${styles.projectPgLogo} mb-4`} />
         <h2 className="titleFont sectBigTitle mb-4 revealText">{title}</h2>
-        <p className="fs-20">{description}</p>
+        <p className="fs-20 fontJakarta">{description}</p>
       </div>
     </section>
   );

@@ -47,7 +47,7 @@ const AboutProject = ( {heading, title, paragraph1, paragraph2, paragraph3, para
             className="w-100 mx-auto text-center text-white"
             style={{ maxWidth: "900px" }}
           >
-            <h2 className="sectTitle textGold mb-3 revealText">
+            <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
               {heading}
             </h2>
 
@@ -56,10 +56,10 @@ const AboutProject = ( {heading, title, paragraph1, paragraph2, paragraph3, para
             </h3>
 
             <div className="animateThis slideTop">
-              <p className="lh-lg opacity-75">{paragraph1}</p>
-              <p className="lh-lg opacity-75">{paragraph2}</p>
-              <p className="lh-lg opacity-75">{paragraph3}</p>
-              <p className="lh-lg opacity-75">{paragraph4}</p>
+              <p className="lh-lg opacity-75 fontJakarta">{paragraph1}</p>
+              <p className="lh-lg opacity-75 fontJakarta">{paragraph2}</p>
+              <p className="lh-lg opacity-75 fontJakarta">{paragraph3}</p>
+              <p className="lh-lg opacity-75 fontJakarta">{paragraph4}</p>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@ const AboutProject = ( {heading, title, paragraph1, paragraph2, paragraph3, para
       <div className="sitePadding pb-5">
         <div className="container-fluid d-flex justify-content-center">
           <div
-            className={`${styles.inProjDetail} row g-2 mb-4 fw-semibold`}
+            className={`${styles.inProjDetail} row g-2 mb-4 fw-semibold fontJakarta`}
           >
             <div className="col-md-6">
               <small className="d-block textGold">Location</small>

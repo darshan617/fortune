@@ -18,7 +18,7 @@
   transition: all 0.3s ease;
 }
 .footLogo {
-  max-width: 200px;
+  max-width: 120px;
   width: 100%;
   aspect-ratio: 2.62;
   display: block;
@@ -73,6 +73,12 @@
   object-fit: contain;
   object-position: center;
   display: block;
+}
+
+@media (min-width: 575px){
+  .footLogo {
+    max-width: 200px;
+  }
 }
 
 @media (min-width: 1200px) {

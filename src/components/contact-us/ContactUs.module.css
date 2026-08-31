@@ -59,6 +59,20 @@
     border-color: #ff0000;
   }
 
-.titleFont .dreamLifestyles{
+.dreamLifestyles{
     color: var(--gold) !important;
+    font-style: italic;
 }
+
+.dreamLifestylesContant{
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 1400px) {
+  .dreamLifestylesContant{
+    display: block;
+  }
+}
+
+

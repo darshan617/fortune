@@ -57,7 +57,7 @@ const Gallery = ({ images = [] }) => {
     <section className="sitePadding py-5">
       <div className="container-fluid py-4">
         <div className="text-center mb-5">
-          <h2 className="sectTitle textGold mb-3 revealText">Gallery</h2>
+          <h2 className="sectTitle textGold mb-3 revealText fontJakarta">Gallery</h2>
           <h3 className="mb-4 titleFont sectBigTitle textPrimary revealText">
             A Glimpse of the Extraordinary
           </h3>

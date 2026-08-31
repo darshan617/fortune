@@ -117,7 +117,7 @@ const Lifestyle = ({
         <div className="container-fluid text-white py-5">
           <div className="row justify-content-between align-items-center mb-sm-5 mb-4">
             <div className="col-xxl-6 col-lg-6">
-              <h2 className="sectTitle textGold mb-3 revealText">
+              <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
                 Fortune Lifestyle Amenities
               </h2>
               <h3 className="sectBigTitle titleFont mb-lg-0 mb-4 revealText">
@@ -125,7 +125,7 @@ const Lifestyle = ({
               </h3>
             </div>
             <div className="col-xxl-4 col-xl-5 col-lg-6 ps-lg-4 ps-xl-0">
-              <p className="lh-lg animateThis slideRight curtainLeft">
+              <p className="lh-lg animateThis slideRight curtainLeft fontJakarta">
                 Experience a thoughtfully curated collection of world-class
                 amenities designed to elevate your everyday living, offering the
                 perfect balance of comfort, wellness, leisure, and security.
@@ -148,7 +148,7 @@ const Lifestyle = ({
                 </h4>
               </div>
               <div
-                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft`}
+                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft fontJakarta`}
               >
                 Relax and unwind in beautifully landscaped gardens.
               </div>
@@ -166,7 +166,7 @@ const Lifestyle = ({
                 <h4 className={`${styles.amntHead} titleFont`}>Gymnasium</h4>
               </div>
               <div
-                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft`}
+                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft fontJakarta`}
               >
                 Stay fit and healthy with a state-of-the-art gym.
               </div>
@@ -186,7 +186,7 @@ const Lifestyle = ({
                 </h4>
               </div>
               <div
-                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft`}
+                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft fontJakarta`}
               >
                 Take a refreshing dip in the swimming pool.
               </div>
@@ -206,7 +206,7 @@ const Lifestyle = ({
                 </h4>
               </div>
               <div
-                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft`}
+                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft fontJakarta`}
               >
                 A safe and fun space for children to play and grow.
               </div>
@@ -226,7 +226,7 @@ const Lifestyle = ({
                 </h4>
               </div>
               <div
-                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft`}
+                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft fontJakarta`}
               >
                 Enjoy peace of mind with round-the-clock security and
                 surveillance.
@@ -316,7 +316,7 @@ const Lifestyle = ({
       <section className="sitePadding py-5">
         <div className="container-fluid py-4">
           <div className="text-center mb-5">
-            <h2 className="sectTitle textGold mb-3 revealText">
+            <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
               Thoughtfully Designed Homes
             </h2>
             <h3 className="mb-4 titleFont sectBigTitle textPrimary revealText">
@@ -324,7 +324,7 @@ const Lifestyle = ({
             </h3>
           </div>
 
-          <div className="row gy-3 gx-0 justify-content-end floorList">
+          <div className="row gy-3 gx-0 justify-content-end floorList fontJakarta">
             <FloorPlanItem
               image={flatImage}
               name={flatImageName}

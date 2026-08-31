@@ -13,14 +13,14 @@ const WhyChoose = () => {
             <h3 className="sectBigTitle titleFont text-white mb-4 revealText">
               The Fortune Advantage
             </h3>
-            <p className="text-white text-opacity-75 animateThis fadeIn">
+            <p className="text-white text-opacity-75 animateThis fadeIn" style={{ fontFamily: "var(--font-jakarta)" }}>
               Unparalleled quality and transparency built into every single
               project.
             </p>
           </div>
 
-          <div className="row text-center text-white pt-md-5 g-md-4 g-5">
-            <div className="col-md-3 col-6">
+          <div className="row text-center text-white pt-md-5 g-md-4 g-5" style={{ fontFamily: "var(--font-jakarta)" }}>
+            <div className="col-md-3 col-6" >
               <div className="wcuItem vstack gap-3">
                 <div className={`${styles.wcuIcon} animateThis`}>
                   <svg
@@ -42,7 +42,7 @@ const WhyChoose = () => {
                   <div
                     className={`${styles.wcutxt} fw-light text-opacity-50 text-white`}
                   >
-                    25+ Years of Trust
+                    Delivering Excellence
                   </div>
                 </div>
               </div>

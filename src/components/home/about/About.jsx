@@ -70,16 +70,26 @@ const About = () => {
                   />
                 </div>
               </div>
-              <div className="aiwYearBox bgPrimary py-sm-4 px-md-5 px-sm-4 p-3 rounded-4 shadow-lg position-absolute bottom-0 end-0">
+              <div
+                className="aiwYearBox bgPrimary py-sm-4 px-md-5 px-sm-4 p-3 rounded-4 shadow-lg position-absolute bottom-0 end-0"
+                style={{ fontFamily: "var(--font-jakarta)" }}
+              >
+                <div className="aiwLabel text-white text-opacity-75">
+                  Founded in
+                </div>
                 <div
                   className={`${styles.aiwYear} textGold lh-1 fw-semibold mb-2`}
                 >
-                  <span className="counter" data-target="2016"></span>
-                </div>
-                <div className="aiwLabel text-white text-opacity-75">
+                  {/* <div className="aiwLabel text-white text-opacity-75">
                   Years of Building
                   <br /> Trust in Mumbai
+                </div> */}
+                  <span className="counter" data-target="2016"></span>
                 </div>
+                {/* <div className="aiwLabel text-white text-opacity-75">
+                  Years of Building
+                  <br /> Trust in Mumbai
+                </div> */}
               </div>
             </div>
             <div className="col-xl-5 col-md-6 p-xl-5 ps-md-5">
@@ -93,7 +103,10 @@ const About = () => {
                 <h3 className="sectBigTitle titleFont textPrimary mb-0 revealText">
                   Crafting Icons. Delivering Distinction.
                 </h3>
-                <p className="fs-20 lh-base mb-0 animateThis fadeIn ">
+                <p
+                  className="fs-20 lh-base mb-0 animateThis fadeIn "
+                  style={{ fontFamily: "var(--font-jakarta)" }}
+                >
                   For over a decade, Fortune Group has been creating
                   thoughtfully designed residential developments that combine
                   quality craftsmanship, innovative planning, and timeless
@@ -102,7 +115,11 @@ const About = () => {
                   lifestyle for generations to come.
                 </p>
                 <div className="animateThis fadeIn ">
-                  <a href="/about-us" className="ctaBtn ghost" style={{ fontFamily: "var(--font-jakarta)" }}>
+                  <a
+                    href="/about-us"
+                    className="ctaBtn ghost"
+                    style={{ fontFamily: "var(--font-jakarta)" }}
+                  >
                     Know More
                   </a>
                 </div>
@@ -119,11 +136,19 @@ const About = () => {
             </div>
             <div className="col-lg ps-xl-5">
               <figure className="ps-xl-5">
-                <blockquote className="sectBigTitle titleFont fw-light text-white lh-base mb-5 revealText">
-                  "We don't just build structures — we create sanctuaries where
-                  generations begin their finest chapters. Every detail, every
-                  material, every space is a{" "}
-                  <span className="textGold"> promise kept</span>."
+                <blockquote className="blockquote ">
+                  <h3 className="sectBigTitle titleFont fw-light text-white lh-base revealText d-inline-block">
+                    "We don't just build structures — we create sanctuaries
+                    where generations begin their finest chapters. Every detail,
+                    every material, every space is a{" "}
+                  </h3>
+                  <span
+                    className="textGold sectBigTitle titleFont revealText fw-normal"
+                    style={{ fontStyle: "italic" }}
+                  >
+                    promises kept
+                  </span>
+                  <span className="sectBigTitle text-white">."</span>
                 </blockquote>
                 <figcaption className="fs-20 d-flex align-items-center gap-4 animateThis slideRight">
                   <span

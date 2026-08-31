@@ -14,13 +14,13 @@ const OurTeam = () => {
         <div className="container-fluid py-5">
           <div className="row justify-content-between align-items-center mb-5">
             <div className="col-xxl-5 col-lg-6">
-              <h2 className="sectTitle textGold mb-3 revealText">Our Team</h2>
+              <h2 className="sectTitle textGold mb-3 revealText fontJakarta">Our Team</h2>
               <h3 className="sectBigTitle titleFont textPrimary mb-lg-0 mb-4 revealText">
                 The Minds Behind Every Milestone
               </h3>
             </div>
             <div className="col-xxl-4 col-xl-5 col-lg-6 ps-lg-4 ps-xl-0">
-              <p className="fs-20 animateThis slideRight curtainLeft">
+              <p className="fs-20 animateThis slideRight curtainLeft fontJakarta">
                 Our leadership team brings together decades of expertise in real
                 estate development, design, finance, and customer experience —
                 united by a single commitment to excellence.

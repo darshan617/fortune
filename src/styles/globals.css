@@ -88,6 +88,10 @@ p {
   line-height: 1.5;
 }
 
+.fontJakarta {
+  font-family: var(--font-jakarta), sans-serif;
+}
+
 .titleFont {
   font-family: var(--font-playfair), serif;
 }

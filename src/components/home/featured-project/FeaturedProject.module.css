@@ -96,6 +96,10 @@
     no-repeat center/ contain;
 }
 
+.featuredProject{
+  padding-bottom: 0 !important;
+}
+
 @media (min-width: 992px) {
   .projectSlider {
     overflow: hidden;

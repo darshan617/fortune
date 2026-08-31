@@ -39,14 +39,12 @@ const FeaturedProject = ({
   }, []);
 
   return (
-    <section className="sitePadding py-5 overflow-hidden">
+    <section className={`${styles.featuredProject} sitePadding py-5 overflow-hidden`}>
       <div className="container-fluid py-5">
         <div className="row justify-content-between align-items-end g-4 mb-4">
           <div className="col-xxl-6 col-lg-6 col-md order-md-1">
-            <h2 className="sectTitle textGold mb-3 revealText">{title}</h2>
-            <h3 className="sectBigTitle titleFont textPrimary mb-0 revealText mb-3">
-              {description}
-            </h3>
+            {title}
+            {description}
           </div>
 
           <div className="col-12 order-md-3">
@@ -55,53 +53,55 @@ const FeaturedProject = ({
                 <div className="swiper-wrapper">
                   <div className="swiper-slide">
                     <Link href="/fortune_florence">
-                    <div className={styles.projectItem}>
-                      <div className={styles.projImgBox}>
-                        <Image
-                          src={projectImage1}
-                          alt=""
-                          fill
-                          sizes="(max-width: 992px) 90vw, 45vw"
-                          className={styles.pibImg}
-                        />
-                        <Image
-                          src={projectImage1Hover}
-                          alt=""
-                          fill
-                          sizes="(max-width: 992px) 90vw, 45vw"
-                          className={`${styles.pibImg} ${styles.pibHoverImg}`}
-                        />
-                      </div>
-                      <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
-                        <div className="pitemHead d-flex justify-content-between align-items-start">
-                          <div className="projStatus badge bgGold lh-sm fw-normal px-3">
-                            {projectStatus1}
-                          </div>
-                          <div className={styles.projLogo}>
-                            <Image
-                              src={featuredProject1Logo}
-                              alt="Fortune Florence"
-                              className={styles.projLogoImg}
-                            />
-                          </div>
+                      <div className={styles.projectItem}>
+                        <div className={styles.projImgBox}>
+                          <Image
+                            src={projectImage1}
+                            alt=""
+                            fill
+                            sizes="(max-width: 992px) 90vw, 45vw"
+                            className={styles.pibImg}
+                          />
+                          <Image
+                            src={projectImage1Hover}
+                            alt=""
+                            fill
+                            sizes="(max-width: 992px) 90vw, 45vw"
+                            className={`${styles.pibImg} ${styles.pibHoverImg}`}
+                          />
                         </div>
-                        <div className="pitemFoot d-flex justify-content-between align-items-end">
-                          <div className="projDetail text-white">
-                            <h3 className={`${styles.projName} titleFont mb-1`}>
-                              Fortune Florence
-                            </h3>
-                            <div className={styles.projLocation}>
-                              Borivali East, Mumbai
+                        <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
+                          <div className="pitemHead d-flex justify-content-between align-items-start">
+                            <div className="projStatus badge bgGold lh-sm fw-normal px-3">
+                              {projectStatus1}
+                            </div>
+                            <div className={styles.projLogo}>
+                              <Image
+                                src={featuredProject1Logo}
+                                alt="Fortune Florence"
+                                className={styles.projLogoImg}
+                              />
                             </div>
                           </div>
-                          {/* <div>
+                          <div className="pitemFoot d-flex justify-content-between align-items-end">
+                            <div className="projDetail text-white">
+                              <h3
+                                className={`${styles.projName} titleFont mb-1`}
+                              >
+                                Fortune Florence
+                              </h3>
+                              <div className={styles.projLocation}>
+                                Borivali East, Mumbai
+                              </div>
+                            </div>
+                            {/* <div>
                             <a href="" className="ctaBtn">
                               View More
                             </a>
                           </div> */}
+                          </div>
                         </div>
                       </div>
-                    </div>
                     </Link>
                   </div>
 
