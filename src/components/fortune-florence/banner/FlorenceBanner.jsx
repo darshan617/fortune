@@ -87,7 +87,7 @@ const FlorenceBanner = ({
         </div>
 
         <div
-          className={`${styles.projNameMain} container-fluid text-center position-relative z-1 mb-4 animateThis fadeIn`}
+          className={`${styles.projNameMain} container-fluid text-center position-relative z-1 mb-4 animateThis `}
         >
           <Image
             src={logo}
