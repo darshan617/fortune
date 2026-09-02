@@ -40,12 +40,10 @@ const fortuneFlorencePage = () => {
     </Head>
     <Layout>
       <FlorenceBanner
-      type="fortune_florence"
-      florenceVideo="/video/florence.mp4"
-        // bannerImage={bannerImage}
-        // bannerImage1={bannerImage1}
-        // bannerImage2={bannerImage2}
-        // bannerImage3={bannerImage3}
+        bannerImage={bannerImage}
+        bannerImage1={bannerImage1}
+        bannerImage2={bannerImage2}
+        bannerImage3={bannerImage3}
         logo={logo}
         title="Experience One In A Million Living"
         description="Where timeless architecture meets refined luxury and every moment feels extraordinary."
@@ -57,8 +55,9 @@ const fortuneFlorencePage = () => {
         paragraph2="The project offer modern amenities that are essential for your daily life while ensuring that you live in style. Our project consists of 2 BHK and 3 BHK flats designed to offer comfort, space, and luxury."
         paragraph3="When it comes to quality and commitment, Fortune group believe in providing the best to clients. The flats are crafted with utmost precision and immaculate finishing to provide you the ultimate luxurious experience."
         paragraph4="Come and experience why Fortune Florence is the perfect choice for your new dream home."
-        aboutProjectImage={aboutProjectImage}
-        aboutProjectImage1={aboutProjectImage1}
+        // aboutProjectImage={aboutProjectImage}
+        // aboutProjectImage1={aboutProjectImage1}
+        videoBanner="/video/florence.mp4"
         Location="Siddharth Nagar, Borivali East, Mumbai"
         Configuration="Premium 2, 2.5, 3 BHK and 2+2 Jodi Apartments with Deck"
       />

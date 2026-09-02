@@ -7,14 +7,18 @@ import blogImage4 from "@/assets/images/blogs/blog1.avif";
 import blogImage5 from "@/assets/images/blogs/blog2.avif";
 import blogImage6 from "@/assets/images/blogs/blog3.avif";
 import styles from "@/components/blogs/Blogs.module.css";
+import { useRouter } from "next/navigation";
 
 const Blogs = () => {
+  const router = useRouter();
   return (
     <section className="sitePadding py-5 overflow-hidden">
       <div className="container-fluid" style={{ paddingTop: "15vh" }}>
         <div className="row justify-content-between g-4 mb-4">
           <div className="col-md text-center mb-5">
-            <h2 className="sectTitle textGold mb-3 revealText fontJakarta">Blogs</h2>
+            <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
+              Blogs
+            </h2>
             <h3 className="sectBigTitle titleFont textPrimary mb-0 revealText">
               Smart insights for modern <br />
             </h3>
@@ -69,7 +73,7 @@ const Blogs = () => {
                     </p>
                   </div>
                   <a
-                    href="/"
+                    onClick={() => router.push("/blog-details")}
                     className={`${styles.stretchedLink} stretched-link`}
                   ></a>
                 </div>
@@ -106,7 +110,7 @@ const Blogs = () => {
                     </p>
                   </div>
                   <a
-                    href="/"
+                    onClick={() => router.push("/blog-details")}
                     className={`${styles.stretchedLink} stretched-link`}
                   ></a>
                 </div>
@@ -142,7 +146,7 @@ const Blogs = () => {
                     </p>
                   </div>
                   <a
-                    href="/"
+                    onClick={() => router.push("/blog-details")}
                     className={`${styles.stretchedLink} stretched-link`}
                   ></a>
                 </div>
@@ -179,7 +183,7 @@ const Blogs = () => {
                     </p>
                   </div>
                   <a
-                    href="/"
+                    onClick={() => router.push("/blog-details")}
                     className={`${styles.stretchedLink} stretched-link`}
                   ></a>
                 </div>
@@ -216,7 +220,7 @@ const Blogs = () => {
                     </p>
                   </div>
                   <a
-                    href="/"
+                    onClick={() => router.push("/blog-details")}
                     className={`${styles.stretchedLink} stretched-link`}
                   ></a>
                 </div>
@@ -252,12 +256,51 @@ const Blogs = () => {
                     </p>
                   </div>
                   <a
-                    href="/"
+                    onClick={() => router.push("/blog-details")}
                     className={`${styles.stretchedLink} stretched-link`}
                   ></a>
                 </div>
               </div>
             </div>
+          </div>
+          <div className="col-12">
+            <nav className="d-flex justify-content-center align-items-center gap-4 mb-5">
+              <button className={`${styles.pgBtn} rounded-pill btn`}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  strokeWidth="1"
+                  stroke="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                  />
+                </svg>
+                Prev
+              </button>
+              <div className="fw-medium">Page 1 of 1</div>
+              <button className={`${styles.pgBtn} rounded-pill btn`}>
+                Next
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  stroke-width="1"
+                  stroke="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                  />
+                </svg>
+              </button>
+            </nav>
           </div>
         </div>
       </div>

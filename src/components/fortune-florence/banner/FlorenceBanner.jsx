@@ -7,7 +7,6 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 
 const FlorenceBanner = ({
-  type,
   bannerImage,
   bannerImage1,
   bannerImage2,
@@ -15,7 +14,6 @@ const FlorenceBanner = ({
   logo,
   title,
   description,
-  florenceVideo,
 }) => {
   const sliderRef = useRef(null);
 
@@ -36,11 +34,10 @@ const FlorenceBanner = ({
   }, []);
   return (
     <>
-    {type === "fortune_florence" ? (
-       <section
-       className={`${styles.projectBanner} sitePadding d-flex align-items-end`}
-     >
-       <video
+      {/* <section
+        className={`${styles.projectBanner} sitePadding d-flex align-items-end`}
+      >
+        <video
          autoPlay
          muted
          loop
@@ -51,66 +48,61 @@ const FlorenceBanner = ({
          <source src={florenceVideo} type="video/mp4" />
          Your browser does not support the video tag.
        </video>
-      
 
-       <div
-         className={`${styles.projNameMain} container-fluid text-center position-relative z-1 mb-4 animateThis fadeIn`}
-       >
-         <Image
-           src={logo}
-           alt=""
-           className={`${styles.projectPgLogo} rounded mb-4 w-100 h-100`}
-         />
-         <h2 className="titleFont textPrimary mb-4">
-           Experience One In A Million Living
-         </h2>
-         <p className="fs-20 fontJakarta">
-           Where timeless architecture meets refined luxury and every moment
-           feels extraordinary.
-         </p>
-       </div>
-     </section>
-    ):(
+        <div
+          className={`${styles.projNameMain} container-fluid text-center position-relative z-1 mb-4 animateThis fadeIn`}
+        >
+          <Image
+            src={logo}
+            alt=""
+            className={`${styles.projectPgLogo} rounded mb-4 w-100 h-100`}
+          />
+          <h2 className="titleFont textPrimary mb-4">
+            Experience One In A Million Living
+          </h2>
+          <p className="fs-20 fontJakarta">
+            Where timeless architecture meets refined luxury and every moment
+            feels extraordinary.
+          </p>
+        </div>
+      </section> */}
       <section
-      className={`${styles.projectBanner} sitePadding d-flex align-items-end`}
-    >
-      
-      <div className={`${styles.projHeroSwiper} swiper`} ref={sliderRef}>
-        <div className="swiper-wrapper">
-          <div className="swiper-slide">
-            <Image src={bannerImage} alt="" className={styles.projBanImg} />
-          </div>
-          <div className="swiper-slide">
-            <Image src={bannerImage1} alt="" className={styles.projBanImg} />
-          </div>
-          <div className="swiper-slide">
-            <Image src={bannerImage2} alt="" className={styles.projBanImg} />
-          </div>
-          <div className="swiper-slide">
-            <Image src={bannerImage3} alt="" className={styles.projBanImg} />
+        className={`${styles.projectBanner} sitePadding d-flex align-items-end`}
+      >
+        <div className={`${styles.projHeroSwiper} swiper`} ref={sliderRef}>
+          <div className="swiper-wrapper">
+            <div className="swiper-slide">
+              <Image src={bannerImage} alt="" className={styles.projBanImg} />
+            </div>
+            <div className="swiper-slide">
+              <Image src={bannerImage1} alt="" className={styles.projBanImg} />
+            </div>
+            <div className="swiper-slide">
+              <Image src={bannerImage2} alt="" className={styles.projBanImg} />
+            </div>
+            <div className="swiper-slide">
+              <Image src={bannerImage3} alt="" className={styles.projBanImg} />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div
-        className={`${styles.projNameMain} container-fluid text-center position-relative z-1 mb-4 animateThis fadeIn`}
-      >
-        <Image
-          src={logo}
-          alt=""
-          className={`${styles.projectPgLogo} rounded mb-4 w-100 h-100`}
-        />
-        <h2 className="titleFont textPrimary mb-4">
-          Experience One In A Million Living
-        </h2>
-        <p className="fs-20 fontJakarta">
-          Where timeless architecture meets refined luxury and every moment
-          feels extraordinary.
-        </p>
-      </div>
-    </section>
-    )
-    }
+        <div
+          className={`${styles.projNameMain} container-fluid text-center position-relative z-1 mb-4 animateThis fadeIn`}
+        >
+          <Image
+            src={logo}
+            alt=""
+            className={`${styles.projectPgLogo} rounded mb-4 w-100 h-100`}
+          />
+          <h2 className="titleFont textPrimary mb-4">
+            Experience One In A Million Living
+          </h2>
+          <p className="fs-20 fontJakarta">
+            Where timeless architecture meets refined luxury and every moment
+            feels extraordinary.
+          </p>
+        </div>
+      </section>
     </>
   );
 };
