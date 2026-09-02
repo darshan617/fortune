@@ -21,8 +21,8 @@ import flatImage7 from "@/assets/images/venetian/19th_floor.jpg";
 import flatImage8 from "@/assets/images/venetian/terrace.jpg";
 import Gallery from '@/components/fortune-florence/gallery/Gallery';
 import galleryImage1 from "@/assets/images/venetian/lobby.jpg";
-import galleryImage2 from "@/assets/images/venetian/gym.jpg";
 import galleryImage3 from "@/assets/images/venetian/terraceView.jpg";
+import galleryImage2 from "@/assets/images/venetian/gym.jpg";
 import Location from '@/components/fortune-florence/location/Location';
 import Head from 'next/head';
 
