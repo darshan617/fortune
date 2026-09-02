@@ -11,8 +11,8 @@ import AboutProject from '@/components/fortune-florence/about-project/AboutProje
 import aboutProjectImage from "@/assets/images/venetian/item.jpg";
 import aboutProjectImage1 from "@/assets/images/venetian/item_hover.jpg";
 import Lifestyle from '@/components/fortune-florence/lifestyle/Lifestyle';
-import flatImage1 from "@/assets/images/venetian/ground_floor.jpg";
 import flatImage2 from "@/assets/images/venetian/1st_floor.jpg";
+import flatImage1 from "@/assets/images/venetian/ground_floor.jpg";
 import flatImage3 from "@/assets/images/venetian/typical_floor_plan.jpg";
 import flatImage4 from "@/assets/images/venetian/8th_floor.jpg";
 import flatImage5 from "@/assets/images/venetian/15th _floor_refugee.jpg";
