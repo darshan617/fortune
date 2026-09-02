@@ -6,7 +6,7 @@ import bannerImage1 from "@/assets/images/venetian/gym.jpg";
 import bannerImage2 from "@/assets/images/venetian/terraceView.jpg";
 import bannerImage3 from "@/assets/images/venetian/item.jpg";
 import bannerImage4 from "@/assets/images/venetian/lobby.jpg";
-import logo from "@/assets/images/Venetian/logo.png";
+import logo from "@/assets/images/venetian/logo.png";
 import AboutProject from '@/components/fortune-florence/about-project/AboutProject';
 import aboutProjectImage from "@/assets/images/venetian/item.jpg";
 import aboutProjectImage1 from "@/assets/images/venetian/item_hover.jpg";
