@@ -1,0 +1,356 @@
+.projectBanner {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background: var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+.projectBanner:before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 1;
+}
+.projHeroSwiper {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  z-index: 0;
+}
+.projBanImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.projNameMain:after {
+  content: "";
+  width: 1400px;
+  aspect-ratio: 1;
+  display: block;
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FAF8F3  ;
+  border-radius: 100%;
+  z-index: -1;
+}
+
+.projBanVid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(130%);
+}
+
+.projectPgLogo {
+  max-width: 300px;
+  width: 50%;
+}
+
+.inProjMain:before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  display: block;
+  background: #182452;
+  border-top: 10px solid var(--gold);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.inProjectSliderWrap {
+  max-width: 900px;
+  width: 100%;
+  aspect-ratio: 16/9;
+  /*box-shadow: 0 20px 50px rgba(var(--primaryRGB),.3), 0 0 10px rgba(var(--primaryRGB),.3);*/
+}
+.inProjectSlider .ipsImg {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.inProjDetail {
+  max-width: 900px;
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.amenity {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem 0;
+}
+.amntImg {
+  width: 10vw;
+  max-width: 75px;
+}
+.amntHead {
+  font-size: clamp(1.25rem, calc(1.125rem + 0.625vw), 1.88rem);
+  font-weight: 700;
+  padding: 0.5rem 0;
+}
+.amntTxt {
+  border-left: 2px solid var(--gold);
+  padding: 0.5rem 0;
+}
+
+.amnitiesBoxes {
+  height: auto;
+}
+.amntBoxItem {
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+.amntBoxItem:hover {
+  flex-shrink: 0;
+}
+
+.amntBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-shadow: 0 -15px 20px rgba(var(--primaryRGB), 0.9);
+}
+.amntBox:before {
+  content: "";
+  width: 100%;
+  height: 40%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(var(--primaryRGB), 0.9) 0%,
+    rgba(var(--primaryRGB), 0.8) 50%,
+    rgba(var(--primaryRGB), 0) 100%
+  );
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+.amntBoxImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% center;
+  transition: all 0.5s ease-in-out;
+  border: 1px solid var(--gold);
+}
+.amntHeading {
+  width: 300px;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  font-size: clamp(1.25rem, calc(1.1rem + 0.75vw), 2rem);
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+@media (max-width: 991.98px) {
+  .amntBoxItem {
+    position: sticky;
+    top: 125px;
+  }
+  .amntBox:before {
+    width: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 1px;
+  }
+}
+
+@media (min-width: 992px) {
+  .amnitiesBoxes {
+    height: 500px;
+  }
+  .amntBoxItem {
+    width: 40%;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+  }
+  .amntBoxItem:hover {
+    flex-shrink: 0;
+  }
+  .amntBoxImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .amntHeading {
+    transform: translateX(-100%);
+    transform-origin: 0 50%;
+    opacity: 0;
+  }
+  .amntBoxItem:hover .amntHeading {
+    transform: translateX(0);
+    transition-delay: 0.25s;
+    opacity: 1;
+  }
+}
+
+.flrListItem {
+  position: relative;
+  transition: all 0.5s ease;
+  padding: 3px;
+}
+.flrListItem:nth-child(even) {
+  margin-right: auto;
+}
+.flrListItem:before {
+  content: "";
+  width: 0;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--gold);
+  transition: inherit;
+  z-index: -1;
+}
+.flrListItem:hover:before {
+  width: 100%;
+}
+.flrName {
+  font-size: clamp(1.25rem, calc(1.125rem + 0.625vw), 1.88rem);
+  color: #333;
+  font-weight: 700;
+  transition: all 0.5s ease;
+}
+.flrImg {
+  aspect-ratio: 3/1.8;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--primary);
+}
+.flrListItem .ctaBtn {
+  position: relative;
+  display: none;
+}
+.flrListItem:hover .flrName {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .flrListItem .ctaBtn {
+    display: inline-flex;
+  }
+}
+
+.projGalleryItem {
+  aspect-ratio: 5/3;
+  display: block;
+  position: relative;
+  border: 0.5px solid var(--bgColor);
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.projGalleryItem:after {
+  content: "";
+  width: auto;
+  height: auto;
+  display: block;
+  border: 2px solid var(--gold);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 1.5rem;
+  transform: scale(0.9);
+  transition: inherit;
+  opacity: 0;
+}
+.projGalleryItem:hover:after {
+  transform: scale(1);
+  opacity: 1;
+}
+.projGalImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.05);
+  transition: inherit;
+}
+.projGalleryItem:hover .projGalImg {
+  transform: scale(1);
+}
+
+.locAdvSection {
+  background: #b5d7f5;
+}
+.locAdvBgimg {
+  width: auto;
+  height: 70%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: left bottom;
+  z-index: 0;
+}
+.locationBuilding {
+  width: 90%;
+  height: 80%;
+  object-fit: contain;
+  object-position: center bottom;
+  position: absolute;
+  bottom: 0;
+}
+
+.locBox {
+  height: 100%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #fff;
+}
+.locBox:hover {
+  transform: scale(1.05);
+}
+.lbTime {
+  font-size: clamp(1.5rem, calc(1.35rem + 0.75vw), 2.25rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .locationBuilding {
+    width: 40%;
+  }
+}
+
+.inProjDetailSection{
+  background: #182452;
+  padding-top: 20px;
+}

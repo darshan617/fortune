@@ -13,6 +13,10 @@
 .teamName {
   font-size: clamp(1.25rem, calc(1.1rem + 0.75vw), 2rem);
 }
+.teamDesig {
+  font-size: 0.9rem;
+  font-family: var(--font-jakarta);
+}
 .teamText {
   width: 100%;
   height: 100%;
@@ -23,6 +27,7 @@
   opacity: 0;
   transition: all 0.5s ease-in-out;
   transform: scale(1.1);
+  font-family: var(--font-jakarta);
 }
 .teamBox:hover .teamText {
   opacity: 1;
@@ -30,9 +35,10 @@
 }
 .teamText p::first-letter {
   font-size: 300%;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-playfair), serif;
   line-height: 0;
 }
+
 
 .skyline {
   height: 330px;

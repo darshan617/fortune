@@ -18,7 +18,7 @@
   transition: all 0.3s ease;
 }
 .footLogo {
-  max-width: 200px;
+  max-width: 120px;
   width: 100%;
   aspect-ratio: 2.62;
   display: block;
@@ -36,6 +36,7 @@
 .footLinks li a {
   position: relative;
   left: 0;
+  cursor: pointer;
   transition: all 0.5s ease;
   display: inline-block;
 }
@@ -73,9 +74,93 @@
   display: block;
 }
 
-@media (min-width: 1200px) {
-  .pageFooter {
-    position: sticky;
-    bottom: 0;
+.scrollToTop {
+  background-color: var(--primary);
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  color: var(--gold);
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0.25rem;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.5) translateY(10px);
+  transition: all 0.15s ease;
+  &:after {
+    content: "";
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
   }
+  &.showBtn {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0);
+  }
+  .scroll-progress-bar {
+    --scrollAmount: 0px;
+    & svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      max-height: 100%;
+      transform: rotate(90deg);
+      & path {
+        stroke: var(--gold);
+        stroke-width: 0.2em;
+        stroke-dasharray: 154;
+        stroke-dashoffset: calc(-154px + var(--scrollAmount));
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+.quickBtn,
+.quickBtn:hover,
+.quickBtn:focus,
+.quickBtn:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+}
+.quickBtn:after {
+  content: "";
+  width: 14px;
+  aspect-ratio: 1;
+  display: block;
+  position: relative;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' stroke='%23ffffff' viewBox='0 0 16 16'><path d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/></svg>")
+    no-repeat center/contain;
+}
+.quickBtn[aria-expanded="true"]:after {
+  transform: rotate(180deg);
+}
+
+.swLinks li {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  padding-right: 0.6rem;
+  margin-right: 0.6rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+.swLinks li:last-child {
+  border-right: 0;
+}
+.swLinks a:not(:hover) {
+  opacity: 0.75;
+  font-weight: 300;
 }

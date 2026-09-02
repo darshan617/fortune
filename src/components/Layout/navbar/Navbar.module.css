@@ -57,6 +57,9 @@
   justify-content: center;
   gap: 10px;
 }
+.headBtns > span {
+  text-shadow: 0 0 1px #000;
+}
 
 .menuBtn {
   width: 1.5rem;
@@ -107,6 +110,7 @@
   transition: all 0.3s ease;
 }
 .naviWrap li a {
+  cursor: pointer;
   width: 100%;
   padding-right: 2vw;
   font-size: clamp(1.88rem, calc(1.5rem + 1.875vw), 3.75rem);
@@ -149,6 +153,63 @@
   -webkit-text-fill-color: transparent;
   display: inline-block;
   letter-spacing: 0;
+}
+
+.headContBtn {
+  width: 2rem;
+  aspect-ratio: 1;
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50rem;
+  transition: all 0.8s ease;
+  overflow: hidden;
+  background: var(--primary);
+  border: 1px solid var(--gold);
+  z-index: 1;
+}
+.headContBtn svg {
+  width: 55%;
+}
+.headContBtn:hover {
+  color: #fff;
+  box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1);
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 1),
+    0 0 1px #000;
+}
+.headContBtn:before {
+  content: "";
+  width: 200%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -250%;
+  z-index: -1;
+  transition: inherit;
+  background: linear-gradient(
+    60deg,
+    rgba(180, 146, 90, 1) 0%,
+    rgba(180, 146, 90, 1) 5%,
+    rgb(219, 202, 114) 28%,
+    rgba(180, 146, 90, 1) 50%,
+    rgba(180, 146, 90, 0) 70%
+  );
+}
+.headContBtn:hover:before {
+  left: 0;
+}
+
+@media (min-width: 576px) {
+  .headContBtn {
+    width: 2.3rem;
+  }
 }
 
 @media (min-width: 576px) {

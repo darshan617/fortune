@@ -1,0 +1,78 @@
+.contWrapper {
+    background: no-repeat center top fixed;
+    background-image: url('../../assets/images/contactBg.jpg');
+  }
+  
+  .contBg {
+    position: absolute;
+    opacity: 1;
+    z-index: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  
+  .contDetails {
+    background: linear-gradient(
+      0deg,
+      rgba(250, 248, 243, 1) 75%,
+      rgba(250, 248, 243, 0) 100%
+    );
+  }
+  
+  .formWrap {
+    border: 1px solid var(--gold);
+  }
+  
+  .formFormat :global(.form-label) {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    color: #666;
+  }
+  
+  .formFormat :global(.form-control) {
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 1rem;
+    padding-left: 0.1rem;
+    background-color: transparent;
+  }
+  
+  .formFormat :global(.form-control):focus {
+    border-color: var(--primary);
+    box-shadow: none;
+  }
+  
+  .formFormat :global(.errorLabel) {
+    color: #ff0000;
+    font-size: 0.7rem;
+    display: none;
+  }
+  
+  .formFormat :global(.error) :global(.errorLabel) {
+    display: block;
+  }
+  
+  .formFormat :global(.error) :global(.form-control) {
+    border-color: #ff0000;
+  }
+
+.dreamLifestyles{
+    color: var(--gold) !important;
+    font-style: italic;
+}
+
+.dreamLifestylesContant{
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 1400px) {
+  .dreamLifestylesContant{
+    display: block;
+  }
+}
+
+

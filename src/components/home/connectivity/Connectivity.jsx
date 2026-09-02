@@ -100,13 +100,14 @@ const Connectivity = () => {
               <h3 className="sectBigTitle titleFont textPrimary mb-3 revealText">
                 At the Centre of Everything That Matters
               </h3>
-              <p className="fs-20 mb-4 animateThis fadeIn">
+              <p className="fs-20 mb-4 animateThis fadeIn" style={{ fontFamily: "var(--font-jakarta)" }}>
                 Whether you&apos;re ready to invest or simply exploring, our team
                 is ready to guide you through every step of your journey home.
               </p>
 
               <div
-                className={`${styles.projStatusBar} rounded-pill d-inline-flex gap-2 p-3 lh-1 animateThis fadeShrink`}
+                className={`${styles.projStatusBar} rounded-pill d-inline-flex gap-2 p-3 lh-1 animateThis fadeShrink fontJakarta  `}
+                
               >
                 <span style={{ fontSize: "1.75rem", lineHeight: ".5rem" }}>
                   &bull;
@@ -153,7 +154,7 @@ const Connectivity = () => {
       <section className="py-5">
         <div className="w-100 py-4">
           <div className="container-fluid">
-            <h2 className="sectTitle textGold text-center mb-5 revealText">
+            <h2 className="sectTitle textGold text-center mb-5 revealText fontJakarta">
               TRUSTED MATERIAL & TECHNOLOGY PARTNERS
             </h2>
           </div>
