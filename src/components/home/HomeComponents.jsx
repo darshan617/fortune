@@ -9,10 +9,10 @@ import OurTeam from "./our-team/OurTeam";
 import Connectivity from "./connectivity/Connectivity";
 import Testimonial from "./testimonial/Testimonial";
 import projectImages1 from "@/assets/images/florence/item.jpg";
-import projectImagesHover from "@/assets/images/florence/item_hover.jpg";
 import featuredProject1Logo from "@/assets/images/florence/logo.png";
-import featuredProject2 from "@/assets/images/Venetian/item.jpg";
-import featuredProject2Hover from "@/assets/images/Venetian/item_hover.jpg";
+import projectImagesHover from "@/assets/images/florence/item_hover.jpg";
+import featuredProject2 from "@/assets/images/venetian/item.jpg";
+import featuredProject2Hover from "@/assets/images/venetian/item_hover.jpg";
 import featuredProject2Logo from "@/assets/images/venetian/logo.png";
 
 const HomeComponents = () => {
