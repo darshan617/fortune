@@ -4,29 +4,30 @@
   min-height: 600px;
   background: var(--primary);
   position: relative;
+  overflow: hidden;
 }
 .projectBanner:before {
   content: "";
   width: 100%;
-  height: 70%;
+  height: 50%;
   display: block;
   position: absolute;
   bottom: 0;
   left: 0;
   background: linear-gradient(
     0deg,
-    rgba(var(--primaryRGB), 1) 0%,
-    rgba(var(--primaryRGB), 0.8) 50%,
-    rgba(var(--primaryRGB), 0) 100%
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
   );
-  z-index: 2;
+  z-index: 1;
 }
 .projHeroSwiper {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  position: absolute !important;
+  position: absolute;
   top: 0;
   left: 0;
   opacity: 0.8;
@@ -39,10 +40,34 @@
   object-position: center center;
 }
 
+.projNameMain:after {
+  content: "";
+  width: 1400px;
+  aspect-ratio: 1;
+  display: block;
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FAF8F3  ;
+  border-radius: 100%;
+  z-index: -1;
+}
+
+.projBanVid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(130%);
+}
+
 .projectPgLogo {
   max-width: 300px;
   width: 50%;
-  height: auto;
 }
 
 .inProjMain:before {
@@ -50,30 +75,29 @@
   width: 100%;
   height: 50%;
   display: block;
-  background: var(--primary);
+  background: #182452;
+  border-top: 10px solid var(--gold);
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  z-index: -1;
 }
 
 .inProjectSliderWrap {
   max-width: 900px;
   width: 100%;
   aspect-ratio: 16/9;
-  box-shadow:
-    0 20px 50px rgba(var(--primaryRGB), 0.3),
-    0 0 10px rgba(var(--primaryRGB), 0.3);
+  /*box-shadow: 0 20px 50px rgba(var(--primaryRGB),.3), 0 0 10px rgba(var(--primaryRGB),.3);*/
 }
 .inProjectSlider .ipsImg {
   width: 100%;
-  height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
 }
 .inProjDetail {
   max-width: 900px;
   width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .amenity {
@@ -221,8 +245,6 @@
   transition: all 0.5s ease;
 }
 .flrImg {
-  width: 100%;
-  height: auto;
   aspect-ratio: 3/1.8;
   object-fit: cover;
   object-position: center;
@@ -326,4 +348,9 @@
   .locationBuilding {
     width: 40%;
   }
+}
+
+.inProjDetailSection{
+  background: #182452;
+  padding-top: 20px;
 }

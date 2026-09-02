@@ -1,27 +1,44 @@
 import Image from "next/image";
-import fortuneLogo from '@/assets/images/fortune_logo.png'
-import React from "react";
-import styles from '@/components/Layout/footer/Footer.module.css'
+import fortuneLogo from "@/assets/images/fortune_logo.png";
+import React, { useState } from "react";
+import styles from "@/components/Layout/footer/Footer.module.css";
+import { useRouter } from "next/router";
 
 const Footer = () => {
+
+  const [showUsefulLinks, setShowUsefulLinks] = useState(false);
+  const router = useRouter();
   return (
-    <footer className={`${styles.pageFooter} sitePadding bgPrimary py-4 overflow-hidden`}>
+    <footer
+      className={`${styles.pageFooter} sitePadding bgPrimary py-4 overflow-hidden`}
+    >
       <div className="container-fluid text-white position-relative">
         <div className="row py-5 g-xxl-5">
           <div
             className="col-lg-3 mb-5 mb-lg-0 animateThis slideRight"
-            style={{transitionDelay:".2s"}}
+            style={{ transitionDelay: ".2s" }}
           >
             <div className="vstack gap-4">
               <div className={`${styles.footLogo}`}>
-                <Image src={fortuneLogo} alt="fortuneLogo" className="w-100 h-100 " />
+                <Image
+                  src={fortuneLogo}
+                  alt="fortuneLogo"
+                  className="w-100 h-100 "
+                />
               </div>
-              <p className="lh-lg mb-0" style={{ fontFamily: "var(--font-jakarta)" }}>
+              <p
+                className="lh-lg mb-0"
+                style={{ fontFamily: "var(--font-jakarta)" }}
+              >
                 Where Visionary Designs and Uncompromising Quality Merge to
                 Shape Extraordinary Real Estate Experiences!
               </p>
               <div>
-                <a href="" className="ctaBtn" style={{ fontFamily: "var(--font-jakarta)" }}>
+                <a
+                  href=""
+                  className="ctaBtn"
+                  style={{ fontFamily: "var(--font-jakarta)" }}
+                >
                   Download Brochure
                 </a>
               </div>
@@ -31,32 +48,36 @@ const Footer = () => {
             <div className="row g-5 g-md-0 justify-content-xl-around justify-content-between">
               <div
                 className="col-xl-auto col-lg col-md-4 col-sm-6 col-12 animateThis slideRight"
-                style={{transitionDelay:".3s"}}
+                style={{ transitionDelay: ".3s" }}
               >
-                <h5 className={`${styles.footHead} textPink fw-semibold mb-4`}>Quick Links</h5>
-                <ul className={`${styles.footLinks} vstack gap-lg-3 gap-2`}>
+                <h5 className={`${styles.footHead} textPink fw-semibold mb-4 fontJakarta`}>
+                  Quick Links
+                </h5>
+                <ul className={`${styles.footLinks} vstack gap-lg-3 gap-2 fontJakarta`}>
                   <li>
-                    <a href="/">Home</a>
+                    <a onClick={() => router.push("/")}>Home</a>
                   </li>
                   <li>
-                    <a href="/about-us">About Us</a>
+                    <a onClick={() => router.push("/about-us")}>About Us</a>
                   </li>
                   <li>
-                    <a href="/projects">Projects</a>
+                    <a onClick={() => router.push("/projects")}>Projects</a>
                   </li>
                   <li>
-                    <a href="">Investors</a>
+                    <a onClick={() => router.push("/blogs")}>Blogs</a>
                   </li>
                   <li>
-                    <a href="/contact-us">Contact Us</a>
+                    <a onClick={() => router.push("/contact-us")}>Contact Us</a>
                   </li>
                 </ul>
               </div>
               <div
                 className="col-xl-auto col-lg col-md-4 col-sm-6 col-12 animateThis slideRight"
-                style={{transitionDelay:".4s"}}
+                style={{ transitionDelay: ".4s" }}
               >
-                <h5 className={`${styles.footHead} textPink fw-semibold mb-4`}>Contact Us</h5>
+                <h5 className={`${styles.footHead} textPink fw-semibold mb-4`}>
+                  Contact Us
+                </h5>
                 <div className="d-flex flex-column gap-4">
                   <div className="d-flex gap-3">
                     <div className="textGold">
@@ -67,16 +88,22 @@ const Footer = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="lucide lucide-map-pin-icon lucide-map-pin"
                       >
                         <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
                         <circle cx="12" cy="10" r="3" />
                       </svg>
                     </div>
-                    <address className="mb-0" style={{maxWidth:"300px", fontFamily: "var(--font-jakarta)"}}>
+                    <address
+                      className="mb-0"
+                      style={{
+                        maxWidth: "300px",
+                        fontFamily: "var(--font-jakarta)",
+                      }}
+                    >
                       Plot C, Near St. Johns High School, Siddharth Nagar,
                       Borivali East, Mumbai - 400066. Maharashtra
                     </address>
@@ -90,9 +117,9 @@ const Footer = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="lucide lucide-phone-icon lucide-phone"
                       >
                         <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
@@ -111,9 +138,9 @@ const Footer = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="lucide lucide-mail-icon lucide-mail"
                       >
                         <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
@@ -130,10 +157,12 @@ const Footer = () => {
               </div>
               <div
                 className="col-xl-auto col-lg col-md-4 col-12 d-flex justify-content-md-end animateThis slideRight"
-                style={{transitionDelay:".5s"}}
+                style={{ transitionDelay: ".5s" }}
               >
                 <div>
-                  <h5 className={`${styles.footHead} textPink fw-semibold mb-4`}>
+                  <h5
+                    className={`${styles.footHead} textPink fw-semibold mb-4 fontJakarta`}
+                  >
                     Social Media
                   </h5>
                   <ul className={`${styles.socialIcons} hstack gap-3`}>
@@ -192,12 +221,81 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className={`${styles.footCopy} text-center py-4 d-flex flex-wrap justify-content-between`}>
-          <div className="d-flex flex-nowrap gap-2 order-last" style={{ fontFamily: "var(--font-jakarta)" }}>
+        <div className="vstack justify-content-center">
+        <button
+          className={`${styles.quickBtn} text-uppercase btn hstack gap-2 rounded-bottom-0 fw-semibold align-self-center fontJakarta`}
+          onClick={() => setShowUsefulLinks((prev) => !prev)}
+          aria-expanded={showUsefulLinks}
+          aria-controls="usefulLinks"
+        >
+          Useful Links
+        </button>
+        <div
+          className={`collapse ${showUsefulLinks ? "show" : ""}`}
+          id="usefulLinks"
+        >
+          <div className={`${styles.footCopy} vstack gap-4 py-4`}>
+            <div className={`${styles.sitewide}`}>
+              <h4 className={`${styles.footHead} fw-semibold mb-3 fontJakarta`}>
+                Projects by Locality
+              </h4>
+              <ul className={`${styles.swLinks} fontJakarta`}>
+                <li><a href="">Apartments in Borivali</a></li>
+                <li><a href="">Apartments in Andheri</a></li>
+                <li><a href="">Apartments in Mumbai Suburbs</a></li>
+                <li><a href="">Apartments in Mumbai</a></li>
+                <li><a href="">Apartments in Borivali</a></li>
+              </ul>
+            </div>
+
+            <div className={`${styles.sitewide}`}>
+              <h4 className={`${styles.footHead} fw-semibold mb-3 fontJakarta`}>
+                Popular Blogs
+              </h4>
+              <ul className={`${styles.swLinks} fontJakarta`}>
+                <li>
+                  <a href="">
+                    The Sunday Test: What Your Home Feels Like When
+                    You&apos;re Not in a Hurry
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    Best Cafes and Restaurants near Purva Heritage, Kudlu Gate
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    The Rise of the Peripheral City: Why the Edges of
+                    Bengaluru Are Getting More Attention
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    The Psychology Behind the &apos;One Last Visit&apos;
+                    Before Booking
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div
+          className={`${styles.footCopy} text-center py-4 d-flex flex-wrap justify-content-between`}
+        >
+          <div
+            className="d-flex flex-nowrap gap-2 order-last"
+            style={{ fontFamily: "var(--font-jakarta)" }}
+          >
             <a href="">Term of Use</a>|<a href="">Privacy Policy</a>|
             <a href="">Compliance</a>
           </div>
-          <div className="order-first" style={{ fontFamily: "var(--font-jakarta)" }}>
+          <div
+            className="order-first"
+            style={{ fontFamily: "var(--font-jakarta)" }}
+          >
             © 2026 Fortune Group. All rights reserved. Designed by{" "}
             <a
               href="https://www.goyalinfotech.com"

@@ -13,13 +13,13 @@ const AboutBanner = () => {
           <div className={styles.stickyFrame}>
             <Image src={aboutBanner} alt="" className={styles.stfrImg} />
             <div
-              className={`${styles.stickyBlue} d-flex align-items-center justify-content-center animateThis fadeGrow`}
+              className={`${styles.stickyBlue} d-flex align-items-center justify-content-center`}
             >
               <Image
                 src={fortuneLogo}
                 alt=""
                 className="w-75 animateThis curtain h-auto"
-                style="transition-delay:1s;"
+                style={{ transitionDelay: "1s" }}
               />
             </div>
           </div>

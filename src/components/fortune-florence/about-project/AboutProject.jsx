@@ -41,17 +41,17 @@ const AboutProject = ( {heading, title, paragraph1, paragraph2, paragraph3, para
 
   return (
     <section className="projOverview position-relative">
-      <div className="bgPrimary sitePadding py-5">
+      <div className="sitePadding py-5">
         <div className="container-fluid pt-5">
           <div
-            className="w-100 mx-auto text-center text-white"
+            className="w-100 mx-auto text-center"
             style={{ maxWidth: "900px" }}
           >
             <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
               {heading}
             </h2>
 
-            <h3 className="mb-4 titleFont revealText">
+            <h3 className="mb-4 sectBigTitle titleFont textPrimary revealText">
               {title}
             </h3>
 
@@ -66,11 +66,11 @@ const AboutProject = ( {heading, title, paragraph1, paragraph2, paragraph3, para
       </div>
 
       <div
-        className={`${styles.inProjMain} sitePadding mb-4 position-relative`}
+        className={`${styles.inProjMain} sitePadding position-relative`}
       >
         <div className="container-fluid">
           <div
-            className={`${styles.inProjectSliderWrap} mx-auto rounded-4 bgPrimary`}
+            className={`${styles.inProjectSliderWrap} mx-auto rounded-4`}
           >
             <div
               ref={sliderRef}
@@ -98,7 +98,7 @@ const AboutProject = ( {heading, title, paragraph1, paragraph2, paragraph3, para
         </div>
       </div>
 
-      <div className="sitePadding pb-5">
+      <div className={`${styles.inProjDetailSection} sitePadding text-white`}>
         <div className="container-fluid d-flex justify-content-center">
           <div
             className={`${styles.inProjDetail} row g-2 mb-4 fw-semibold fontJakarta`}

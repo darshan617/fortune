@@ -40,10 +40,12 @@ const fortuneFlorencePage = () => {
     </Head>
     <Layout>
       <FlorenceBanner
-        bannerImage={bannerImage}
-        bannerImage1={bannerImage1}
-        bannerImage2={bannerImage2}
-        bannerImage3={bannerImage3}
+      type="fortune_florence"
+      florenceVideo="/video/florence.mp4"
+        // bannerImage={bannerImage}
+        // bannerImage1={bannerImage1}
+        // bannerImage2={bannerImage2}
+        // bannerImage3={bannerImage3}
         logo={logo}
         title="Experience One In A Million Living"
         description="Where timeless architecture meets refined luxury and every moment feels extraordinary."

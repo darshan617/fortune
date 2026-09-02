@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 
 const FlorenceBanner = ({
+  type,
   bannerImage,
   bannerImage1,
   bannerImage2,
@@ -14,6 +15,7 @@ const FlorenceBanner = ({
   logo,
   title,
   description,
+  florenceVideo,
 }) => {
   const sliderRef = useRef(null);
 
@@ -33,9 +35,46 @@ const FlorenceBanner = ({
     });
   }, []);
   return (
-    <section
+    <>
+    {type === "fortune_florence" ? (
+       <section
+       className={`${styles.projectBanner} sitePadding d-flex align-items-end`}
+     >
+       <video
+         autoPlay
+         muted
+         loop
+         playsInline
+         className={`${styles.projBanVid}`}
+         poster="/video/florence.jpg"
+       >
+         <source src={florenceVideo} type="video/mp4" />
+         Your browser does not support the video tag.
+       </video>
+      
+
+       <div
+         className={`${styles.projNameMain} container-fluid text-center position-relative z-1 mb-4 animateThis fadeIn`}
+       >
+         <Image
+           src={logo}
+           alt=""
+           className={`${styles.projectPgLogo} rounded mb-4 w-100 h-100`}
+         />
+         <h2 className="titleFont textPrimary mb-4">
+           Experience One In A Million Living
+         </h2>
+         <p className="fs-20 fontJakarta">
+           Where timeless architecture meets refined luxury and every moment
+           feels extraordinary.
+         </p>
+       </div>
+     </section>
+    ):(
+      <section
       className={`${styles.projectBanner} sitePadding d-flex align-items-end`}
     >
+      
       <div className={`${styles.projHeroSwiper} swiper`} ref={sliderRef}>
         <div className="swiper-wrapper">
           <div className="swiper-slide">
@@ -53,13 +92,26 @@ const FlorenceBanner = ({
         </div>
       </div>
 
-      <div className="container-fluid text-center text-white position-relative z-3 mb-sm-5 mb-4 animateThis fadeIn">
-        <Image src={logo} alt="" className={`${styles.projectPgLogo} mb-4`} />
-        <h2 className="titleFont sectBigTitle mb-4 revealText">{title}</h2>
-        <p className="fs-20 fontJakarta">{description}</p>
+      <div
+        className={`${styles.projNameMain} container-fluid text-center position-relative z-1 mb-4 animateThis fadeIn`}
+      >
+        <Image
+          src={logo}
+          alt=""
+          className={`${styles.projectPgLogo} rounded mb-4 w-100 h-100`}
+        />
+        <h2 className="titleFont textPrimary mb-4">
+          Experience One In A Million Living
+        </h2>
+        <p className="fs-20 fontJakarta">
+          Where timeless architecture meets refined luxury and every moment
+          feels extraordinary.
+        </p>
       </div>
     </section>
+    )
+    }
+    </>
   );
 };
-
 export default FlorenceBanner;
