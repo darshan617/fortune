@@ -10,7 +10,7 @@ import gym from "@/assets/images/florence/gym.webp";
 import dropoff from "@/assets/images/florence/dropoff.webp";
 import yoga from "@/assets/images/florence/yoga.webp";
 import toddler from "@/assets/images/florence/toddler.webp";
-import styles from "@/components/fortune-florence/banner/FlorenceBanner.module.css";
+import styles from "@/components/fortune-florence/lifestyle/Lifestyle.module.css";
 
 const Lifestyle = ({
   flatImage,
@@ -55,7 +55,7 @@ const Lifestyle = ({
       if (cancelled) return;
       fancyboxRef = Fancybox;
       Fancybox.bind("[data-fancybox]", {
-        // groupAll: true,
+        groupAll: true,
         Carousel: {
           Thumbs: false,
           Toolbar: {
@@ -140,7 +140,7 @@ const Lifestyle = ({
               <div className="col-lg-4 col-6 d-flex flex-column flex-md-row align-items-md-center gap-md-4 animateThis slideRight">
                 <Image
                   src={icPark}
-                  alt=""
+                  alt="icPark"
                   className={`${styles.amntImg} animateThis fadeGrow`}
                 />
                 <h4 className={`${styles.amntHead} titleFont`}>
@@ -160,7 +160,7 @@ const Lifestyle = ({
               <div className="col-lg-4 col-6 d-flex flex-column flex-md-row align-items-md-center gap-md-4 animateThis slideRight">
                 <Image
                   src={icGym}
-                  alt=""
+                  alt="icGym"
                   className={`${styles.amntImg} animateThis fadeGrow`}
                 />
                 <h4 className={`${styles.amntHead} titleFont`}>Gymnasium</h4>
@@ -178,7 +178,7 @@ const Lifestyle = ({
               <div className="col-lg-4 col-6 d-flex flex-column flex-md-row align-items-md-center gap-md-4 animateThis slideRight">
                 <Image
                   src={icPool}
-                  alt=""
+                  alt="icPool"
                   className={`${styles.amntImg} animateThis fadeGrow`}
                 />
                 <h4 className={`${styles.amntHead} titleFont`}>
@@ -198,7 +198,7 @@ const Lifestyle = ({
               <div className="col-lg-4 col-6 d-flex flex-column flex-md-row align-items-md-center gap-md-4 animateThis slideRight">
                 <Image
                   src={icPlayarea}
-                  alt=""
+                  alt="icPlayarea"
                   className={`${styles.amntImg} animateThis fadeGrow`}
                 />
                 <h4 className={`${styles.amntHead} titleFont`}>
@@ -218,7 +218,7 @@ const Lifestyle = ({
               <div className="col-lg-4 col-6 d-flex flex-column flex-md-row align-items-md-center gap-md-4 animateThis slideRight">
                 <Image
                   src={icSecurity}
-                  alt=""
+                  alt="icSecurity"
                   className={`${styles.amntImg} animateThis fadeGrow`}
                 />
                 <h4 className={`${styles.amntHead} titleFont`}>
@@ -234,80 +234,56 @@ const Lifestyle = ({
             </li>
           </ul>
 
-          <div
-            className={`${styles.amnitiesBoxes} d-flex flex-column flex-lg-row gap-lg-2 gap-4 mt-5 text-white`}
-          >
+          <div className={`${styles.amnitiesBoxes} d-flex flex-column flex-lg-row gap-lg-2 gap-4 mt-5 text-white`}>
             <div className={`${styles.amntBoxItem}`}>
-              <a
-                href={deck.src}
-                data-fancybox="amenitiesGallery"
-                className={`${styles.amntBox} d-block position-relative`}
-              >
-                <Image src={deck} alt="" className={`${styles.amntBoxImg}`} />
-                <div className={`${styles.amntHeading} titleFont`}>
-                  Private Deck
-                </div>
-              </a>
+              <div className={`${styles.amntBox}`}>
+                <Image
+                  src={deck}
+                  alt="deck"
+                  className={`${styles.amntBoxImg}`}
+                />
+                <div className={`${styles.amntHeading} titleFont`}>Private Deck</div>
+              </div>
             </div>
-
             <div className={`${styles.amntBoxItem}`}>
-              <a
-                href={gym.src}
-                data-fancybox="amenitiesGallery"
-                className={`${styles.amntBox} d-block position-relative`}
-              >
-                <Image src={gym} alt="" className={`${styles.amntBoxImg}`} />
-                <div className={`${styles.amntHeading} titleFont`}>
-                  Gymnasium
-                </div>
-              </a>
+              <div className={`${styles.amntBox}`}>
+                <Image
+                  src={gym}
+                  alt="gym"
+                  className={`${styles.amntBoxImg}`}
+                />
+                <div className={`${styles.amntHeading} titleFont`}>Gymnasium</div>
+              </div>
             </div>
-
             <div className={`${styles.amntBoxItem}`}>
-              <a
-                href={dropoff.src}
-                data-fancybox="amenitiesGallery"
-                className={`${styles.amntBox} d-block position-relative`}
-              >
+              <div className={`${styles.amntBox}`}>
                 <Image
                   src={dropoff}
-                  alt=""
+                  alt="dropoff"
                   className={`${styles.amntBoxImg}`}
                 />
-                <div className={`${styles.amntHeading} titleFont`}>
-                  Grand Dropoff Area
-                </div>
-              </a>
+                <div className={`${styles.amntHeading} titleFont`}>Grand Dropoff Area</div>
+              </div>
             </div>
-
             <div className={`${styles.amntBoxItem}`}>
-              <a
-                href={yoga.src}
-                data-fancybox="amenitiesGallery"
-                className={`${styles.amntBox} d-block position-relative`}
-              >
-                <Image src={yoga} alt="" className={`${styles.amntBoxImg}`} />
-                <div className={`${styles.amntHeading} titleFont`}>
-                  Yoga & Meditation Room
-                </div>
-              </a>
+              <div className={`${styles.amntBox}`}>
+                <Image
+                  src={yoga}
+                  alt="yoga"
+                  className={`${styles.amntBoxImg}`}
+                />
+                <div className={`${styles.amntHeading} titleFont`}>Yoga & Meditation Room</div>
+              </div>
             </div>
-
             <div className={`${styles.amntBoxItem}`}>
-              <a
-                href={toddler.src}
-                data-fancybox="amenitiesGallery"
-                className={`${styles.amntBox} d-block position-relative`}
-              >
+              <div className={`${styles.amntBox}`}>
                 <Image
                   src={toddler}
-                  alt=""
+                  alt="toddler"
                   className={`${styles.amntBoxImg}`}
                 />
-                <div className={`${styles.amntHeading} titleFont`}>
-                  Toddler's Room
-                </div>
-              </a>
+                <div className={`${styles.amntHeading} titleFont`}>Toddler's Room</div>
+              </div>
             </div>
           </div>
         </div>

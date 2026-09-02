@@ -35,8 +35,6 @@ const fortuneVenetianPage = () => {
     </Head>
     <Layout>
         <FlorenceBanner 
-        type="fortune_venetian"
-          // florenceVideo="/video/venetian.mp4"
         bannerImage={bannerImage}
         bannerImage1={bannerImage1}
         bannerImage2={bannerImage2}

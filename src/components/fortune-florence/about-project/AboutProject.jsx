@@ -8,34 +8,46 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import styles from "@/components/fortune-florence/banner/FlorenceBanner.module.css";
 
-const AboutProject = ( {heading, title, paragraph1, paragraph2, paragraph3, paragraph4, aboutProjectImage, aboutProjectImage1, Location, Configuration} ) => {
+const AboutProject = ({
+  heading,
+  title,
+  paragraph1,
+  paragraph2,
+  paragraph3,
+  paragraph4,
+  videoBanner,
+  aboutProjectImage,
+  aboutProjectImage1,
+  Location,
+  Configuration,
+}) => {
   const sliderRef = useRef(null);
 
   useEffect(() => {
     if (!sliderRef.current) return;
 
-    const swiper = new Swiper(sliderRef.current, {
-      modules: [Autoplay, EffectFade],
+    // const swiper = new Swiper(sliderRef.current, {
+    //   modules: [Autoplay, EffectFade],
 
-      slidesPerView: 1,
-      spaceBetween: 0,
-      speed: 1000,
-      effect: "fade",
-      loop: true,
+    //   slidesPerView: 1,
+    //   spaceBetween: 0,
+    //   speed: 1000,
+    //   effect: "fade",
+    //   loop: true,
 
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
+    //   autoplay: {
+    //     delay: 3000,
+    //     disableOnInteraction: false,
+    //   },
 
-      // navigation: {
-      //   nextEl: ".projNext",
-      //   prevEl: ".projPrev",
-      // },
-    });
+    //   // navigation: {
+    //   //   nextEl: ".projNext",
+    //   //   prevEl: ".projPrev",
+    //   // },
+    // });
 
     return () => {
-      swiper.destroy(true, true);
+      // swiper.destroy(true, true);
     };
   }, []);
 
@@ -65,18 +77,29 @@ const AboutProject = ( {heading, title, paragraph1, paragraph2, paragraph3, para
         </div>
       </div>
 
-      <div
-        className={`${styles.inProjMain} sitePadding position-relative`}
-      >
+      <div className={`${styles.inProjMain} sitePadding position-relative`}>
         <div className="container-fluid">
-          <div
-            className={`${styles.inProjectSliderWrap} mx-auto rounded-4`}
-          >
+          <div className={`${styles.inProjectSliderWrap} mx-auto rounded-4`}>
             <div
               ref={sliderRef}
               className={`${styles.inProjectSlider} swiper rounded-4 animateThis curtain`}
             >
-              <div className="swiper-wrapper">
+              <div
+                className={`${styles.inProjWidth} mx-auto bgPrimary rounded-4 overflow-hidden`}
+              >
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className={`${styles.inProjectVideo} animateThis curtain w-100 h-100`}
+                  poster="/video/florence.jpg"
+                >
+                  <source src={videoBanner} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              {/* <div className="swiper-wrapper">
                 <div className="swiper-slide">
                   <Image
                     src={aboutProjectImage}
@@ -92,7 +115,7 @@ const AboutProject = ( {heading, title, paragraph1, paragraph2, paragraph3, para
                     className={styles.ipsImg}
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
