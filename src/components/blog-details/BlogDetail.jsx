@@ -12,7 +12,7 @@ const BlogDetail = () => {
         <div className="row justify-content-center mb-4">
           <div className="col-12 text-center vstack">
             <a onClick={() => router.push("/blogs")}>
-              <h2 className="sectTitle textGold revealText">Blogs</h2>
+              <h2 className="sectTitle textGold revealText" style={{cursor: "pointer"}}>Blogs</h2>
             </a>
             <h1 className="sectBigTitle titleFont textPrimary mb-3 revealText">
               The rise of the peripheral city: Why the edges of Bengaluru are

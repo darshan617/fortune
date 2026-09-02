@@ -94,7 +94,7 @@ const Connectivity = () => {
         <div className="container-fluid py-5">
           <div className="row justify-content-between">
             <div className="col-lg-5 align-self-center mb-5 mb-lg-0">
-              <h2 className="sectTitle textGold mb-3 revealText">
+              <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
                 CONNECTIVITY
               </h2>
               <h3 className="sectBigTitle titleFont textPrimary mb-3 revealText">
