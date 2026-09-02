@@ -7,7 +7,7 @@ const WhyChoose = () => {
       <section className="sitePadding bgPrimary py-5 overflow-hidden">
         <div className="container-fluid py-5">
           <div className="w-100 mb-5 text-center">
-            <h2 className="sectTitle textGold mb-3 revealText">
+            <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
               WHY CHOOSE US
             </h2>
             <h3 className="sectBigTitle titleFont text-white mb-4 revealText">

@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -8,6 +9,10 @@ import Swiper from "swiper";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import Lenis from "lenis";
+
+if (typeof window !== "undefined") {
+  window.history.scrollRestoration = "manual";
+}
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -350,13 +355,18 @@ export function initTestimSwiper(
 }
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+  const lenisRef = useRef(null);
+
   useEffect(() => {
     if (typeof window === "undefined") return;
+
+    history.scrollRestoration = "manual";
 
     const lenis = new Lenis({
       autoRaf: true,
     });
-
+    lenisRef.current = lenis;
 
     wrapRevealText();
 
@@ -396,6 +406,8 @@ export default function App({ Component, pageProps }) {
     });
 
     return () => {
+      lenisRef.current = null;
+
       window.removeEventListener(
         "scroll",
         onScrollOrResize,
@@ -412,6 +424,22 @@ export default function App({ Component, pageProps }) {
       lenis.destroy();
     };
   }, []);
+
+  useEffect(() => {
+    const scrollToTop = () => {
+      lenisRef.current?.scrollTo(0, { immediate: true });
+      window.scrollTo(0, 0);
+    };
+
+    scrollToTop();
+    const frame = requestAnimationFrame(scrollToTop);
+    const timeout = setTimeout(scrollToTop, 50);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(timeout);
+    };
+  }, [router.asPath]);
 
   return (
     <div

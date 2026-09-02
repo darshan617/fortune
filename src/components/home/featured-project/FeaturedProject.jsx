@@ -72,7 +72,7 @@ const FeaturedProject = ({
                         </div>
                         <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
                           <div className="pitemHead d-flex justify-content-between align-items-start">
-                            <div className="projStatus badge bgGold lh-sm fw-normal px-3">
+                            <div className="projStatus badge bgGold lh-sm fw-normal px-3 fontJakarta">
                               {projectStatus1}
                             </div>
                             <div className={styles.projLogo}>
@@ -90,7 +90,7 @@ const FeaturedProject = ({
                               >
                                 Fortune Florence
                               </h3>
-                              <div className={styles.projLocation}>
+                              <div className={`${styles.projLocation} fontJakarta`}>
                                 Borivali East, Mumbai
                               </div>
                             </div>
@@ -126,7 +126,7 @@ const FeaturedProject = ({
                         </div>
                         <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
                           <div className="pitemHead d-flex justify-content-between align-items-start">
-                            <div className="projStatus badge bgGold lh-sm fw-normal px-3">
+                            <div className="projStatus badge bgGold lh-sm fw-normal px-3 fontJakarta">
                               {projectStatus2}
                             </div>
                             <div className={styles.projLogo}>
@@ -144,7 +144,7 @@ const FeaturedProject = ({
                               >
                                 Fortune Venetian
                               </h3>
-                              <div className={styles.projLocation}>
+                              <div className={`${styles.projLocation} fontJakarta`}>
                                 Andheri West, Mumbai
                               </div>
                             </div>
@@ -285,7 +285,7 @@ const FeaturedProject = ({
             </div>
           </div>
 
-          <div className="col-md-auto order-md-2 text-md-end text-center animateThis fadeShrink">
+          <div className="col-md-auto order-md-2 text-md-end text-center animateThis fadeShrink fontJakarta">
             <a href="/projects" className="ctaBtn ghost">
               View All
             </a>
