@@ -2,19 +2,21 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
-import featuredProject1 from "@/assets/images/florence/item.jpg";
-import featuredProject1Hover from "@/assets/images/florence/item_hover.jpg";
-import featuredProject1Logo from "@/assets/images/florence/logo.png";
-import featuredProject2 from "@/assets/images/Venetian/item.jpg";
-import featuredProject2Hover from "@/assets/images/Venetian/item_hover.jpg";
-import featuredProject3 from "@/assets/images/florence/item.jpg";
-import featuredProject3Hover from "@/assets/images/florence/item_hover.jpg";
-import featuredProject3Logo from "@/assets/images/florence/logo.png";
-import featuredProject4 from "@/assets/images/Venetian/item.jpg";
-import featuredProject4Hover from "@/assets/images/Venetian/item_hover.jpg";
 import styles from "@/components/home/featured-project/FeaturedProject.module.css";
+import Link from "next/link";
 
-const FeaturedProject = () => {
+const FeaturedProject = ({
+  title,
+  description,
+  projectImage1,
+  projectImage1Hover,
+  featuredProject1Logo,
+  featuredProject2,
+  featuredProject2Hover,
+  featuredProject2Logo,
+  projectStatus1,
+  projectStatus2,
+}) => {
   useEffect(() => {
     const el = document.querySelector(".projectSlider");
     if (!el) return undefined;
@@ -37,16 +39,12 @@ const FeaturedProject = () => {
   }, []);
 
   return (
-    <section className="sitePadding py-5 overflow-hidden">
+    <section className={`${styles.featuredProject} sitePadding py-5 overflow-hidden`}>
       <div className="container-fluid py-5">
         <div className="row justify-content-between align-items-end g-4 mb-4">
-          <div className="col-xxl-4 col-lg-6 col-md order-md-1">
-            <h2 className="sectTitle textGold mb-3 revealText">
-              FEATURED PROJECTS
-            </h2>
-            <h3 className="sectBigTitle titleFont textPrimary mb-0 revealText">
-              Our Signature Addresses
-            </h3>
+          <div className="col-xxl-6 col-lg-6 col-md order-md-1">
+            {title}
+            {description}
           </div>
 
           <div className="col-12 order-md-3">
@@ -54,100 +52,114 @@ const FeaturedProject = () => {
               <div className={`${styles.projectSlider} projectSlider swiper`}>
                 <div className="swiper-wrapper">
                   <div className="swiper-slide">
-                    <div className={styles.projectItem}>
-                      <div className={styles.projImgBox}>
-                        <Image
-                          src={featuredProject1}
-                          alt=""
-                          fill
-                          sizes="(max-width: 992px) 90vw, 45vw"
-                          className={styles.pibImg}
-                        />
-                        <Image
-                          src={featuredProject1Hover}
-                          alt=""
-                          fill
-                          sizes="(max-width: 992px) 90vw, 45vw"
-                          className={`${styles.pibImg} ${styles.pibHoverImg}`}
-                        />
-                      </div>
-                      <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
-                        <div className="pitemHead d-flex justify-content-between align-items-start">
-                          <div className="projStatus badge bgGold lh-sm fw-normal px-3">
-                            Ongoing Project
-                          </div>
-                          <div className={styles.projLogo}>
-                            <Image
-                              src={featuredProject1Logo}
-                              alt="Fortune Florence"
-                              className={styles.projLogoImg}
-                            />
-                          </div>
+                    <Link href="/fortune_florence">
+                      <div className={styles.projectItem}>
+                        <div className={styles.projImgBox}>
+                          <Image
+                            src={projectImage1}
+                            alt=""
+                            fill
+                            sizes="(max-width: 992px) 90vw, 45vw"
+                            className={styles.pibImg}
+                          />
+                          <Image
+                            src={projectImage1Hover}
+                            alt=""
+                            fill
+                            sizes="(max-width: 992px) 90vw, 45vw"
+                            className={`${styles.pibImg} ${styles.pibHoverImg}`}
+                          />
                         </div>
-                        <div className="pitemFoot d-flex justify-content-between align-items-end">
-                          <div className="projDetail text-white">
-                            <h3 className={`${styles.projName} titleFont mb-1`}>
-                              Fortune Florence
-                            </h3>
-                            <div className={styles.projLocation}>
-                              Borivali East, Mumbai
+                        <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
+                          <div className="pitemHead d-flex justify-content-between align-items-start">
+                            <div className="projStatus badge bgGold lh-sm fw-normal px-3">
+                              {projectStatus1}
+                            </div>
+                            <div className={styles.projLogo}>
+                              <Image
+                                src={featuredProject1Logo}
+                                alt="Fortune Florence"
+                                className={styles.projLogoImg}
+                              />
                             </div>
                           </div>
-                          {/* <div>
+                          <div className="pitemFoot d-flex justify-content-between align-items-end">
+                            <div className="projDetail text-white">
+                              <h3
+                                className={`${styles.projName} titleFont mb-1`}
+                              >
+                                Fortune Florence
+                              </h3>
+                              <div className={styles.projLocation}>
+                                Borivali East, Mumbai
+                              </div>
+                            </div>
+                            {/* <div>
                             <a href="" className="ctaBtn">
                               View More
                             </a>
                           </div> */}
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
 
                   <div className="swiper-slide">
-                    <div className={styles.projectItem}>
-                      <div className={styles.projImgBox}>
-                        <Image
-                          src={featuredProject2}
-                          alt=""
-                          fill
-                          sizes="(max-width: 992px) 90vw, 45vw"
-                          className={styles.pibImg}
-                        />
-                        <Image
-                          src={featuredProject2Hover}
-                          alt=""
-                          fill
-                          sizes="(max-width: 992px) 90vw, 45vw"
-                          className={`${styles.pibImg} ${styles.pibHoverImg}`}
-                        />
-                      </div>
-                      <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
-                        <div className="pitemHead d-flex justify-content-between align-items-start">
-                          <div className="projStatus badge bgGold lh-sm fw-normal px-3">
-                            New Launch
-                          </div>
-                          <div className={styles.projLogo} />
+                    <Link href="/fortune_venetian">
+                      <div className={styles.projectItem}>
+                        <div className={styles.projImgBox}>
+                          <Image
+                            src={featuredProject2}
+                            alt=""
+                            fill
+                            sizes="(max-width: 992px) 90vw, 45vw"
+                            className={styles.pibImg}
+                          />
+                          <Image
+                            src={featuredProject2Hover}
+                            alt=""
+                            fill
+                            sizes="(max-width: 992px) 90vw, 45vw"
+                            className={`${styles.pibImg} ${styles.pibHoverImg}`}
+                          />
                         </div>
-                        <div className="pitemFoot d-flex justify-content-between align-items-end">
-                          <div className="projDetail text-white">
-                            <h3 className={`${styles.projName} titleFont mb-1`}>
-                              Fortune Venetian
-                            </h3>
-                            <div className={styles.projLocation}>
-                              Andheri West, Mumbai
+                        <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
+                          <div className="pitemHead d-flex justify-content-between align-items-start">
+                            <div className="projStatus badge bgGold lh-sm fw-normal px-3">
+                              {projectStatus2}
+                            </div>
+                            <div className={styles.projLogo}>
+                              <Image
+                                src={featuredProject2Logo}
+                                alt="Fortune Florence"
+                                className={styles.projLogoImg}
+                              />
                             </div>
                           </div>
-                          {/* <div>
+                          <div className="pitemFoot d-flex justify-content-between align-items-end">
+                            <div className="projDetail text-white">
+                              <h3
+                                className={`${styles.projName} titleFont mb-1`}
+                              >
+                                Fortune Venetian
+                              </h3>
+                              <div className={styles.projLocation}>
+                                Andheri West, Mumbai
+                              </div>
+                            </div>
+                            {/* <div>
                             <a href="" className="ctaBtn">
                               View More
                             </a>
                           </div> */}
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
 
-                  <div className="swiper-slide">
+                  {/* <div className="swiper-slide">
                     <div className={styles.projectItem}>
                       <div className={styles.projImgBox}>
                         <Image
@@ -187,17 +199,17 @@ const FeaturedProject = () => {
                               Borivali East, Mumbai
                             </div>
                           </div>
-                          {/* <div>
+                          <div>
                             <a href="" className="ctaBtn">
                               View More
                             </a>
-                          </div> */}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="swiper-slide">
+                  {/* <div className="swiper-slide">
                     <div className={styles.projectItem}>
                       <div className={styles.projImgBox}>
                         <Image
@@ -231,15 +243,15 @@ const FeaturedProject = () => {
                               Andheri West, Mumbai
                             </div>
                           </div>
-                          {/* <div>
+                          <div>
                             <a href="" className="ctaBtn">
                               View More
                             </a>
-                          </div> */}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="swiperBtn next projNext">
                   <svg
@@ -274,7 +286,7 @@ const FeaturedProject = () => {
           </div>
 
           <div className="col-md-auto order-md-2 text-md-end text-center animateThis fadeShrink">
-            <a href="" className="ctaBtn ghost">
+            <a href="/projects" className="ctaBtn ghost">
               View All
             </a>
           </div>
