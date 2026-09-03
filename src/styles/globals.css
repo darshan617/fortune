@@ -130,6 +130,69 @@ p {
   position: relative;
 }
 
+/* Banner shell must live in global CSS so it applies on client navigation
+   before the page CSS module chunk is injected (Link / router.push). */
+.projectHeroBanner {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+.projectHeroBanner::before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    0deg,
+    #faf8f3 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+.projectHeroBanner > .swiper {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.8;
+}
+.projectHeroBanner .swiper-wrapper,
+.projectHeroBanner .swiper-slide {
+  width: 100% !important;
+  height: 100% !important;
+}
+.projectHeroBanner .swiper-slide {
+  position: relative;
+}
+.projectHeroBanner .bannerName {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+.projectHeroBanner .bannerName::after {
+  content: "";
+  width: 1400px;
+  aspect-ratio: 1;
+  display: block;
+  position: absolute;
+  top: -2.5rem;
+  left: calc(50% - 700px);
+  background: #faf8f3;
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.22);
+}
+
 @media (min-width: 575px) {
   .sitePadding {
     padding-left: 4vw;

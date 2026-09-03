@@ -18,19 +18,63 @@ const FlorenceBanner = ({
   const sliderRef = useRef(null);
 
   useEffect(() => {
-    if (!sliderRef.current) return;
+    if (!sliderRef.current) return undefined;
 
-    const swiper = new Swiper(sliderRef.current, {
-      modules: [Autoplay, EffectFade],
+    let swiper;
+    let cancelled = false;
+    let frameId = 0;
+    const loadedImages = [];
 
-      slidesPerView: 1,
-      spaceBetween: 0,
-      speed: 1000,
-      effect: "fade",
-      loop: true,
-      autoplay: { delay: 3000, disableOnInteraction: false },
-      //navigation: {nextEl:".projNext",prevEl:".projPrev"},
+    const updateSwiper = () => {
+      if (!swiper || swiper.destroyed) return;
+      swiper.update();
+      swiper.updateSize();
+    };
+
+    const initSwiper = () => {
+      if (cancelled || !sliderRef.current) return;
+
+      swiper = new Swiper(sliderRef.current, {
+        modules: [Autoplay, EffectFade],
+        slidesPerView: 1,
+        spaceBetween: 0,
+        speed: 1000,
+        effect: "fade",
+        fadeEffect: { crossFade: true },
+        loop: true,
+        observer: true,
+        observeParents: true,
+        watchOverflow: true,
+        autoplay: { delay: 3000, disableOnInteraction: false },
+      });
+
+      sliderRef.current.querySelectorAll("img").forEach((img) => {
+        loadedImages.push(img);
+        if (!img.complete) {
+          img.addEventListener("load", updateSwiper);
+        }
+      });
+
+      updateSwiper();
+    };
+
+    // Wait for the CSS module + layout to apply. router.push does not
+    // prefetch styles the way <Link> does, so Swiper can otherwise
+    // measure an unstyled banner and lock in a wrong inline height.
+    frameId = requestAnimationFrame(() => {
+      frameId = requestAnimationFrame(initSwiper);
     });
+
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(frameId);
+      loadedImages.forEach((img) => {
+        img.removeEventListener("load", updateSwiper);
+      });
+      if (swiper && !swiper.destroyed) {
+        swiper.destroy(true, true);
+      }
+    };
   }, []);
   return (
     <>
@@ -67,27 +111,52 @@ const FlorenceBanner = ({
         </div>
       </section> */}
       <section
-        className={`${styles.projectBanner} sitePadding d-flex align-items-end`}
+        className={`${styles.projectBanner} projectHeroBanner sitePadding d-flex align-items-end`}
       >
         <div className={`${styles.projHeroSwiper} swiper`} ref={sliderRef}>
           <div className="swiper-wrapper">
-            <div className="swiper-slide">
-              <Image src={bannerImage} alt="" className={styles.projBanImg} />
+            <div className={`swiper-slide ${styles.projHeroSlide}`}>
+              <Image
+                src={bannerImage}
+                alt=""
+                fill
+                priority
+                sizes="100vw"
+                className={styles.projBanImg}
+              />
             </div>
-            <div className="swiper-slide">
-              <Image src={bannerImage1} alt="" className={styles.projBanImg} />
+            <div className={`swiper-slide ${styles.projHeroSlide}`}>
+              <Image
+                src={bannerImage1}
+                alt=""
+                fill
+                sizes="100vw"
+                className={styles.projBanImg}
+              />
             </div>
-            <div className="swiper-slide">
-              <Image src={bannerImage2} alt="" className={styles.projBanImg} />
+            <div className={`swiper-slide ${styles.projHeroSlide}`}>
+              <Image
+                src={bannerImage2}
+                alt=""
+                fill
+                sizes="100vw"
+                className={styles.projBanImg}
+              />
             </div>
-            <div className="swiper-slide">
-              <Image src={bannerImage3} alt="" className={styles.projBanImg} />
+            <div className={`swiper-slide ${styles.projHeroSlide}`}>
+              <Image
+                src={bannerImage3}
+                alt=""
+                fill
+                sizes="100vw"
+                className={styles.projBanImg}
+              />
             </div>
           </div>
         </div>
 
         <div
-          className={`${styles.projNameMain} container-fluid text-center position-relative z-1 mb-4 animateThis `}
+          className={`${styles.projNameMain} bannerName container-fluid text-center position-relative mb-4`}
         >
           <Image
             src={logo}
