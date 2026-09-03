@@ -38,11 +38,12 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className={`${styles.arrowDown}`}>
+      <a href="#pullUp" className={`${styles.arrowDown} z-3`}>
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </a>
+      <div id="pullUp" className="clearfix"></div>
     </section>
   );
 };
