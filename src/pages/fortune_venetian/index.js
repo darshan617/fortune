@@ -45,6 +45,7 @@ const fortuneVenetianPage = () => {
         description={null}
         />
         <AboutProject
+        type="venetian"
         heading="About the project"
         title="Premium Residences offering a tranquil escape from city bustle"
         paragraph1="Fortune Venetian, developed by Vighnavinashanaya Vikasak LLP, is a luxurious residential tower rising 22 storeys high on Azad Nagar Lane No. 3, Veera Desai Road, Andheri West, Mumbai."
