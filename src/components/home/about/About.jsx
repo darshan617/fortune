@@ -141,14 +141,14 @@ const About = () => {
                     "We don't just build structures — we create sanctuaries
                     where generations begin their finest chapters. Every detail,
                     every material, every space is a{" "}
+                    <span
+                      className="textGold fw-normal"
+                      style={{ fontStyle: "italic" }}
+                    >
+                      promises kept
+                    </span>
+                    <span className="sectBigTitle text-white">."</span>
                   </h3>
-                  <span
-                    className="textGold sectBigTitle titleFont revealText fw-normal"
-                    style={{ fontStyle: "italic" }}
-                  >
-                    promises kept
-                  </span>
-                  <span className="sectBigTitle text-white">."</span>
                 </blockquote>
                 <figcaption className="fs-20 d-flex align-items-center gap-4 animateThis slideRight">
                   <span

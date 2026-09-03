@@ -6,36 +6,25 @@
   position: relative;
   overflow: hidden;
 }
-.projectBanner:before {
-  content: "";
-  width: 100%;
-  height: 50%;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(
-    0deg,
-    #FAF8F3 0%,
-    rgba(255, 255, 255, 0.8) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  z-index: 1;
-}
+
 .projHeroSwiper {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
+  width: 100% !important;
+  height: 100% !important;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0.8;
   z-index: 0;
 }
+.projHeroSwiper :global(.swiper-wrapper) {
+  height: 100% !important;
+}
+.projHeroSlide {
+  position: relative;
+  width: 100% !important;
+  height: 100% !important;
+}
 .projBanImg {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: center center;
 }
@@ -47,11 +36,12 @@
   display: block;
   position: absolute;
   top: -2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 700px);
   background: #faf8f3;
-  border-radius: 100%;
+  border-radius: 50%;
   z-index: -1;
+  pointer-events: none;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.22);
 }
 
 .projBanVid {
