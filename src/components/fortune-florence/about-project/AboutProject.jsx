@@ -9,6 +9,7 @@ import "swiper/css/effect-fade";
 import styles from "@/components/fortune-florence/banner/FlorenceBanner.module.css";
 
 const AboutProject = ({
+  type,
   heading,
   title,
   paragraph1,
@@ -22,34 +23,30 @@ const AboutProject = ({
   Configuration,
 }) => {
   const sliderRef = useRef(null);
+  const isVenetian = type === "venetian";
 
   useEffect(() => {
-    if (!sliderRef.current) return;
+    if (!isVenetian || !sliderRef.current) return;
 
-    // const swiper = new Swiper(sliderRef.current, {
-    //   modules: [Autoplay, EffectFade],
+    const swiper = new Swiper(sliderRef.current, {
+      modules: [Autoplay, EffectFade],
 
-    //   slidesPerView: 1,
-    //   spaceBetween: 0,
-    //   speed: 1000,
-    //   effect: "fade",
-    //   loop: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 1000,
+      effect: "fade",
+      loop: true,
 
-    //   autoplay: {
-    //     delay: 3000,
-    //     disableOnInteraction: false,
-    //   },
-
-    //   // navigation: {
-    //   //   nextEl: ".projNext",
-    //   //   prevEl: ".projPrev",
-    //   // },
-    // });
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
 
     return () => {
-      // swiper.destroy(true, true);
+      swiper.destroy(true, true);
     };
-  }, []);
+  }, [isVenetian]);
 
   return (
     <section className="projOverview position-relative">
@@ -80,10 +77,30 @@ const AboutProject = ({
       <div className={`${styles.inProjMain} sitePadding position-relative`}>
         <div className="container-fluid">
           <div className={`${styles.inProjectSliderWrap} mx-auto rounded-4`}>
-            <div
-              ref={sliderRef}
-              className={`${styles.inProjectSlider} swiper rounded-4 animateThis curtain`}
-            >
+            {isVenetian ? (
+              <div
+                ref={sliderRef}
+                className={`${styles.inProjectSlider} swiper rounded-4 animateThis curtain`}
+              >
+                <div className="swiper-wrapper">
+                  <div className="swiper-slide">
+                    <Image
+                      src={aboutProjectImage}
+                      alt=""
+                      className={styles.ipsImg}
+                    />
+                  </div>
+
+                  <div className="swiper-slide">
+                    <Image
+                      src={aboutProjectImage1}
+                      alt=""
+                      className={styles.ipsImg}
+                    />
+                  </div>
+                </div>
+              </div>
+            ) : (
               <div
                 className={`${styles.inProjWidth} mx-auto bgPrimary rounded-4 overflow-hidden`}
               >
@@ -99,24 +116,7 @@ const AboutProject = ({
                   Your browser does not support the video tag.
                 </video>
               </div>
-              {/* <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <Image
-                    src={aboutProjectImage}
-                    alt=""
-                    className={styles.ipsImg}
-                  />
-                </div>
-
-                <div className="swiper-slide">
-                  <Image
-                    src={aboutProjectImage1}
-                    alt=""
-                    className={styles.ipsImg}
-                  />
-                </div>
-              </div> */}
-            </div>
+            )}
           </div>
         </div>
       </div>

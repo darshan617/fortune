@@ -49,6 +49,7 @@ const fortuneFlorencePage = () => {
         description="Where timeless architecture meets refined luxury and every moment feels extraordinary."
       />
       <AboutProject
+        type="florence"
         heading="About the project"
         title="Signature Living Spaces For You To Indulge"
         paragraph1="A premier residential project located in the thriving neighborhood of Borivali East, Mumbai. Designed for those who seek a blend of luxury, comfort, and convenience, Fortune Florence offers an exceptional living experience."

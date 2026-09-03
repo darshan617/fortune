@@ -1,13 +1,23 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "@/components/Layout/navbar/Navbar.module.css";
 import logo from "@/assets/images/fortune_logo.png";
 import lineProject from "@/assets/images/line-project.png";
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
+
+const DateTimePicker = dynamic(
+  () =>
+    import("@vaadin/react-components/DateTimePicker.js").then(
+      (mod) => mod.DateTimePicker,
+    ),
+  { ssr: false },
+);
 
 const Navbar = () => {
   const [menuShow, setMenuShow] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const dateTimePickerWrapperRef = useRef(null);
 
   const handleMenuShow = () => {
     setMenuShow((prev) => !prev);
@@ -28,7 +38,48 @@ const Navbar = () => {
     return () => document.body.classList.remove("stopScroll");
   }, [menuShow]);
 
+  useEffect(() => {
+    const wrapper = dateTimePickerWrapperRef.current;
+    if (!wrapper) return;
+
+    const applyTimeLimits = () => {
+      const picker = wrapper.querySelector("vaadin-date-time-picker");
+      if (!picker) return false;
+
+      const timePicker = picker.querySelector('[slot="time-picker"]');
+      if (!timePicker) return false;
+
+      timePicker.min = "08:00";
+      timePicker.max = "21:00";
+      return true;
+    };
+
+    if (applyTimeLimits()) return;
+
+    const observer = new MutationObserver(() => {
+      if (applyTimeLimits()) {
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(wrapper, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
+  }, []);
+
   const router = useRouter();
+
+  const dateTimeRange = React.useMemo(() => {
+    const pad = (n) => String(n).padStart(2, "0");
+    const format = (date) =>
+      `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}:00`;
+
+    const min = new Date();
+    const max = new Date();
+    max.setDate(max.getDate() + 30);
+
+    return { min: format(min), max: format(max) };
+  }, []);
 
   return (
     <header
@@ -123,7 +174,7 @@ const Navbar = () => {
                 role="button"
                 className={`${styles.headContBtn}`}
                 data-bs-toggle="offcanvas"
-                href="#appointmentModal"
+                data-bs-target="#appointmentModal"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -188,6 +239,85 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="offcanvas offcanvas-end p-3"
+        tabindex="-1"
+        id="appointmentModal"
+        data-bs-scroll="false"
+        data-lenis-prevent
+      >
+        <form
+          className={`${styles.formWrap} ${styles.formFormat} row g-3 m-0 p-sm-4 p-3 rounded-3`}
+        >
+          <button
+            type="button"
+            className="btn-close position-absolute end-0 top-0 m-4"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+          <div className="col-12 hstack justify-content-between">
+            <h4 className="textPrimary sectSubTitle titleFont fw-semibold mb-0 lh-1">
+              Book An Appointment
+            </h4>
+          </div>
+          <div className="col-12 fontJakarta">
+            <label className="form-label">Choose Project *</label>
+            <select className="form-control form-select">
+              <option value=""></option>
+              <option value="">Fortune Florence, Borivali</option>
+              <option value="">Fortune Venetian, Andheri</option>
+            </select>
+            <span className={`${styles.errorLabel}`}>
+              This field is required
+            </span>
+          </div>
+          <div className="col-12 fontJakarta">
+            <label className="form-label">Date & Time*</label>
+            <div ref={dateTimePickerWrapperRef}>
+              <DateTimePicker
+                min={dateTimeRange.min}
+                max={dateTimeRange.max}
+                className="form-control"
+                style={{
+                  border: "none",
+                  borderBottom: "1px solid #ddd",
+                  borderRadius: "0",
+                  fontSize: "1rem",
+                  paddingLeft: "0.1rem",
+                  backgroundColor: "transparent",
+                }}
+              />
+            </div>
+            <span className={`${styles.errorLabel}`}>
+              This field is required
+            </span>
+          </div>
+          <div className="col-12 fontJakarta">
+            <label className="form-label">Name *</label>
+            <input type="text" className="form-control" />
+            <span className={`${styles.errorLabel}`}>
+              This field is required
+            </span>
+          </div>
+          <div className="col-12 fontJakarta">
+            <label className="form-label">Email *</label>
+            <input type="text" className="form-control" />
+            <span className={`${styles.errorLabel}`}>
+              This field is required
+            </span>
+          </div>
+          <div className="col-12 fontJakarta">
+            <label className="form-label">Mobile No.*</label>
+            <input type="text" className="form-control" />
+            <span className={`${styles.errorLabel}`}>
+              This field is required
+            </span>
+          </div>
+          <div className="col-12 pt-3 text-center fontJakarta">
+            <button className="ctaBtn">Submit</button>
+          </div>
+        </form>
       </div>
     </header>
   );

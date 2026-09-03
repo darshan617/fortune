@@ -30,20 +30,47 @@ function wrapRevealText() {
   document.querySelectorAll(".revealText").forEach((el) => {
     if (el.dataset.revealReady === "true") return;
 
-    const words = el.textContent.trim().split(/\s+/).filter(Boolean);
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
 
-    el.innerHTML = words
-      .map(
-        (word) =>
-          `<span class="word"><span class="word-inner">${word}</span></span>`,
-      )
-      .join(" ");
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (node.parentElement?.closest(".word")) continue;
+      if (!node.textContent.trim()) continue;
+      textNodes.push(node);
+    }
+
+    textNodes.forEach((textNode) => {
+      const parts = textNode.textContent.split(/(\s+)/);
+      const frag = document.createDocumentFragment();
+
+      parts.forEach((part) => {
+        if (!part) return;
+        if (/^\s+$/.test(part)) {
+          frag.appendChild(document.createTextNode(part));
+          return;
+        }
+
+        const word = document.createElement("span");
+        word.className = "word";
+        const inner = document.createElement("span");
+        inner.className = "word-inner";
+        inner.textContent = part;
+        word.appendChild(inner);
+        frag.appendChild(word);
+      });
+
+      textNode.parentNode.replaceChild(frag, textNode);
+    });
 
     el.querySelectorAll(".word-inner").forEach((inner, i) => {
       inner.style.transitionDelay = `${i * 100}ms`;
     });
 
     el.dataset.revealReady = "true";
+    el.querySelectorAll(".revealText").forEach((nested) => {
+      nested.dataset.revealReady = "true";
+    });
   });
 }
 
@@ -360,6 +387,8 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
 
     history.scrollRestoration = "manual";
 
