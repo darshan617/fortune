@@ -240,11 +240,11 @@ const Footer = () => {
                 Projects by Locality
               </h4>
               <ul className={`${styles.swLinks} fontJakarta`}>
-                <li><a href="">Apartments in Borivali</a></li>
-                <li><a href="">Apartments in Andheri</a></li>
-                <li><a href="">Apartments in Mumbai Suburbs</a></li>
-                <li><a href="">Apartments in Mumbai</a></li>
-                <li><a href="">Apartments in Borivali</a></li>
+                <li><a onClick={() => router.push("/apartments")}>Apartments in Borivali</a></li>
+                <li><a onClick={() => router.push("/apartments")}>Apartments in Andheri</a></li>
+                <li><a onClick={() => router.push("/apartments")}>Apartments in Mumbai Suburbs</a></li>
+                <li><a onClick={() => router.push("/apartments")}>Apartments in Mumbai</a></li>
+                <li><a onClick={() => router.push("/apartments")}>Apartments in Borivali</a></li>
               </ul>
             </div>
 
