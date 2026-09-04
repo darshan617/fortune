@@ -39,7 +39,9 @@ const FeaturedProject = ({
   }, []);
 
   return (
-    <section className={`${styles.featuredProject} sitePadding py-5 overflow-hidden`}>
+    <section
+      className={`${styles.featuredProject} sitePadding py-5 overflow-hidden`}
+    >
       <div className="container-fluid py-5">
         <div className="row justify-content-between align-items-end g-4 mb-4">
           <div className="col-xxl-6 col-lg-6 col-md order-md-1">
@@ -90,7 +92,9 @@ const FeaturedProject = ({
                               >
                                 Fortune Florence
                               </h3>
-                              <div className={`${styles.projLocation} fontJakarta`}>
+                              <div
+                                className={`${styles.projLocation} fontJakarta`}
+                              >
                                 Borivali East, Mumbai
                               </div>
                             </div>
@@ -144,7 +148,9 @@ const FeaturedProject = ({
                               >
                                 Fortune Venetian
                               </h3>
-                              <div className={`${styles.projLocation} fontJakarta`}>
+                              <div
+                                className={`${styles.projLocation} fontJakarta`}
+                              >
                                 Andheri West, Mumbai
                               </div>
                             </div>
