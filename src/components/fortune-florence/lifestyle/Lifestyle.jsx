@@ -107,8 +107,8 @@ const Lifestyle = ({
         <div className="col d-flex flex-column align-items-center justify-content-center">
           <div className="p-3 rounded-2 text-center">
             <div className={`${styles.flrName} mb-2`}>{name}</div>
-            <span className="ctaBtn">View Plan</span>
-          </div>
+            <span className="ctaBtn d-xl-block d-lg-block d-md-block d-sm-none d-none">View Plan</span>
+          </div>  
         </div>
 
         <a
