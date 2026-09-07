@@ -55,6 +55,7 @@ vaadin-time-picker::part(input-field) {
   box-shadow: none;
   background: transparent;
   border-radius: 0;
+  border-bottom: 1px solid #ddd;
 }
 
 vaadin-date-picker-overlay,
@@ -159,7 +160,7 @@ p {
   background: #faf8f3;
 }
 .pageWrapper {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background: #faf8f3;
   z-index: 1;
   position: relative;
@@ -235,7 +236,7 @@ p {
     margin: 1rem;
   }
 }
-@media (max-width: 575px) {
+/* @media (max-width: 575px) {
   .scrollToTop {
     width: 45px;
     height: 45px;
@@ -244,7 +245,7 @@ p {
       padding: 4px;
     }
   }
-}
+} */
 
 .animateThis {
   position: relative;
@@ -602,7 +603,7 @@ p {
   position: fixed;
   bottom: 0;
   right: 0;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   z-index: 100;
   opacity: 0;
   visibility: hidden;

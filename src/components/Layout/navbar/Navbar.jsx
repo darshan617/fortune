@@ -227,7 +227,7 @@ const Navbar = () => {
     >
       <div className="pgHeadMain container-fluid rounded">
         <div className="row align-items-center">
-          <div className="col-md-4 col-auto">
+          <div className="col d-flex">
             <button
               role="button"
               className={`${styles.headBtns} titleFont`}
@@ -241,7 +241,7 @@ const Navbar = () => {
               <span className="d-none d-md-block">MENU</span>
             </button>
           </div>
-          <div className="col d-flex justify-content-center align-items-center text-center">
+          <div className="col-auto d-flex justify-content-center align-items-center text-center">
             <a href="/" className={`${styles.logoBox}`}>
               <Image
                 src={logo}

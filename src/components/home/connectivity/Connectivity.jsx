@@ -115,7 +115,7 @@ const Connectivity = () => {
                 On Schedule — Possession Dec 2025
               </div>
             </div>
-            <div className="col-lg-7">
+            <div className="col-lg-6">
               <div
                 className={`${styles.arialViewWrap} bgPrimary rounded-4 overflow-hidden position-relative d-flex justify-content-center align-items-center z-1`}
               >
