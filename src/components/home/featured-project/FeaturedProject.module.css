@@ -96,7 +96,7 @@
     no-repeat center/ contain;
 }
 
-.featuredProject{
+.featuredProject {
   padding-bottom: 0 !important;
 }
 
@@ -107,4 +107,40 @@
   .projectSlider .swiperBtn {
     visibility: visible;
   }
+}
+
+.blogBanner {
+  background: var(--primary);
+}
+.blogContent h2 {
+  font-weight: 600;
+  color: var(--primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.blogContent p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+.blogContent ul li {
+  margin-left: 1rem;
+  list-style: disc;
+  margin-bottom: 1rem;
+}
+.blogContent ul.number li {
+  list-style: decimal;
+}
+.blogContent ul.alpha li {
+  list-style: lower-alpha;
+}
+.blogContent ul.roman li {
+  list-style: lower-roman;
+}
+.blogContent ul > li::marker {
+  font-weight: 600;
+  color: var(--red);
+}
+.blogContent a {
+  color: var(--primary);
+  text-decoration: underline;
 }

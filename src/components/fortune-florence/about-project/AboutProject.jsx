@@ -54,9 +54,9 @@ const AboutProject = ({
         <div className="container-fluid pt-5">
           <div
             className="w-100 mx-auto text-center"
-            style={{ maxWidth: "900px" }}
+            style={{ maxWidth: "1000px" }}
           >
-            <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
+            <h2 className="sectTitle textGold mb-3 revealText ">
               {heading}
             </h2>
 
@@ -65,10 +65,10 @@ const AboutProject = ({
             </h3>
 
             <div className="animateThis slideTop">
-              <p className="lh-lg opacity-75 fontJakarta">{paragraph1}</p>
-              <p className="lh-lg opacity-75 fontJakarta">{paragraph2}</p>
-              <p className="lh-lg opacity-75 fontJakarta">{paragraph3}</p>
-              <p className="lh-lg opacity-75 fontJakarta">{paragraph4}</p>
+              <p className="lh-lg opacity-75 ">{paragraph1}</p>
+              <p className="lh-lg opacity-75 ">{paragraph2}</p>
+              <p className="lh-lg opacity-75 ">{paragraph3}</p>
+              <p className="lh-lg opacity-75 ">{paragraph4}</p>
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@ const AboutProject = ({
       <div className={`${styles.inProjDetailSection} sitePadding text-white`}>
         <div className="container-fluid d-flex justify-content-center">
           <div
-            className={`${styles.inProjDetail} row g-2 mb-4 fw-semibold fontJakarta`}
+            className={`${styles.inProjDetail} row g-2 mb-4 fw-semibold `}
           >
             <div className="col-md-6">
               <small className="d-block textGold">Location</small>

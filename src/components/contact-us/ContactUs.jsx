@@ -13,24 +13,22 @@ const ContactUs = () => {
         <div className="row justify-content-between gx-lg-5 gy-5">
           <div className="col-lg-6">
             <div className="position-sticky" style={{ top: "130px" }}>
-              <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
+              <h2 className="sectTitle textGold mb-3 revealText ">
                 Contact Us
               </h2>
               <h3
                 className={`${styles.titleFont} sectBigTitle textPrimary revealText titleFont`}
               >
                 We are committed to deliver exceptional service and provide{" "}
+                <span className={`${styles.dreamLifestylesContant}  `}>
+                  <span className={`${styles.dreamLifestyles} d-inline-block sectBigTitle textPrimary revealText titleFont`}>
+                    dream lifestyles
+                  </span>
+                  <span className=" sectBigTitle textPrimary mb-5 revealText titleFont">
+                    to you.
+                  </span>
+                </span>
               </h3>
-              <span className={`${styles.dreamLifestylesContant}  `}>
-                <h3
-                  className={`${styles.dreamLifestyles} d-inline-block sectBigTitle textPrimary revealText titleFont`}
-                >
-                  dream lifestyles
-                </h3>
-                <h3 className="fontJakarta sectBigTitle textPrimary mb-5 revealText titleFont">
-                 to you.
-                </h3>
-              </span>
             </div>
           </div>
 
@@ -45,17 +43,17 @@ const ContactUs = () => {
                   </h4>
                 </div>
                 <div className="col-12">
-                  <label className="form-label fontJakarta">Name *</label>
+                  <label className="form-label ">Name *</label>
                   <input type="text" className="form-control" />
                   <span className="errorLabel">This field is required</span>
                 </div>
                 <div className="col-12">
-                  <label className="form-label fontJakarta">Email *</label>
+                  <label className="form-label ">Email *</label>
                   <input type="text" className="form-control" />
                   <span className="errorLabel">This field is required</span>
                 </div>
                 <div className="col-12">
-                  <label className="form-label fontJakarta">Mobile No.*</label>
+                  <label className="form-label ">Mobile No.*</label>
                   <input
                     type="text"
                     className="form-control"
@@ -66,9 +64,7 @@ const ContactUs = () => {
                   <span className="errorLabel">This field is required</span>
                 </div>
                 <div className="col-12">
-                  <label className="form-label fontJakarta">
-                    Choose Project *
-                  </label>
+                  <label className="form-label ">Choose Project *</label>
                   <select className="form-control form-select">
                     <option value=""></option>
                     <option value="">Fortune Florence, Borivali</option>
@@ -77,12 +73,12 @@ const ContactUs = () => {
                   <span className="errorLabel">This field is required</span>
                 </div>
                 <div className="col-12">
-                  <label className="form-label fontJakarta">Message</label>
+                  <label className="form-label ">Message</label>
                   <textarea className="form-control" rows="2"></textarea>
                   <span className="errorLabel">This field is required</span>
                 </div>
                 <div className="col-12 pt-3 text-center">
-                  <button className="ctaBtn fontJakarta">Submit</button>
+                  <button className="ctaBtn ">Submit</button>
                 </div>
               </form>
             </div>
@@ -114,8 +110,8 @@ const ContactUs = () => {
               </div>
             </div>
             <div className="vstack gap-4 mx-auto" style={{ maxWidth: "500px" }}>
-              <h2 className="sectTitle textGold mb-0 fontJakarta">We Are Here</h2>
-              <address className="col lh-lg mb-0 fontJakarta">
+              <h2 className="sectTitle textGold mb-0 ">We Are Here</h2>
+              <address className="col lh-lg mb-0 ">
                 <strong className="d-block textPrimary ">
                   Fortune Acres Pvt. Ltd.
                 </strong>
@@ -138,7 +134,7 @@ const ContactUs = () => {
                   >
                     <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
                   </svg>
-                  <a href="tel:+919960560199" className="fw-medium fontJakarta">
+                  <a href="tel:+919960560199" className="fw-medium ">
                     +91 99605 60199
                   </a>
                 </div>
@@ -159,7 +155,7 @@ const ContactUs = () => {
                     <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
                     <rect x="2" y="4" width="20" height="16" rx="2" />
                   </svg>
-                  <a href="mailto:info@fortunegroup.in" className="fw-medium fontJakarta">
+                  <a href="mailto:info@fortunegroup.in" className="fw-medium ">
                     info@fortunegroup.in
                   </a>
                 </div>

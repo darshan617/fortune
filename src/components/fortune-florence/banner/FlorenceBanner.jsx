@@ -104,7 +104,7 @@ const FlorenceBanner = ({
           <h2 className="titleFont textPrimary mb-4">
             Experience One In A Million Living
           </h2>
-          <p className="fs-20 fontJakarta">
+          <p className="fs-20 ">
             Where timeless architecture meets refined luxury and every moment
             feels extraordinary.
           </p>
@@ -166,7 +166,7 @@ const FlorenceBanner = ({
           <h2 className="titleFont textPrimary mb-4">
             Experience One In A Million Living
           </h2>
-          <p className="fs-20 fontJakarta">
+          <p className="fs-20 ">
             Where timeless architecture meets refined luxury and every moment
             feels extraordinary.
           </p>

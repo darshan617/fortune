@@ -14,6 +14,48 @@ const DateTimePicker = dynamic(
   { ssr: false },
 );
 
+const APPOINTMENT_TIME_MIN = "08:00";
+const APPOINTMENT_TIME_MAX = "20:00";
+
+const padTime = (n) => String(n).padStart(2, "0");
+
+const toMinutes = (hhmm) => {
+  const [hours, minutes] = hhmm.split(":").map(Number);
+  return hours * 60 + minutes;
+};
+
+const fromMinutes = (mins) => {
+  const hours = Math.floor(mins / 60);
+  const minutes = mins % 60;
+  return `${padTime(hours)}:${padTime(minutes)}`;
+};
+
+const constrainAppointmentTime = (datePicker, timePicker) => {
+  let minMins = toMinutes(APPOINTMENT_TIME_MIN);
+  const maxMins = toMinutes(APPOINTMENT_TIME_MAX);
+  const selectedDate = datePicker.value;
+
+  if (selectedDate) {
+    const now = new Date();
+    const today = `${now.getFullYear()}-${padTime(now.getMonth() + 1)}-${padTime(now.getDate())}`;
+
+    if (selectedDate === today) {
+      let nowMins = now.getHours() * 60;
+      if (now.getMinutes() > 0) {
+        nowMins += 60;
+      }
+      minMins = Math.max(minMins, nowMins);
+      if (minMins > maxMins) {
+        minMins = maxMins;
+      }
+    }
+  }
+
+  timePicker.min = fromMinutes(minMins);
+  timePicker.max = fromMinutes(maxMins);
+  timePicker.step = 3600;
+};
+
 const Navbar = () => {
   const [menuShow, setMenuShow] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
@@ -42,32 +84,129 @@ const Navbar = () => {
     const wrapper = dateTimePickerWrapperRef.current;
     if (!wrapper) return;
 
-    const applyTimeLimits = () => {
+    const hideYearScroller = (datePicker) => {
+      const yearScroller = datePicker.querySelector(
+        "vaadin-date-picker-year-scroller",
+      );
+      if (yearScroller) {
+        yearScroller.hidden = true;
+      }
+    };
+
+    let datePicker;
+    let timePicker;
+    let pickerReady = false;
+
+    const applyConstraints = () => {
+      if (!datePicker || !timePicker) return;
+      constrainAppointmentTime(datePicker, timePicker);
+    };
+
+    const onDateOpened = (event) => {
+      if (event.detail?.value) {
+        requestAnimationFrame(() => hideYearScroller(datePicker));
+      }
+    };
+
+    const onDateOrValueChanged = () => {
+      queueMicrotask(applyConstraints);
+    };
+
+    const onTimeOpened = (event) => {
+      if (event.detail?.value) {
+        applyConstraints();
+      }
+    };
+
+    const bindPickers = () => {
       const picker = wrapper.querySelector("vaadin-date-time-picker");
       if (!picker) return false;
 
-      const timePicker = picker.querySelector('[slot="time-picker"]');
-      if (!timePicker) return false;
+      timePicker = picker.querySelector('[slot="time-picker"]');
+      datePicker = picker.querySelector('[slot="date-picker"]');
+      if (!timePicker || !datePicker) return false;
 
-      timePicker.min = "08:00";
-      timePicker.max = "21:00";
+      applyConstraints();
+      hideYearScroller(datePicker);
+
+      datePicker.addEventListener("opened-changed", onDateOpened);
+      datePicker.addEventListener("value-changed", onDateOrValueChanged);
+      picker.addEventListener("value-changed", onDateOrValueChanged);
+      timePicker.addEventListener("opened-changed", onTimeOpened);
+
+      const originalUpdate = picker.__updateTimePickerMinMax?.bind(picker);
+      if (originalUpdate) {
+        picker.__updateTimePickerMinMax = () => {
+          originalUpdate();
+          applyConstraints();
+        };
+      }
+
+      pickerReady = true;
       return true;
     };
 
-    if (applyTimeLimits()) return;
+    if (bindPickers()) {
+      return () => {
+        datePicker?.removeEventListener("opened-changed", onDateOpened);
+        datePicker?.removeEventListener("value-changed", onDateOrValueChanged);
+        timePicker?.removeEventListener("opened-changed", onTimeOpened);
+        wrapper
+          .querySelector("vaadin-date-time-picker")
+          ?.removeEventListener("value-changed", onDateOrValueChanged);
+      };
+    }
 
     const observer = new MutationObserver(() => {
-      if (applyTimeLimits()) {
+      if (bindPickers()) {
         observer.disconnect();
       }
     });
 
     observer.observe(wrapper, { childList: true, subtree: true });
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (!pickerReady) return;
+      datePicker?.removeEventListener("opened-changed", onDateOpened);
+      datePicker?.removeEventListener("value-changed", onDateOrValueChanged);
+      timePicker?.removeEventListener("opened-changed", onTimeOpened);
+      wrapper
+        .querySelector("vaadin-date-time-picker")
+        ?.removeEventListener("value-changed", onDateOrValueChanged);
+    };
   }, []);
 
   const router = useRouter();
+
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about-us" },
+    { label: "Projects", href: "/projects" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Contact Us", href: "/contact-us" },
+  ];
+
+  const isNavActive = (href) => {
+    const path = router.pathname;
+
+    if (href === "/") {
+      return path === "/" || path === "/home";
+    }
+    if (href === "/projects") {
+      return (
+        path.startsWith("/projects") ||
+        path.startsWith("/fortune_florence") ||
+        path.startsWith("/fortune_venetian") ||
+        path.startsWith("/apartments")
+      );
+    }
+    if (href === "/blogs") {
+      return path.startsWith("/blogs") || path.startsWith("/blog-details");
+    }
+
+    return path === href || path.startsWith(`${href}/`);
+  };
 
   const dateTimeRange = React.useMemo(() => {
     const pad = (n) => String(n).padStart(2, "0");
@@ -76,7 +215,8 @@ const Navbar = () => {
 
     const min = new Date();
     const max = new Date();
-    max.setDate(max.getDate() + 30);
+    max.setDate(max.getDate() + 29);
+    max.setHours(20, 0, 0, 0);
 
     return { min: format(min), max: format(max) };
   }, []);
@@ -111,21 +251,6 @@ const Navbar = () => {
               />
             </a>
           </div>
-          {/* <div className="col-md-4 col-auto text-end">
-            <a href="/contact-us">
-              <span
-                className="ctaBtn headEnquiryBtn"
-                style={{ "--btnWidth": "30px" }}
-              >
-                <span
-                  className="d-none d-md-block"
-                  style={{ fontFamily: "var(--font-jakarta)" }}
-                >
-                  Enquire Now
-                </span>
-              </span>
-            </a>
-          </div> */}
           <div className="col d-flex gap-sm-2 gap-1 justify-content-end">
             <div
               data-bs-toggle="tooltip"
@@ -210,31 +335,22 @@ const Navbar = () => {
               <ul
                 className={`${styles.naviWrap} titleFont d-flex flex-column text-uppercase py-5`}
               >
-                <li>
-                  <a onClick={() => router.push("/")}>
-                    <span>Home</span>
-                  </a>
-                </li>
-                <li>
-                  <a onClick={() => router.push("/about-us")}>
-                    <span>About Us</span>
-                  </a>
-                </li>
-                <li>
-                  <a onClick={() => router.push("/projects")}>
-                    <span>Projects</span>
-                  </a>
-                </li>
-                <li>
-                  <a onClick={() => router.push("/blogs")}>
-                    <span>Blogs</span>
-                  </a>
-                </li>
-                <li>
-                  <a onClick={() => router.push("/contact-us")}>
-                    <span>Contact Us</span>
-                  </a>
-                </li>
+                {navItems.map((item) => (
+                  <li
+                    key={item.href}
+                    className={isNavActive(item.href) ? styles.active : ""}
+                  >
+                    <a
+                      onClick={() => {
+                        setMenuShow(false);
+                        router.push(item.href);
+                      }}
+                      aria-current={isNavActive(item.href) ? "page" : undefined}
+                    >
+                      <span>{item.label}</span>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -261,7 +377,7 @@ const Navbar = () => {
               Book An Appointment
             </h4>
           </div>
-          <div className="col-12 fontJakarta">
+          <div className="col-12 ">
             <label className="form-label">Choose Project *</label>
             <select className="form-control form-select">
               <option value=""></option>
@@ -272,49 +388,44 @@ const Navbar = () => {
               This field is required
             </span>
           </div>
-          <div className="col-12 fontJakarta">
+          <div className="col-12 ">
             <label className="form-label">Date & Time*</label>
-            <div ref={dateTimePickerWrapperRef}>
+            <div
+              ref={dateTimePickerWrapperRef}
+              className={styles.dateTimePicker}
+            >
               <DateTimePicker
                 min={dateTimeRange.min}
                 max={dateTimeRange.max}
-                className="form-control"
-                style={{
-                  border: "none",
-                  borderBottom: "1px solid #ddd",
-                  borderRadius: "0",
-                  fontSize: "1rem",
-                  paddingLeft: "0.1rem",
-                  backgroundColor: "transparent",
-                }}
+                step={3600}
               />
             </div>
             <span className={`${styles.errorLabel}`}>
               This field is required
             </span>
           </div>
-          <div className="col-12 fontJakarta">
+          <div className="col-12 ">
             <label className="form-label">Name *</label>
             <input type="text" className="form-control" />
             <span className={`${styles.errorLabel}`}>
               This field is required
             </span>
           </div>
-          <div className="col-12 fontJakarta">
+          <div className="col-12 ">
             <label className="form-label">Email *</label>
             <input type="text" className="form-control" />
             <span className={`${styles.errorLabel}`}>
               This field is required
             </span>
           </div>
-          <div className="col-12 fontJakarta">
+          <div className="col-12 ">
             <label className="form-label">Mobile No.*</label>
             <input type="text" className="form-control" />
             <span className={`${styles.errorLabel}`}>
               This field is required
             </span>
           </div>
-          <div className="col-12 pt-3 text-center fontJakarta">
+          <div className="col-12 pt-3 text-center ">
             <button className="ctaBtn">Submit</button>
           </div>
         </form>
