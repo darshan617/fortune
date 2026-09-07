@@ -42,10 +42,10 @@ const BlogDetail = () => {
               >
                 <Image
                   src={blogImage}
-                  className={`${styles.blogImg} w-100`}
+                  className={`${styles.blogImgBanner} w-100`}
                   alt="Blog Image"
                   width={1000}
-                  height={700}
+                  height={600}
                 />
               </div>
 

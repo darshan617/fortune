@@ -141,12 +141,12 @@ const About = () => {
                     "We don't just build structures — we create sanctuaries
                     where generations begin their finest chapters. Every detail,
                     every material, every space is a{" "}
-                    <span
+                    <i
                       className="textGold fw-normal"
                       style={{ fontStyle: "italic" }}
                     >
                       promises kept
-                    </span>
+                    </i>
                     <span className="sectBigTitle text-white">."</span>
                   </h3>
                 </blockquote>
