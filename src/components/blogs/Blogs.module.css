@@ -10,7 +10,7 @@
 }
 .blogImg {
   width: 100% !important;
-  height: 700px !important;
+  /* height: 700px !important; */
   object-fit: cover !important;
   object-position: center !important;
 }
@@ -93,7 +93,7 @@
 }
 .pgBtn:hover,
 .pgBtn:focus {
-  background: var(--gold);
+  background: #d4af37;
   color: #fff !important;
 }
 .pgBtn svg {

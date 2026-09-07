@@ -30,7 +30,7 @@ const BlogDetail = () => {
               <div className="d-flex gap-4 mb-4 align-items-center animateThis curtain">
                 <div className="col bgGold" style={{ height: "1px" }}></div>
                 <div
-                  className={`${styles.blogDate} col-auto rounded textGold animateThis fadeGrow fontJakarta`}
+                  className={`${styles.blogDate} col-auto rounded textGold animateThis fadeGrow `}
                 >
                   05-03-2025
                 </div>
@@ -49,7 +49,7 @@ const BlogDetail = () => {
                 />
               </div>
 
-              <div className={`${styles.blogContent} fs-20 fontJakarta`}>
+              <div className={`${styles.blogContent} fs-20 `}>
                 <p>
                   Bengaluru’s real estate story is no longer limited to its
                   traditional core. For decades, buyers looked towards
@@ -511,18 +511,18 @@ const BlogDetail = () => {
                       <Image
                         src={blogImage}
                         alt=""
-                        className="blogImg w-100"
+                        className={`${styles.blogImg} w-100`}
                         width={1000}
-                        height={700}
+                        height={400}
                       />
                     </div>
                     <div className="p-4">
                       <div className={`${styles.blogDate} textGold mb-2`}>05-03-2025</div>
-                      <h3 className={`${styles.blogHead} titleFont fs-20 lh-base mb-3 fontJakarta`}>
+                      <h3 className={`${styles.blogHead} titleFont fs-20 lh-base mb-3 `}>
                         The Rise of the Peripheral City: Why the Edges of
                         Bengaluru Are Getting More Attention
                       </h3>
-                      <p className="fontJakarta">
+                      <p className="">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Sequi fuga quo ducimus ipsum autem? Vero voluptatum, ...
                       </p>
@@ -531,7 +531,7 @@ const BlogDetail = () => {
                   </div>
                 </div>
 
-                <div className="col animateThis fadeGrow fontJakarta">
+                <div className="col animateThis fadeGrow ">
                   <div className={`${styles.blogItem} rounded-4 d-flex flex-column h-100`}>
                     <div className={`${styles.blogThumb} rounded-3 overflow-hidden`}>
                       <Image
@@ -539,16 +539,16 @@ const BlogDetail = () => {
                         alt=""
                         className={`${styles.blogImg} w-100`}
                         width={1000}
-                        height={700}
+                        height={400}
                       />
                     </div>
                     <div className="p-4">
                       <div className={`${styles.blogDate} textGold mb-2`}>05-03-2025</div>
-                      <h3 className={`${styles.blogHead} titleFont fs-20 lh-base mb-3 fontJakarta`}>
+                      <h3 className={`${styles.blogHead} titleFont fs-20 lh-base mb-3 `}>
                         The Sunday Test: What Your Home Feels Like When You're
                         Not in a Hurry
                       </h3>
-                      <p className="fontJakarta">
+                      <p className="">
                         Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit. Ratione illum accusamus cupiditate quas odio ut id
                         ...
@@ -558,7 +558,7 @@ const BlogDetail = () => {
                   </div>
                 </div>
 
-                <div className="col animateThis fadeGrow fontJakarta">
+                <div className="col animateThis fadeGrow ">
                   <div className={`${styles.blogItem} rounded-4 d-flex flex-column h-100`}>
                     <div className={`${styles.blogThumb} rounded-3 overflow-hidden`}>
                       <Image
@@ -566,7 +566,7 @@ const BlogDetail = () => {
                         alt=""
                         className={`${styles.blogImg} w-100`}
                         width={1000}
-                        height={700}
+                        height={400}
                       />
                     </div>
                     <div className="p-4">

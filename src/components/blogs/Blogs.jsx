@@ -16,7 +16,7 @@ const Blogs = () => {
       <div className="container-fluid" style={{ paddingTop: "15vh" }}>
         <div className="row justify-content-between g-4 mb-4">
           <div className="col-md text-center mb-5">
-            <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
+            <h2 className="sectTitle textGold mb-3 revealText ">
               Blogs
             </h2>
             <h3 className="sectBigTitle titleFont textPrimary mb-0 revealText">

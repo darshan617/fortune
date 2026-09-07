@@ -9,6 +9,22 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
+const syncFancyboxBackdrop = (instance) => {
+  const slide = instance.getSlide();
+  const src =
+    slide?.src ||
+    slide?.triggerEl?.getAttribute("href") ||
+    slide?.el?.querySelector("img")?.currentSrc ||
+    slide?.el?.querySelector("img")?.src;
+  const backdrop =
+    instance.getContainer?.()?.querySelector(".fancybox__backdrop") ||
+    document.querySelector(".fancybox__backdrop");
+
+  if (backdrop && src) {
+    backdrop.style.setProperty("--fancybox-bg-image", `url("${src}")`);
+  }
+};
+
 const Gallery = ({ images = [] }) => {
   useEffect(() => {
     let Fancybox = null;
@@ -21,6 +37,9 @@ const Gallery = ({ images = [] }) => {
 
         if (Fancybox) {
           Fancybox.bind("[data-fancybox]", {
+            on: {
+              "Carousel.ready Carousel.change": syncFancyboxBackdrop,
+            },
             Carousel: {
               Thumbs: false,
               Toolbar: {
@@ -57,7 +76,7 @@ const Gallery = ({ images = [] }) => {
     <section className="sitePadding py-5">
       <div className="container-fluid py-4">
         <div className="text-center mb-5">
-          <h2 className="sectTitle textGold mb-3 revealText fontJakarta">Gallery</h2>
+          <h2 className="sectTitle textGold mb-3 revealText ">Gallery</h2>
           <h3 className="mb-4 titleFont sectBigTitle textPrimary revealText">
             A Glimpse of the Extraordinary
           </h3>

@@ -27,26 +27,23 @@ const AboutBanner = () => {
         <div className="col-md-6 col-12 position-relative z-1">
           <div className={`${styles.motoMain} d-flex align-items-center`}>
             <div className="container-fluid py-5 py-md-0">
-              
-                <strong className="sectTitle textGold mb-3 revealText fontJakarta">
-                  We are driven by our motto
-                </strong>
-                
-                <h1 className="sectBigTitle titleFont textPrimary revealText">
-                  Relentless Dedication to{" "}
-                </h1>{" "}
-                <div className="d-flex gap-3">
-                <h1 className="textGold sectBigTitle titleFont textPrimary revealText" style={{ fontStyle: "italic" }}>
+              <strong className="sectTitle textGold mb-3 revealText ">
+                We are driven by our motto
+              </strong>
+              <h1 className="sectBigTitle titleFont textPrimary revealText">
+                Relentless Dedication to{" "}
+                <span
+                  className="textGold sectBigTitle titleFont textPrimary revealText"
+                  style={{ fontStyle: "italic" }}
+                >
                   Your
-                </h1>{" "}
-                <h1 className="sectBigTitle titleFont textPrimary revealText">
-                  Satisfaction
-                </h1>
-              </div>
+                </span>{" "}
+                Satisfaction
+              </h1>
             </div>
           </div>
           <div className="sitePadding d-flex align-items-center">
-            <div className={`${styles.aboutPgContent} fs-20 text-body fontJakarta`}>
+            <div className={`${styles.aboutPgContent} fs-20 text-body `}>
               <div className="container-fluid mb-5 mb-md-0">
                 <h2 className="sectTitle textGold mb-3 animateThis fadeIn">
                   About Fortune Group
@@ -79,11 +76,14 @@ const AboutBanner = () => {
       <section className="sitePadding bgPrimary py-3">
         <div className="container-fluid text-center text-white py-5 d-lg-flex align-items-center justify-content-center gap-3 d-md-block">
           <h2 className="sectBigTitle titleFont revealText fw-normal mb-0">
-            A Legacy of delivering
+            A Legacy of delivering{" "}
+            <span
+              className="textGold sectBigTitle titleFont revealText fw-normal"
+              style={{ fontStyle: "italic" }}
+            >
+              promises
+            </span>
           </h2>
-          <span className="textGold sectBigTitle titleFont revealText fw-normal" style={{ fontStyle: "italic" }}>
-            promises
-          </span>
         </div>
       </section>
 
@@ -115,7 +115,7 @@ const AboutBanner = () => {
                   </svg>
                 </div>
                 <h3 className={`${styles.invHead} titleFont mb-0`}>Mission</h3>
-                <p className={`${styles.invTxt} lh-lg mb-0 fontJakarta`}>
+                <p className={`${styles.invTxt} lh-lg mb-0 `}>
                   Transforming lives through innovative and customer-centric
                   real estate developments, Fortune Acres Pvt. Ltd. aims at
                   creating architectural marvels that evoke joy, prosperity, and
@@ -151,7 +151,7 @@ const AboutBanner = () => {
                   </svg>
                 </div>
                 <h3 className={`${styles.invHead} titleFont mb-0`}>Vision</h3>
-                <p className={`${styles.invTxt} lh-lg mb-0 fontJakarta`}>
+                <p className={`${styles.invTxt} lh-lg mb-0 `}>
                   Our vision is to selflessly prioritize client's interests,
                   providing prime property locations with seamless connectivity
                   to nature and maximum benefits. With a focus on exceeding
@@ -187,7 +187,7 @@ const AboutBanner = () => {
                   </svg>
                 </div>
                 <h3 className={`${styles.invHead} titleFont mb-0`}>Values</h3>
-                <p className={`${styles.invTxt} lh-lg mb-0 fontJakarta`}>
+                <p className={`${styles.invTxt} lh-lg mb-0 `}>
                   Our values drive our growth, treating every client as family
                   and delivering unmatched service and quality. We prioritize
                   respect, transparency, and continuous improvement, offering

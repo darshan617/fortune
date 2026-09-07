@@ -5,7 +5,6 @@ import styles from "@/components/Layout/footer/Footer.module.css";
 import { useRouter } from "next/router";
 
 const Footer = () => {
-
   const [showUsefulLinks, setShowUsefulLinks] = useState(false);
   const router = useRouter();
   return (
@@ -50,10 +49,10 @@ const Footer = () => {
                 className="col-xl-auto col-lg col-md-4 col-sm-6 col-12 animateThis slideRight"
                 style={{ transitionDelay: ".3s" }}
               >
-                <h5 className={`${styles.footHead} textPink fw-semibold mb-4 fontJakarta`}>
+                <h5 className={`${styles.footHead} textPink fw-semibold mb-4 `}>
                   Quick Links
                 </h5>
-                <ul className={`${styles.footLinks} vstack gap-lg-3 gap-2 fontJakarta`}>
+                <ul className={`${styles.footLinks} vstack gap-lg-3 gap-2 `}>
                   <li>
                     <a onClick={() => router.push("/")}>Home</a>
                   </li>
@@ -161,7 +160,7 @@ const Footer = () => {
               >
                 <div>
                   <h5
-                    className={`${styles.footHead} textPink fw-semibold mb-4 fontJakarta`}
+                    className={`${styles.footHead} textPink fw-semibold mb-4 `}
                   >
                     Social Media
                   </h5>
@@ -222,65 +221,88 @@ const Footer = () => {
         </div>
 
         <div className="vstack justify-content-center">
-        <button
-          className={`${styles.quickBtn} text-uppercase btn hstack gap-2 rounded-bottom-0 fw-semibold align-self-center fontJakarta`}
-          onClick={() => setShowUsefulLinks((prev) => !prev)}
-          aria-expanded={showUsefulLinks}
-          aria-controls="usefulLinks"
-        >
-          Useful Links
-        </button>
-        <div
-          className={`collapse ${showUsefulLinks ? "show" : ""}`}
-          id="usefulLinks"
-        >
-          <div className={`${styles.footCopy} vstack gap-4 py-4`}>
-            <div className={`${styles.sitewide}`}>
-              <h4 className={`${styles.footHead} fw-semibold mb-3 fontJakarta`}>
-                Projects by Locality
-              </h4>
-              <ul className={`${styles.swLinks} fontJakarta`}>
-                <li><a onClick={() => router.push("/apartments")}>Apartments in Borivali</a></li>
-                <li><a onClick={() => router.push("/apartments")}>Apartments in Andheri</a></li>
-                <li><a onClick={() => router.push("/apartments")}>Apartments in Mumbai Suburbs</a></li>
-                <li><a onClick={() => router.push("/apartments")}>Apartments in Mumbai</a></li>
-                <li><a onClick={() => router.push("/apartments")}>Apartments in Borivali</a></li>
-              </ul>
-            </div>
+          <button
+            type="button"
+            className={`${styles.quickBtn} text-uppercase btn hstack gap-2 rounded-bottom-0 fw-semibold align-self-center`}
+            onClick={() => setShowUsefulLinks((prev) => !prev)}
+            aria-expanded={showUsefulLinks}
+            aria-controls="usefulLinks"
+          >
+            Useful Links
+          </button>
+          <div
+            id="usefulLinks"
+            className={`${styles.usefulLinks} ${showUsefulLinks ? styles.usefulLinksOpen : ""}`}
+          >
+            <div className={styles.usefulLinksInner}>
+              <div className={`${styles.footCopy} vstack gap-4 py-4`}>
+              <div className={`${styles.sitewide}`}>
+                <h4 className={`${styles.footHead} fw-semibold mb-3 `}>
+                  Projects by Locality
+                </h4>
+                <ul className={`${styles.swLinks} `}>
+                  <li>
+                    <a onClick={() => router.push("/apartments")}>
+                      Apartments in Borivali
+                    </a>
+                  </li>
+                  <li>
+                    <a onClick={() => router.push("/apartments")}>
+                      Apartments in Andheri
+                    </a>
+                  </li>
+                  <li>
+                    <a onClick={() => router.push("/apartments")}>
+                      Apartments in Mumbai Suburbs
+                    </a>
+                  </li>
+                  <li>
+                    <a onClick={() => router.push("/apartments")}>
+                      Apartments in Mumbai
+                    </a>
+                  </li>
+                  <li>
+                    <a onClick={() => router.push("/apartments")}>
+                      Apartments in Borivali
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-            <div className={`${styles.sitewide}`}>
-              <h4 className={`${styles.footHead} fw-semibold mb-3 fontJakarta`}>
-                Popular Blogs
-              </h4>
-              <ul className={`${styles.swLinks} fontJakarta`}>
-                <li>
-                  <a href="">
-                    The Sunday Test: What Your Home Feels Like When
-                    You&apos;re Not in a Hurry
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    Best Cafes and Restaurants near Purva Heritage, Kudlu Gate
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    The Rise of the Peripheral City: Why the Edges of
-                    Bengaluru Are Getting More Attention
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    The Psychology Behind the &apos;One Last Visit&apos;
-                    Before Booking
-                  </a>
-                </li>
-              </ul>
+              <div className={`${styles.sitewide}`}>
+                <h4 className={`${styles.footHead} fw-semibold mb-3 `}>
+                  Popular Blogs
+                </h4>
+                <ul className={`${styles.swLinks} `}>
+                  <li>
+                    <a href="">
+                      The Sunday Test: What Your Home Feels Like When
+                      You&apos;re Not in a Hurry
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      Best Cafes and Restaurants near Purva Heritage, Kudlu Gate
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      The Rise of the Peripheral City: Why the Edges of
+                      Bengaluru Are Getting More Attention
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      The Psychology Behind the &apos;One Last Visit&apos;
+                      Before Booking
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
             </div>
           </div>
         </div>
-      </div>
 
         <div
           className={`${styles.footCopy} text-center py-4 d-flex flex-wrap justify-content-between`}

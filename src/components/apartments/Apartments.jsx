@@ -41,7 +41,7 @@ const Apartments = () => {
       >
         <div className="row justify-content-center mb-5">
           <div className="col-12 mb-4 text-center vstack">
-            <h2 className="sectTitle textGold revealText fontJakarta">
+            <h2 className="sectTitle textGold revealText ">
               Projects by Locality
             </h2>
             <h1 className="sectBigTitle titleFont textPrimary mb-3 revealText">
@@ -56,7 +56,7 @@ const Apartments = () => {
               <Image src={banner} alt="Banner" className="w-100 h-100" />
             </div>
 
-            <div className={`${styles.blogContent} fs-20 mb-5 fontJakarta`}>
+            <div className={`${styles.blogContent} fs-20 mb-5 `}>
               <p>
                 Borivali, a vibrant locality in West Mumbai, is becoming
                 increasingly popular among homebuyers and renters alike. With a
@@ -170,7 +170,7 @@ const Apartments = () => {
                           </div>
                           <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
                             <div className="pitemHead d-flex justify-content-between align-items-start">
-                              <div className="projStatus badge bgGold lh-sm fw-normal px-3 fontJakarta">
+                              <div className="projStatus badge bgGold lh-sm fw-normal px-3 ">
                                 Ongoing Project
                               </div>
                               <div className={styles.projLogo}>
@@ -189,7 +189,7 @@ const Apartments = () => {
                                   Fortune Florence
                                 </h3>
                                 <div
-                                  className={`${styles.projLocation} fontJakarta`}
+                                  className={`${styles.projLocation} `}
                                 >
                                   Borivali East, Mumbai
                                 </div>
@@ -226,7 +226,7 @@ const Apartments = () => {
                           </div>
                           <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
                             <div className="pitemHead d-flex justify-content-between align-items-start">
-                              <div className="projStatus badge bgGold lh-sm fw-normal px-3 fontJakarta">
+                              <div className="projStatus badge bgGold lh-sm fw-normal px-3 ">
                                 New Launch
                               </div>
                               <div className={styles.projLogo}>
@@ -245,7 +245,7 @@ const Apartments = () => {
                                   Fortune Venetian
                                 </h3>
                                 <div
-                                  className={`${styles.projLocation} fontJakarta`}
+                                  className={`${styles.projLocation} `}
                                 >
                                   Andheri West, Mumbai
                                 </div>

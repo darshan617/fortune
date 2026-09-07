@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -476,6 +477,14 @@ export default function App({ Component, pageProps }) {
     <div
       className={`${playfair.variable} ${jakarta.variable}`}
     >
+      <Head>
+        <style>{`
+          :root {
+            --font-jakarta: ${jakarta.style.fontFamily};
+            --font-playfair: ${playfair.style.fontFamily};
+          }
+        `}</style>
+      </Head>
       <Component {...pageProps} />
 
       <button className="scrollToTop">
