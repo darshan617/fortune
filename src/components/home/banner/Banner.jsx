@@ -22,7 +22,7 @@ const Banner = () => {
           <h1 className={`${styles.heroHead} titleFont fw-normal revealText`}>
             A Legacy of Delivering Promises.
           </h1>
-          <p className={`${styles.heroTxt} fs-20 revealText fontJakarta `}>
+          <p className={`${styles.heroTxt} fs-20 revealText  `}>
             Experience thoughtfully crafted residences where timeless
             architecture, exceptional craftsmanship, and premium living come
             together.

@@ -22,7 +22,7 @@ const HomeComponents = () => {
       {/* <Counter /> */}
       <About />
       <FeaturedProject 
-       title={<h2 className="sectTitle textGold mb-3 revealText fontJakarta">Featured Projects</h2>}
+       title={<h2 className="sectTitle textGold mb-3 revealText ">Featured Projects</h2>}
        description={<h3 className="sectBigTitle titleFont textPrimary mb-0 revealText mb-3">Our Signature <br /> Addresses</h3>}
        projectImage1={projectImages1}
        projectImage1Hover={projectImagesHover}

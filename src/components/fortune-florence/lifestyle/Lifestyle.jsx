@@ -12,6 +12,22 @@ import yoga from "@/assets/images/florence/yoga.webp";
 import toddler from "@/assets/images/florence/toddler.webp";
 import styles from "@/components/fortune-florence/lifestyle/Lifestyle.module.css";
 
+const syncFancyboxBackdrop = (instance) => {
+  const slide = instance.getSlide();
+  const src =
+    slide?.src ||
+    slide?.triggerEl?.getAttribute("href") ||
+    slide?.el?.querySelector("img")?.currentSrc ||
+    slide?.el?.querySelector("img")?.src;
+  const backdrop =
+    instance.getContainer?.()?.querySelector(".fancybox__backdrop") ||
+    document.querySelector(".fancybox__backdrop");
+
+  if (backdrop && src) {
+    backdrop.style.setProperty("--fancybox-bg-image", `url("${src}")`);
+  }
+};
+
 const Lifestyle = ({
   flatImage,
   flatImageName,
@@ -56,6 +72,9 @@ const Lifestyle = ({
       fancyboxRef = Fancybox;
       Fancybox.bind("[data-fancybox]", {
         groupAll: true,
+        on: {
+          "Carousel.ready Carousel.change": syncFancyboxBackdrop,
+        },
         Carousel: {
           Thumbs: false,
           Toolbar: {
@@ -117,7 +136,7 @@ const Lifestyle = ({
         <div className="container-fluid text-white py-5">
           <div className="row justify-content-between align-items-center mb-sm-5 mb-4">
             <div className="col-xxl-6 col-lg-6">
-              <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
+              <h2 className="sectTitle textGold mb-3 revealText ">
                 Fortune Lifestyle Amenities
               </h2>
               <h3 className="sectBigTitle titleFont mb-lg-0 mb-4 revealText">
@@ -125,7 +144,7 @@ const Lifestyle = ({
               </h3>
             </div>
             <div className="col-xxl-4 col-xl-5 col-lg-6 ps-lg-4 ps-xl-0">
-              <p className="lh-lg animateThis slideRight curtainLeft fontJakarta">
+              <p className="lh-lg animateThis slideRight curtainLeft ">
                 Experience a thoughtfully curated collection of world-class
                 amenities designed to elevate your everyday living, offering the
                 perfect balance of comfort, wellness, leisure, and security.
@@ -148,7 +167,7 @@ const Lifestyle = ({
                 </h4>
               </div>
               <div
-                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft fontJakarta`}
+                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft `}
               >
                 Relax and unwind in beautifully landscaped gardens.
               </div>
@@ -166,7 +185,7 @@ const Lifestyle = ({
                 <h4 className={`${styles.amntHead} titleFont`}>Gymnasium</h4>
               </div>
               <div
-                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft fontJakarta`}
+                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft `}
               >
                 Stay fit and healthy with a state-of-the-art gym.
               </div>
@@ -186,7 +205,7 @@ const Lifestyle = ({
                 </h4>
               </div>
               <div
-                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft fontJakarta`}
+                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft `}
               >
                 Take a refreshing dip in the swimming pool.
               </div>
@@ -206,7 +225,7 @@ const Lifestyle = ({
                 </h4>
               </div>
               <div
-                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft fontJakarta`}
+                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft `}
               >
                 A safe and fun space for children to play and grow.
               </div>
@@ -226,7 +245,7 @@ const Lifestyle = ({
                 </h4>
               </div>
               <div
-                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft fontJakarta`}
+                className={`${styles.amntTxt} col d-flex align-items-center ps-md-4 ps-3 animateThis curtainLeft `}
               >
                 Enjoy peace of mind with round-the-clock security and
                 surveillance.
@@ -292,7 +311,7 @@ const Lifestyle = ({
       <section className="sitePadding py-5">
         <div className="container-fluid py-4">
           <div className="text-center mb-5">
-            <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
+            <h2 className="sectTitle textGold mb-3 revealText ">
               Thoughtfully Designed Homes
             </h2>
             <h3 className="mb-4 titleFont sectBigTitle textPrimary revealText">
@@ -300,7 +319,7 @@ const Lifestyle = ({
             </h3>
           </div>
 
-          <div className="row gy-3 gx-0 justify-content-end floorList fontJakarta">
+          <div className="row gy-3 gx-0 justify-content-end floorList ">
             <FloorPlanItem
               image={flatImage}
               name={flatImageName}

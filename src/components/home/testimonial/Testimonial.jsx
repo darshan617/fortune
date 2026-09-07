@@ -74,7 +74,7 @@ const Testimonial = () => {
     <section className={`${styles.testimonialSection}" py-5 overflow-hidden bg-white`}>
       <div className="w-100 py-5">
         <div className="text-center mb-5">
-          <h2 className="sectTitle textGold mb-3 revealText fontJakarta">TESTIMONIALS</h2>
+          <h2 className="sectTitle textGold mb-3 revealText ">TESTIMONIALS</h2>
           <h3 className="sectBigTitle titleFont textPrimary mb-0 revealText">
             Voices of Trust
           </h3>
@@ -92,10 +92,10 @@ const Testimonial = () => {
                     <div className={`${styles.tiUser} ti_user pt-4 d-flex align-items-center gap-3`}>
                       <div className={`${styles.tiUserImg} ti_userImg rounded-circle overflow-hidden`}></div>
                       <div className={`${styles.tiUserInfo}`}>
-                        <strong className={`${styles.tiUserName} ti_userName d-block fw-bold textGold fontJakarta`}>
+                        <strong className={`${styles.tiUserName} ti_userName d-block fw-bold textGold `}>
                           {item.name}
                         </strong>
-                        <small className="fontJakarta">{item.info}</small>
+                        <small className="">{item.info}</small>
                       </div>
                     </div>
                   </div>

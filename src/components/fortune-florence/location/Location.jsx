@@ -34,8 +34,8 @@ const Location = () => {
                   <div className="lbLoc d-flex gap-3 align-items-center">
                     <Image src={railway} alt="" />
                     <div>
-                      <div className={`${styles.lbTime} mb-1 fontJakarta`}>5 Min</div>
-                      <span className="fontJakarta">Borivali Railway Station</span>
+                      <div className={`${styles.lbTime} mb-1 `}>5 Min</div>
+                      <span className="">Borivali Railway Station</span>
                     </div>
                   </div>
                 </div>
@@ -45,8 +45,8 @@ const Location = () => {
                   <div className="lbLoc d-flex gap-3 align-items-center">
                     <Image src={metro} alt="" />
                     <div>
-                      <div className={`${styles.lbTime} mb-1 fontJakarta`}>3 Min</div>
-                      <span className="fontJakarta">Magthane Metro Station</span>
+                      <div className={`${styles.lbTime} mb-1 `}>3 Min</div>
+                      <span className="">Magthane Metro Station</span>
                     </div>
                   </div>
                 </div>
@@ -56,8 +56,8 @@ const Location = () => {
                   <div className="lbLoc d-flex gap-3 align-items-center">
                     <Image src={road} alt="" />
                     <div>
-                      <div className={`${styles.lbTime} mb-1 fontJakarta`}>2 Min</div>
-                      <span className="fontJakarta">Western Express Highway</span>
+                      <div className={`${styles.lbTime} mb-1 `}>2 Min</div>
+                      <span className="">Western Express Highway</span>
                     </div>
                   </div>
                 </div>
@@ -67,8 +67,8 @@ const Location = () => {
                   <div className="lbLoc d-flex gap-3 align-items-center">
                     <Image src={hospital} alt="" />
                     <div>
-                      <div className={`${styles.lbTime} mb-1 fontJakarta`}>5 Min</div>
-                      <span className="fontJakarta">Leading Hospitals</span>
+                      <div className={`${styles.lbTime} mb-1 `}>5 Min</div>
+                      <span className="">Leading Hospitals</span>
                     </div>
                   </div>
                 </div>
@@ -78,8 +78,8 @@ const Location = () => {
                   <div className="lbLoc d-flex gap-3 align-items-center">
                     <Image src={school} alt="" />
                     <div>
-                      <div className={`${styles.lbTime} mb-1 fontJakarta`}>5 Min</div>
-                      <span className="fontJakarta">Top Schools</span>
+                      <div className={`${styles.lbTime} mb-1 `}>5 Min</div>
+                      <span className="">Top Schools</span>
                     </div>
                   </div>
                 </div>
@@ -89,8 +89,8 @@ const Location = () => {
                   <div className="lbLoc d-flex gap-3 align-items-center">
                     <Image src={mall} alt="" />
                     <div>
-                      <div className={`${styles.lbTime} mb-1 fontJakarta`}>5 Min</div>
-                      <span className="fontJakarta">Shopping Mall</span>
+                      <div className={`${styles.lbTime} mb-1 `}>5 Min</div>
+                      <span className="">Shopping Mall</span>
                     </div>
                   </div>
                 </div>

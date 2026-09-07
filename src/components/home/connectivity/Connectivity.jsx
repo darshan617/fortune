@@ -94,7 +94,7 @@ const Connectivity = () => {
         <div className="container-fluid py-5">
           <div className="row justify-content-between">
             <div className="col-lg-5 align-self-center mb-5 mb-lg-0">
-              <h2 className="sectTitle textGold mb-3 revealText fontJakarta">
+              <h2 className="sectTitle textGold mb-3 revealText ">
                 CONNECTIVITY
               </h2>
               <h3 className="sectBigTitle titleFont textPrimary mb-3 revealText">
@@ -106,7 +106,7 @@ const Connectivity = () => {
               </p>
 
               <div
-                className={`${styles.projStatusBar} rounded-pill d-inline-flex gap-2 p-3 lh-1 animateThis fadeShrink fontJakarta  `}
+                className={`${styles.projStatusBar} rounded-pill d-inline-flex gap-2 p-3 lh-1 animateThis fadeShrink   `}
                 
               >
                 <span style={{ fontSize: "1.75rem", lineHeight: ".5rem" }}>
@@ -154,7 +154,7 @@ const Connectivity = () => {
       <section className="py-5">
         <div className="w-100 py-4">
           <div className="container-fluid">
-            <h2 className="sectTitle textGold text-center mb-5 revealText fontJakarta">
+            <h2 className="sectTitle textGold text-center mb-5 revealText ">
               TRUSTED MATERIAL & TECHNOLOGY PARTNERS
             </h2>
           </div>

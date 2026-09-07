@@ -125,6 +125,18 @@
   }
 }
 
+.usefulLinks {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s ease;
+}
+.usefulLinksOpen {
+  grid-template-rows: 1fr;
+}
+.usefulLinksInner {
+  overflow: hidden;
+  min-height: 0;
+}
 .quickBtn,
 .quickBtn:hover,
 .quickBtn:focus,
@@ -156,6 +168,7 @@
   line-height: 1.2;
   margin-bottom: 1rem;
   display: inline-block;
+  cursor: pointer;
 }
 .swLinks li:last-child {
   border-right: 0;
@@ -163,4 +176,17 @@
 .swLinks a:not(:hover) {
   opacity: 0.75;
   font-weight: 300;
+}
+@media (min-width: 576px) {
+  .footLogo {
+    max-width: 200px;
+  }
+  .scrollToTop {
+    width: 45px;
+    height: 45px;
+    margin: 1rem;
+    &:after {
+      padding: 4px;
+    }
+  }
 }
