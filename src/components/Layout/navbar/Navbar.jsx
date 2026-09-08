@@ -84,13 +84,50 @@ const Navbar = () => {
     const wrapper = dateTimePickerWrapperRef.current;
     if (!wrapper) return;
 
-    const hideYearScroller = (datePicker) => {
+    const monthIndexFromToday = (date) => {
+      const now = new Date();
+      return (
+        (date.getFullYear() - now.getFullYear()) * 12 +
+        (date.getMonth() - now.getMonth())
+      );
+    };
+
+    const constrainCalendarOverlay = (datePicker) => {
       const yearScroller = datePicker.querySelector(
         "vaadin-date-picker-year-scroller",
       );
       if (yearScroller) {
         yearScroller.hidden = true;
       }
+
+      const overlayContent = datePicker.querySelector(
+        "vaadin-date-picker-overlay-content",
+      );
+      const monthScroller =
+        overlayContent?.querySelector("vaadin-date-picker-month-scroller") ||
+        datePicker.querySelector("vaadin-date-picker-month-scroller");
+      if (!monthScroller) return;
+
+      const maxDate = new Date();
+      maxDate.setDate(maxDate.getDate() + 30);
+      const maxMonthIndex = Math.max(0, monthIndexFromToday(maxDate));
+
+      const clampMonthScroller = () => {
+        const position = monthScroller.position;
+        if (typeof position !== "number") return;
+        if (position < 0) {
+          monthScroller.position = 0;
+        } else if (position > maxMonthIndex) {
+          monthScroller.position = maxMonthIndex;
+        }
+      };
+
+      if (!monthScroller.__appointmentRangeClamped) {
+        monthScroller.addEventListener("custom-scroll", clampMonthScroller);
+        monthScroller.__appointmentRangeClamped = true;
+      }
+
+      clampMonthScroller();
     };
 
     let datePicker;
@@ -104,7 +141,7 @@ const Navbar = () => {
 
     const onDateOpened = (event) => {
       if (event.detail?.value) {
-        requestAnimationFrame(() => hideYearScroller(datePicker));
+        requestAnimationFrame(() => constrainCalendarOverlay(datePicker));
       }
     };
 
@@ -127,7 +164,7 @@ const Navbar = () => {
       if (!timePicker || !datePicker) return false;
 
       applyConstraints();
-      hideYearScroller(datePicker);
+      constrainCalendarOverlay(datePicker);
 
       datePicker.addEventListener("opened-changed", onDateOpened);
       datePicker.addEventListener("value-changed", onDateOrValueChanged);
@@ -215,7 +252,7 @@ const Navbar = () => {
 
     const min = new Date();
     const max = new Date();
-    max.setDate(max.getDate() + 29);
+    max.setDate(max.getDate() + 30);
     max.setHours(20, 0, 0, 0);
 
     return { min: format(min), max: format(max) };
