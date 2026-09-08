@@ -20,6 +20,7 @@ if (typeof window !== "undefined") {
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  adjustFontFallback: false,
 });
 
 const jakarta = Plus_Jakarta_Sans({

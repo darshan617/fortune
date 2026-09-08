@@ -142,8 +142,8 @@ const About = () => {
                     where generations begin their finest chapters. Every detail,
                     every material, every space is a{" "}
                     <i
-                      className="textGold fw-normal"
-                      style={{ fontStyle: "italic" }}
+                      className="textGold fw-light"
+                      style={{ fontStyle: "italic", fontWeight: 300 }}
                     >
                       promises kept
                     </i>
