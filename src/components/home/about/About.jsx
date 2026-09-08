@@ -1,6 +1,6 @@
 import Image from "next/image";
-import React, { useEffect } from "react";
 import styles from "@/components/home/about/About.module.css";
+import React, { useEffect } from "react";
 import aboutHero from "@/assets/images/aboutHero.jpg";
 
 const About = () => {
