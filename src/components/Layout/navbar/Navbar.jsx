@@ -161,7 +161,39 @@ const Navbar = () => {
 
       timePicker = picker.querySelector('[slot="time-picker"]');
       datePicker = picker.querySelector('[slot="date-picker"]');
+
       if (!timePicker || !datePicker) return false;
+
+      // Force DD/MM/YYYY format
+      datePicker.i18n = {
+        ...datePicker.i18n,
+
+        formatDate: (date) => {
+          if (!date) return "";
+
+          const day = String(date.day).padStart(2, "0");
+          const month = String(date.month).padStart(2, "0");
+          const year = date.year;
+
+          return `${day}/${month}/${year}`;
+        },
+
+        parseDate: (dateString) => {
+          if (!dateString) return null;
+
+          const parts = dateString.split("/");
+
+          if (parts.length !== 3) return null;
+
+          const [day, month, year] = parts.map(Number);
+
+          return {
+            day,
+            month,
+            year,
+          };
+        },
+      };
 
       applyConstraints();
       constrainCalendarOverlay(datePicker);
@@ -172,6 +204,7 @@ const Navbar = () => {
       timePicker.addEventListener("opened-changed", onTimeOpened);
 
       const originalUpdate = picker.__updateTimePickerMinMax?.bind(picker);
+
       if (originalUpdate) {
         picker.__updateTimePickerMinMax = () => {
           originalUpdate();
