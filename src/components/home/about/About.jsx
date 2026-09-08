@@ -1,6 +1,6 @@
 import Image from "next/image";
-import React, { useEffect } from "react";
 import styles from "@/components/home/about/About.module.css";
+import React, { useEffect } from "react";
 import aboutHero from "@/assets/images/aboutHero.jpg";
 
 const About = () => {
@@ -142,8 +142,8 @@ const About = () => {
                     where generations begin their finest chapters. Every detail,
                     every material, every space is a{" "}
                     <i
-                      className="textGold fw-normal"
-                      style={{ fontStyle: "italic" }}
+                      className="textGold fw-light"
+                      style={{ fontStyle: "italic", fontWeight: 300 }}
                     >
                       promises kept
                     </i>
