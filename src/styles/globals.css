@@ -85,6 +85,15 @@ vaadin-date-picker-overlay-content::part(years-toggle-button) {
   display: none;
 }
 
+vaadin-month-calendar[disabled] {
+  display: none !important;
+}
+
+vaadin-month-calendar [part~="date"][disabled] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
