@@ -16,7 +16,13 @@ const FeaturedProject = ({
   featuredProject2Logo,
   projectStatus1,
   projectStatus2,
+  featuredProject3Hover,
+  featuredProject3,
+  // featuredProject3Logo,
+  projectStatus3,
+
   showFilter = false,
+
 }) => {
   const [filter, setFilter] = useState("all");
   const [displayedFilter, setDisplayedFilter] = useState("all");
@@ -44,6 +50,17 @@ const FeaturedProject = ({
       hover: featuredProject2Hover,
       logo: featuredProject2Logo,
       name: "Fortune Venetian",
+      location: "Andheri West, Mumbai",
+    },
+    {
+      key: "Elite",
+      href: "/",
+      status: "ongoing Project",
+      statusLabel: projectStatus3,
+      image: featuredProject3,
+      hover: featuredProject3Hover,
+      // logo: featuredProject3Logo,
+      name: "Fortune Elite",
       location: "Andheri West, Mumbai",
     },
   ];
@@ -176,100 +193,6 @@ const FeaturedProject = ({
                       </Link>
                     </div>
                   ))}
-
-                  {/* <div className="swiper-slide">
-                    <div className={styles.projectItem}>
-                      <div className={styles.projImgBox}>
-                        <Image
-                          src={featuredProject3}
-                          alt=""
-                          fill
-                          sizes="(max-width: 992px) 90vw, 45vw"
-                          className={styles.pibImg}
-                        />
-                        <Image
-                          src={featuredProject3Hover}
-                          alt=""
-                          fill
-                          sizes="(max-width: 992px) 90vw, 45vw"
-                          className={`${styles.pibImg} ${styles.pibHoverImg}`}
-                        />
-                      </div>
-                      <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
-                        <div className="pitemHead d-flex justify-content-between align-items-start">
-                          <div className="projStatus badge bgGold lh-sm fw-normal px-3">
-                            Ongoing Project
-                          </div>
-                          <div className={styles.projLogo}>
-                            <Image
-                              src={featuredProject3Logo}
-                              alt="Fortune Florence"
-                              className={styles.projLogoImg}
-                            />
-                          </div>
-                        </div>
-                        <div className="pitemFoot d-flex justify-content-between align-items-end">
-                          <div className="projDetail text-white">
-                            <h3 className={`${styles.projName} titleFont mb-1`}>
-                              Fortune Florence
-                            </h3>
-                            <div className={styles.projLocation}>
-                              Borivali East, Mumbai
-                            </div>
-                          </div>
-                          <div>
-                            <a href="" className="ctaBtn">
-                              View More
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
-
-                  {/* <div className="swiper-slide">
-                    <div className={styles.projectItem}>
-                      <div className={styles.projImgBox}>
-                        <Image
-                          src={featuredProject4}
-                          alt=""
-                          fill
-                          sizes="(max-width: 992px) 90vw, 45vw"
-                          className={styles.pibImg}
-                        />
-                        <Image
-                          src={featuredProject4Hover}
-                          alt=""
-                          fill
-                          sizes="(max-width: 992px) 90vw, 45vw"
-                          className={`${styles.pibImg} ${styles.pibHoverImg}`}
-                        />
-                      </div>
-                      <div className="w-100 h-100 d-flex flex-column justify-content-between position-relative z-3">
-                        <div className="pitemHead d-flex justify-content-between align-items-start">
-                          <div className="projStatus badge bgGold lh-sm fw-normal px-3">
-                            New Launch
-                          </div>
-                          <div className={styles.projLogo} />
-                        </div>
-                        <div className="pitemFoot d-flex justify-content-between align-items-end">
-                          <div className="projDetail text-white">
-                            <h3 className={`${styles.projName} titleFont mb-1`}>
-                              Fortune Venetian
-                            </h3>
-                            <div className={styles.projLocation}>
-                              Andheri West, Mumbai
-                            </div>
-                          </div>
-                          <div>
-                            <a href="" className="ctaBtn">
-                              View More
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
                 </div>
                 <div className="swiperBtn next projNext">
                   <svg
