@@ -14,6 +14,7 @@ import projectImagesHover from "@/assets/images/florence/item_hover.jpg";
 import featuredProject2 from "@/assets/images/venetian/item.jpg";
 import featuredProject2Hover from "@/assets/images/venetian/item_hover.jpg";
 import featuredProject2Logo from "@/assets/images/venetian/logo.png";
+import featuredProject3 from "@/assets/images/elite/item.jpg"
 
 const HomeComponents = () => {
   return (
@@ -32,6 +33,11 @@ const HomeComponents = () => {
        featuredProject2Logo={featuredProject2Logo}
        projectStatus1="Ongoing Project"
        projectStatus2="Upcoming Project"
+       projectStatus3= "Upcoming Project"
+       featuredProject3={featuredProject3}
+      //  featuredProject3Hover={featuredProject2Hover}
+      featuredProject3Logo={null}
+
 
        />
       <WhyChoose />

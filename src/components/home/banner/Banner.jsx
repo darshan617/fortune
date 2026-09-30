@@ -23,9 +23,8 @@ const Banner = () => {
             A Legacy of Delivering Promises.
           </h1>
           <p className={`${styles.heroTxt} fs-20 revealText  `}>
-            Experience thoughtfully crafted residences where timeless
-            architecture, exceptional craftsmanship, and premium living come
-            together.
+            Building enduring spaces through experience, integrity, innovation
+            and disciplined execution.
           </p>
           <div
             className="animateThis fadeIn"
